@@ -31,6 +31,10 @@ sudo apt-get install -y ranger
 sudo apt-get install -y git
 sudo apt-get install -y curl
 sudo apt-get install -y gnome-disk-utility
+sudo apt-get install -y blender
+sudo apt-get install -y gimp
+sudo apt-get install -y kdenlive
+sudo apt-get install -y inkscape
 
 echo "==================================="
 echo "Installing misc softwares"
