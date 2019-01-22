@@ -42,3 +42,13 @@ echo "==================================="
 sudo apt-get install -y screenfetch
 sudo apt-get install -y cowsay
 sudo apt-get install -y fortune
+
+echo "==================================="
+echo "Installing NodeJS development softwares"
+echo "==================================="
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+
+echo "==================================="
+echo "Installing Golang development softwares"
+echo "==================================="
+sudo apt-get install -y go-dep
