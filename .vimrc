@@ -15,22 +15,25 @@ set hlsearch
 
 set term=screen-256color
 set background=dark
+"set background=light
 
-syntax on
-" color dracula
+syntax enable
+"colorscheme monokai
+colorscheme solarized
 
-"set termguicolors     " enable true colors support
-"let ayucolor="light"  " for light version of theme
-"let ayucolor="mirage" " for mirage version of theme
-"let ayucolor="dark"   " for dark version of theme
-"colorscheme ayu
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-" Make sure you use single quotes
+" ALE is a linting
+Plug 'w0rp/ale'
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
@@ -67,15 +70,16 @@ Plug 'vim-airline/vim-airline-themes'
 " VIM Javscript Prettier formatter
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
-
 " VIM Javscript Syntax highlighting
 Plug 'pangloss/vim-javascript' 
 Plug 'mxw/vim-jsx'
 
+" VIM dracula theme
 Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'ayu-theme/ayu-vim', { 'as': 'ayu' }
 
-" Initialize plugin system
+" Syntax highting for styled-components
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
 call plug#end()
 
 " max line length that prettier will wrap on
