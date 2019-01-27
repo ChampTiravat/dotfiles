@@ -44,6 +44,11 @@ sudo apt-get install -y cowsay
 sudo apt-get install -y fortune
 
 echo "==================================="
+echo "Installing Python development softwares"
+echo "==================================="
+sudo apt-get install -y python3-pip
+
+echo "==================================="
 echo "Installing NodeJS development softwares"
 echo "==================================="
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
