@@ -3,6 +3,9 @@ filetype plugin indent on
 "show existing tab with 4 spaces width
 set tabstop=2
 
+"set vim-airline theme
+let g:airline_theme='luna'
+
 "when indenting with '>', use 4 spaces width
 set shiftwidth=2
 
@@ -17,15 +20,9 @@ set term=screen-256color
 set background=dark
 "set background=light
 
-syntax enable
+"syntax enable
 "colorscheme monokai
-colorscheme solarized
-
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-      \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+"colorscheme solarized
 
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
@@ -84,7 +81,7 @@ call plug#end()
 
 " max line length that prettier will wrap on
 " Prettier default: 80
-let g:prettier#config#print_width = 90
+let g:prettier#config#print_width = 80
 
 " number of spaces per indentation level
 " Prettier default: 2
@@ -96,11 +93,11 @@ let g:prettier#config#use_tabs = 'false'
 
 " print semicolons
 " Prettier default: true
-let g:prettier#config#semi = 'false'
+let g:prettier#config#semi = 'true'
 
 " single quotes over double quotes
 " Prettier default: false
-let g:prettier#config#single_quote = 'false'
+let g:prettier#config#single_quote = 'true'
 
 " print spaces between brackets
 " Prettier default: true
