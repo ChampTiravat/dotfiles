@@ -3,8 +3,10 @@ filetype plugin indent on
 "show existing tab with 4 spaces width
 set tabstop=2
 
-"set vim-airline theme
+"set vim-airline theme and plugin configuration
 let g:airline_theme='luna'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 "when indenting with '>', use 4 spaces width
 set shiftwidth=2
