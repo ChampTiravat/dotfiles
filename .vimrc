@@ -4,7 +4,9 @@ filetype plugin indent on
 set tabstop=2
 
 "set vim-airline theme and plugin configuration
-let g:airline_theme='luna'
+let g:airline_theme='dark'
+"let g:airline_theme='luna'
+"let g:airline_theme='molokai'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
@@ -15,15 +17,15 @@ set shiftwidth=2
 set expandtab
 
 set number
-set relativenumber
+"set relativenumber
 set hlsearch
 
 set term=screen-256color
 set background=dark
 "set background=light
 
-"syntax enable
-"colorscheme monokai
+syntax enable
+colorscheme monokai
 "colorscheme solarized
 
 " Specify a directory for plugins
