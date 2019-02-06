@@ -4,9 +4,20 @@ filetype plugin indent on
 set tabstop=2
 
 "set vim-airline theme and plugin configuration
-let g:airline_theme='dark'
-"let g:airline_theme='luna'
+"let g:airline_theme='light'
+"let g:airline_theme='dark'
+let g:airline_theme='luna'
 "let g:airline_theme='molokai'
+"let g:airline_theme='angr'
+"let g:airline_theme='aurora'
+"let g:airline_theme='cool'
+"let g:airline_theme='deus'
+"let g:airline_theme='papercolor'
+"let g:airline_theme='peaksea'
+"let g:airline_theme='sierra'
+"let g:airline_theme='soda'
+"let g:airline_theme='violet'
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
@@ -25,7 +36,7 @@ set background=dark
 "set background=light
 
 syntax enable
-colorscheme monokai
+"colorscheme monokai
 "colorscheme solarized
 
 " Specify a directory for plugins
@@ -101,7 +112,7 @@ let g:prettier#config#semi = 'true'
 
 " single quotes over double quotes
 " Prettier default: false
-let g:prettier#config#single_quote = 'true'
+let g:prettier#config#single_quote = 'false'
 
 " print spaces between brackets
 " Prettier default: true
