@@ -38,6 +38,7 @@ set background=dark
 syntax enable
 "colorscheme monokai
 "colorscheme solarized
+colorscheme parsec
 
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
