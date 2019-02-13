@@ -1,48 +1,48 @@
 filetype plugin indent on
 
+" ============================================
 "show existing tab with 4 spaces width
+" ============================================
 set tabstop=2
 
+" ============================================
 "set vim-airline theme and plugin configuration
+" ============================================
 "let g:airline_theme='light'
 "let g:airline_theme='dark'
 let g:airline_theme='luna'
 "let g:airline_theme='molokai'
-"let g:airline_theme='angr'
 "let g:airline_theme='aurora'
 "let g:airline_theme='cool'
-"let g:airline_theme='deus'
-"let g:airline_theme='papercolor'
-"let g:airline_theme='peaksea'
-"let g:airline_theme='sierra'
-"let g:airline_theme='soda'
 "let g:airline_theme='violet'
 
+" ============================================
+" vim-airline config
+" ============================================
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
+" ============================================
 "when indenting with '>', use 4 spaces width
+" ============================================
 set shiftwidth=2
 
+" ============================================
 "On pressing tab, insert 4 spaces
+" ============================================
 set expandtab
 
 set number
-"set relativenumber
 set hlsearch
 
 set term=screen-256color
 set background=dark
-"set background=light
 
 syntax enable
 "colorscheme monokai
 "colorscheme solarized
 colorscheme parsec
 
-" Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
-" - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
 " ALE is a linting
