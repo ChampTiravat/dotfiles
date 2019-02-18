@@ -1,7 +1,7 @@
 filetype plugin indent on
 
 " ============================================
-"show existing tab with 4 spaces width
+" show existing tab with 4 spaces width
 " ============================================
 set tabstop=2
 
@@ -31,20 +31,17 @@ set shiftwidth=2
 "On pressing tab, insert 4 spaces
 " ============================================
 set expandtab
-
 set number
 set hlsearch
-
 set term=screen-256color
 set background=dark
 
 syntax enable
-"colorscheme monokai
+colorscheme monokai
 "colorscheme solarized
 "colorscheme parsec
 
 call plug#begin('~/.vim/plugged')
-
 " ============================================
 " ALE is a linting
 " ============================================
@@ -122,6 +119,11 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 " Syntax highting for styled-components
 " ============================================
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
+" ============================================
+" Easy Motion is a tools to navigate around the file
+" ============================================
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 
