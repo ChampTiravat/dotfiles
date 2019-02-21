@@ -6,7 +6,7 @@ filetype plugin indent on
 set tabstop=2
 
 " ============================================
-"set vim-airline theme and plugin configuration
+" set vim-airline theme and plugin configuration
 " ============================================
 "let g:airline_theme='light'
 let g:airline_theme='dark'
@@ -124,6 +124,8 @@ Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 " Easy Motion is a tools to navigate around the file
 " ============================================
 Plug 'easymotion/vim-easymotion'
+
+Plug 'tpope/vim-vinegar'
 
 call plug#end()
 
