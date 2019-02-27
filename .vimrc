@@ -8,13 +8,9 @@ set tabstop=2
 " ============================================
 " set vim-airline theme and plugin configuration
 " ============================================
-"let g:airline_theme='light'
 let g:airline_theme='dark'
+"let g:airline_theme='light'
 "let g:airline_theme='luna'
-"let g:airline_theme='molokai'
-"let g:airline_theme='aurora'
-"let g:airline_theme='cool'
-"let g:airline_theme='violet'
 
 " ============================================
 " vim-airline config
@@ -38,8 +34,6 @@ set background=dark
 
 syntax enable
 colorscheme monokai
-"colorscheme solarized
-"colorscheme parsec
 
 call plug#begin('~/.vim/plugged')
 " ============================================
