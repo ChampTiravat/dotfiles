@@ -4,19 +4,23 @@ filetype plugin indent on
 " show existing tab with 4 spaces width
 " ============================================
 set tabstop=2
+set mouse=a
+set cursorline
+set showcmd
+set hlsearch
+set showmatch
+set incsearch
 
 " ============================================
 " set vim-airline theme and plugin configuration
 " ============================================
 let g:airline_theme='dark'
-"let g:airline_theme='light'
-"let g:airline_theme='luna'
 
 " ============================================
 " vim-airline config
 " ============================================
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+"let g:airline_powerline_fonts = 1
 
 " ============================================
 "when indenting with '>', use 4 spaces width
@@ -28,12 +32,13 @@ set shiftwidth=2
 " ============================================
 set expandtab
 set number
+"set relativenumber
 set hlsearch
 set term=screen-256color
 set background=dark
 
 syntax enable
-colorscheme monokai
+colorscheme gruvbox
 
 call plug#begin('~/.vim/plugged')
 " ============================================
