@@ -32,8 +32,3 @@ echo "==================================="
 echo "Installing Python development softwares"
 echo "==================================="
 sudo apt-get install -y python3-pip
-
-echo "==================================="
-echo "Installing Golang development softwares"
-echo "==================================="
-sudo apt-get install -y go-dep
