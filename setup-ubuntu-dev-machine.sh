@@ -18,6 +18,8 @@ sudo apt-get install -y htop
 sudo apt-get install -y ranger
 sudo apt-get install -y git
 sudo apt-get install -y curl
+sudo apt-get install -y gnome-tweak-tool
+sudo snap install postman
 
 echo "==================================="
 echo "Installing misc softwares"
