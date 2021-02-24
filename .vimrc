@@ -3,13 +3,14 @@ filetype plugin indent on
 " ============================================
 " show existing tab with 4 spaces width
 " ============================================
-set tabstop=2
 set mouse=a
 set cursorline
 set showcmd
 set hlsearch
 set showmatch
 set incsearch
+set syntax=go
+set autoindent
 
 " ============================================
 " set vim-airline theme and plugin configuration
@@ -23,14 +24,12 @@ let g:airline#extensions#tabline#enabled = 1
 "let g:airline_powerline_fonts = 1
 
 " ============================================
-"when indenting with '>', use 4 spaces width
-" ============================================
-set shiftwidth=2
-
-" ============================================
 "On pressing tab, insert 4 spaces
 " ============================================
-set expandtab
+set expandtab " convert tab into spaces.
+set tabstop=4
+set softtabstop=4 " set number of spaces when adding new tab(s) or remove existing tab(s).
+set shiftwidth=4
 set number
 "set relativenumber
 set hlsearch
@@ -39,6 +38,8 @@ set background=dark
 
 syntax enable
 colorscheme gruvbox
+"colorscheme solarized
+"colorscheme monokai
 
 call plug#begin('~/.vim/plugged')
 " ============================================
@@ -201,3 +202,4 @@ let g:prettier#config#config_precedence = 'prefer-file'
 " always|never|preserve
 " ============================================
 let g:prettier#config#prose_wrap = 'preserve'
+
