@@ -10,6 +10,7 @@ plugins=(sudo git docker python genpass)
 source $ZSH/oh-my-zsh.sh
 
 alias getip='ip addr | grep eth | grep inet'
+alias getports='sudo lsof -i -P -n | grep LISTEN'
 alias python='python3'
 alias pg='sudo service postgresql'
 alias m='make'
