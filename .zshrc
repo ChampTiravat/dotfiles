@@ -1,48 +1,97 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# cowsay hello, master
-
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+# =====================================================================================
 # Path to your oh-my-zsh installation.
-export ZSH="/home/johnwick/.oh-my-zsh"
+# =====================================================================================
+export ZSH="/Users/tiravat/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+
+# =====================================================================================
+# Theme Configurations
+# =====================================================================================
 ZSH_THEME="robbyrussell"
 
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git sudo)
 
+# =====================================================================================
+# Plugin Configurations
+# =====================================================================================
+plugins=(sudo)
 source $ZSH/oh-my-zsh.sh
 
+
+# =====================================================================================
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias getip='ip addr | grep eth | grep inet'
+# =====================================================================================
 alias getports='sudo lsof -i -P -n | grep LISTEN'
-alias python='python3'
+alias composer='/usr/local/bin/composer.phar'
+alias startpgsql='brew services start postgresql@12'
+alias r='ranger'
+alias s='source'
+alias work='cd ~/Code/ContractWorks'
+alias psn='cd ~/Code/Personal'
+alias lvim='/Users/tiravat/.local/bin/lvim'
+alias vi='nvim'
+alias vim='nvim'
+alias psql:niyomwan='psql -d niyomwan -U john -W'
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+# =====================================================================================
+# Activate FZF (file searching/resolution tool)
+# =====================================================================================
+export NVIM_CONFIG="${HOME}/.config/nvim/init.vim"
+
+
+# =====================================================================================
+# Activate FZF (file searching/resolution tool)
+# =====================================================================================
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+# =====================================================================================
+# Set PATH to Go(Compiler) binary
+# =====================================================================================
 export PATH=$PATH:/usr/local/go/bin
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source ~/powerlevel10k/powerlevel10k.zsh-theme
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# =====================================================================================
+# Node Version Manager Configuration
+# =====================================================================================
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="/usr/local/opt/php@7.3/bin:$PATH"
+export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/tiravat/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tiravat/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/tiravat/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tiravat/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+
+# =====================================================================================
+# Conda initialization config
+# =====================================================================================
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/tiravat/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/tiravat/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/tiravat/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/tiravat/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+
