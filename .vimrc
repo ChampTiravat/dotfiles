@@ -12,6 +12,9 @@ set incsearch
 set syntax=go
 set autoindent
 
+set colorcolumn=90
+highlight ColorColumn ctermbg=0 guibg=lightgrey
+
 " ============================================
 " set vim-airline theme and plugin configuration
 " ============================================
