@@ -21,15 +21,15 @@ set shiftwidth=2
 set number
 set hlsearch
 set background=dark
-"set relativenumber
+" set relativenumber
 
 
 " ======================================================================================
 " Airline configurations
 " ======================================================================================
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'dark'
-"let g:airline_powerline_fonts = 1
+let g:airline_theme = 'nord'
+let g:airline_powerline_fonts = 0
 
 
 " ======================================================================================
@@ -38,12 +38,6 @@ let g:airline_theme = 'dark'
 let g:blamer_enabled = 1
 let g:blamer_delay = 200
 let g:blamer_relative_time = 1
-
-
-" ======================================================================================
-" Set colorscheme
-" ======================================================================================
-colorscheme monokai
 
 
 " ======================================================================================
@@ -137,7 +131,7 @@ call plug#begin('~/.vim/plugged')
   " ============================================
   " Equivalence to GitLens in VSCode
   " ============================================
-  Plug 'APZelos/blamer.nvim'
+  " Plug 'APZelos/blamer.nvim'
 
   " ============================================
   " HTML/JSX auto closing tag
@@ -149,11 +143,13 @@ call plug#begin('~/.vim/plugged')
   " ============================================
   Plug 'sakshamgupta05/vim-todo-highlight'
 
+  Plug 'arcticicestudio/nord-vim'
+
   " ============================================
   " Add markdown support
   " ============================================
-  Plug 'godlygeek/tabular'
-  Plug 'plasticboy/vim-markdown'
+  "Plug 'godlygeek/tabular'
+  "Plug 'plasticboy/vim-markdown'
 
   " ============================================
   " File icons for many other plugins
@@ -162,6 +158,13 @@ call plug#begin('~/.vim/plugged')
   Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
+
+
+" ======================================================================================
+" Set colorscheme
+" ======================================================================================
+colorscheme nord
+"hi Normal guibg=NONE ctermbg=NONE
 
 
 " ======================================================================================
