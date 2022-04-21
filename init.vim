@@ -1,6 +1,5 @@
 filetype plugin indent on
 
-
 " ======================================================================================
 " Basic (Vim Native) Configurations
 " ======================================================================================
@@ -19,15 +18,45 @@ set tabstop=2
 set softtabstop=2 " Set number of spaces when add/remove new tab(s).
 set shiftwidth=2
 set number
+set laststatus=2
 set hlsearch
 set background=dark
-" set relativenumber
+set ignorecase
+
+set exrc
+set backspace=indent,eol,start
+set nocompatible
+set nohlsearch
+set nowrap
+set showcmd
+set incsearch
+set noswapfile
+set smartcase
+set autoread
+set ruler
+set hidden
+set splitright
+set expandtab
+set noerrorbells
+
+set encoding=UTF-8
+let g:NERDTreeFileExtensionHighlightFullName = 0
+let g:NERDTreeExactMatchHighlightFullName = 0
+let g:NERDTreePatternMatchHighlightFullName = 0
+
+let g:NERDTreeHighlightFolders = 0 " enables folder icon highlighting using exact match
+let g:NERDTreeHighlightFoldersFullName = 0 " highlights the folder name
+
+
+"--- Vim Markdown settings
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_follow_anchor = 1
 
 
 " ======================================================================================
 " Airline configurations
 " ======================================================================================
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline_theme = 'nord'
 let g:airline_powerline_fonts = 0
 
@@ -40,11 +69,13 @@ let g:blamer_delay = 200
 let g:blamer_relative_time = 1
 
 
+
 " ======================================================================================
 " Load plugins
 " ======================================================================================
 call plug#begin('~/.vim/plugged')
 
+  Plug 'NLKNguyen/papercolor-theme'
   Plug 'dracula/vim'
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
@@ -150,12 +181,32 @@ call plug#begin('~/.vim/plugged')
   " ============================================
   "Plug 'godlygeek/tabular'
   "Plug 'plasticboy/vim-markdown'
+  
+  Plug 'ap/vim-css-color'
+
+  "--- LSP
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'nvim-lua/lsp-status.nvim'
+  Plug 'mfussenegger/nvim-jdtls'
+
+  "--- Completion
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-cmdline'
+  Plug 'hrsh7th/nvim-cmp'
+
+  Plug 'hrsh7th/cmp-vsnip'
+  Plug 'hrsh7th/vim-vsnip'
+
 
   " ============================================
   " File icons for many other plugins
   " (always load this plugin as the last one)
   " ============================================
   Plug 'ryanoasis/vim-devicons'
+  " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 
 call plug#end()
 
@@ -163,9 +214,10 @@ call plug#end()
 " ======================================================================================
 " Set colorscheme
 " ======================================================================================
+" hi Normal guibg=NONE ctermbg=NONE
+colorscheme PaperColor
 colorscheme nord
-"hi Normal guibg=NONE ctermbg=NONE
-
+" colorscheme gruvbox
 
 " ======================================================================================
 " Javascript Prettier Configurations
@@ -289,3 +341,10 @@ let g:closetag_shortcut = '>'
 "
 let g:closetag_close_shortcut = '<leader>>'
 
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-f> :FZF<CR>
+nnoremap <C-p> :Prettier<CR>
+nnoremap <C-t> :tabnew<CR>
+
+" autocmd VimEnter * NERDTree " Open NERDTree when at startup
