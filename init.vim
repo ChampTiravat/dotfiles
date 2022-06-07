@@ -56,8 +56,8 @@ let g:vim_markdown_follow_anchor = 1
 " ======================================================================================
 " Airline configurations
 " ======================================================================================
-let g:airline#extensions#tabline#enabled = 0
-let g:airline_theme = 'nord'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'dark'
 let g:airline_powerline_fonts = 0
 
 
@@ -168,6 +168,10 @@ call plug#begin('~/.vim/plugged')
   " HTML/JSX auto closing tag
   " ============================================
   Plug 'alvan/vim-closetag'
+  
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+
 
   " ============================================
   " Highlight TODO
@@ -199,7 +203,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
 
-
   " ============================================
   " File icons for many other plugins
   " (always load this plugin as the last one)
@@ -215,9 +218,9 @@ call plug#end()
 " Set colorscheme
 " ======================================================================================
 " hi Normal guibg=NONE ctermbg=NONE
-colorscheme PaperColor
-colorscheme nord
-" colorscheme gruvbox
+"colorscheme PaperColor
+"colorscheme nord
+colorscheme gruvbox
 
 " ======================================================================================
 " Javascript Prettier Configurations
@@ -343,7 +346,10 @@ let g:closetag_close_shortcut = '<leader>>'
 
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
-nnoremap <C-f> :FZF<CR>
+"nnoremap <C-f> :FZF<CR>
+nnoremap <C-f> :Telescope find_files<CR>
+nnoremap <C-g> :Telescope live_grep<CR>
+"nnoremap <C-f> :Telescope buffers<CR>
 nnoremap <C-p> :Prettier<CR>
 nnoremap <C-t> :tabnew<CR>
 

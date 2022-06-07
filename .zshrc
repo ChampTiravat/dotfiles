@@ -13,7 +13,7 @@ ZSH_THEME="robbyrussell"
 # =====================================================================================
 # Plugin Configurations
 # =====================================================================================
-plugins=(sudo git git-flow )
+plugins=(sudo git git-flow)
 source $ZSH/oh-my-zsh.sh
 
 
@@ -22,21 +22,15 @@ source $ZSH/oh-my-zsh.sh
 # =====================================================================================
 alias getports='sudo lsof -i -P -n | grep LISTEN'
 alias composer='/usr/local/bin/composer.phar'
-
 alias startpgsql='brew services start postgresql@12'
 alias psql:niyomwan='psql -d niyomwan -U john -W'
-
 alias r='ranger'
 alias s='source'
-
 alias work='cd ~/Code/ContractWorks'
 alias psn='cd ~/Code/Personal'
-
 alias lvim='/Users/tiravat/.local/bin/lvim'
 alias vi='nvim'
 alias vim='nvim'
-
-# Git Shortcuts
 alias gs='git status'
 alias gd='git diff'
 alias gl='git log'
@@ -45,6 +39,8 @@ alias gaa='git add .'
 alias gc='git commit'
 alias gca='git commit --amend'
 alias gp='git push'
+
+export OBSIDIEN_VAULT="/Users/tiravat/Library/Mobile Documents/iCloud~md~obsidian/Documents"
 
 
 # =====================================================================================
@@ -78,10 +74,6 @@ export PATH="/usr/local/opt/php@7.3/sbin:$PATH"
 
 
 # =====================================================================================
-# Google Cloud Platform CLI tool
-# =====================================================================================
-
-# =====================================================================================
 # Conda initialization config
 # =====================================================================================
 # !! Contents within this block are managed by 'conda init' !!
@@ -108,12 +100,12 @@ export PATH="/usr/local/opt/libpq/bin:$PATH"
 # =====================================================================================
 # iTerm2 additional shell configurations
 # =====================================================================================
-# test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
-# The next line updates PATH for the Google Cloud SDK.
-# if [ -f '/Users/tiravat/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tiravat/Downloads/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-# if [ -f '/Users/tiravat/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tiravat/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
