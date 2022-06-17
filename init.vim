@@ -219,8 +219,8 @@ call plug#end()
 " ======================================================================================
 " hi Normal guibg=NONE ctermbg=NONE
 "colorscheme PaperColor
-"colorscheme nord
-colorscheme gruvbox
+colorscheme nord
+"colorscheme gruvbox
 
 " ======================================================================================
 " Javascript Prettier Configurations
@@ -352,5 +352,6 @@ nnoremap <C-g> :Telescope live_grep<CR>
 "nnoremap <C-f> :Telescope buffers<CR>
 nnoremap <C-p> :Prettier<CR>
 nnoremap <C-t> :tabnew<CR>
+nnoremap <C-s> :w<CR>
 
 " autocmd VimEnter * NERDTree " Open NERDTree when at startup
