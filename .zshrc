@@ -8,6 +8,7 @@ export ZSH="/Users/tiravat/.oh-my-zsh"
 # Theme Configurations
 # =====================================================================================
 ZSH_THEME="robbyrussell"
+#ZSH_THEME="agnoster"
 
 
 # =====================================================================================
@@ -26,8 +27,9 @@ alias startpgsql='brew services start postgresql@12'
 alias psql:niyomwan='psql -d niyomwan -U john -W'
 alias r='ranger'
 alias s='source'
-alias work='cd ~/Code/ContractWorks'
-alias psn='cd ~/Code/Personal'
+alias work='cd ~/Code/work'
+alias lab='cd ~/Code/lab'
+alias psn='cd ~/Code/personal'
 alias lvim='/Users/tiravat/.local/bin/lvim'
 alias vi='nvim'
 alias vim='nvim'
@@ -109,3 +111,5 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+export PATH="/usr/local/opt/php@7.4/bin:$PATH"
+export PATH="/usr/local/opt/php@7.4/sbin:$PATH"

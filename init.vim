@@ -57,7 +57,7 @@ let g:vim_markdown_follow_anchor = 1
 " Airline configurations
 " ======================================================================================
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'dark'
+let g:airline_theme = 'solarized'
 let g:airline_powerline_fonts = 0
 
 
@@ -217,10 +217,16 @@ call plug#end()
 " ======================================================================================
 " Set colorscheme
 " ======================================================================================
-" hi Normal guibg=NONE ctermbg=NONE
-"colorscheme PaperColor
-colorscheme nord
+hi Normal guibg=NONE ctermbg=NONE
+
+"colorscheme nord
 "colorscheme gruvbox
+"colorscheme PaperColor
+colorscheme solarized
+
+set t_Co=256
+highlight Normal ctermbg=NONE
+highlight nonText ctermbg=NONE
 
 " ======================================================================================
 " Javascript Prettier Configurations
