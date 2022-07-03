@@ -57,7 +57,7 @@ let g:vim_markdown_follow_anchor = 1
 " Airline configurations
 " ======================================================================================
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'solarized'
+let g:airline_theme = 'nord'
 let g:airline_powerline_fonts = 0
 
 
@@ -203,6 +203,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
 
+  "--- Solidity Syntax
+  Plug 'tomlion/vim-solidity'
+
   " ============================================
   " File icons for many other plugins
   " (always load this plugin as the last one)
@@ -219,10 +222,10 @@ call plug#end()
 " ======================================================================================
 hi Normal guibg=NONE ctermbg=NONE
 
-"colorscheme nord
 "colorscheme gruvbox
+"colorscheme solarized
 "colorscheme PaperColor
-colorscheme solarized
+colorscheme nord
 
 set t_Co=256
 highlight Normal ctermbg=NONE
@@ -352,12 +355,16 @@ let g:closetag_close_shortcut = '<leader>>'
 
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
-"nnoremap <C-f> :FZF<CR>
 nnoremap <C-f> :Telescope find_files<CR>
 nnoremap <C-g> :Telescope live_grep<CR>
-"nnoremap <C-f> :Telescope buffers<CR>
 nnoremap <C-p> :Prettier<CR>
 nnoremap <C-t> :tabnew<CR>
 nnoremap <C-s> :w<CR>
+"nnoremap <C-f> :FZF<CR>
+"nnoremap <C-f> :Telescope buffers<CR>
 
-" autocmd VimEnter * NERDTree " Open NERDTree when at startup
+" ======================================================================================
+" Open NERDTree at startup
+" ======================================================================================
+" autocmd VimEnter * NERDTree 
+
