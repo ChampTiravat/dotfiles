@@ -223,9 +223,9 @@ call plug#end()
 hi Normal guibg=NONE ctermbg=NONE
 
 "colorscheme gruvbox
-"colorscheme solarized
 "colorscheme PaperColor
 colorscheme nord
+"colorscheme solarized
 
 set t_Co=256
 highlight Normal ctermbg=NONE
