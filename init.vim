@@ -57,7 +57,7 @@ let g:vim_markdown_follow_anchor = 1
 " Airline configurations
 " ======================================================================================
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'nord'
+let g:airline_theme = 'base16_gruvbox_dark_hard'
 let g:airline_powerline_fonts = 0
 
 
@@ -222,9 +222,9 @@ call plug#end()
 " ======================================================================================
 hi Normal guibg=NONE ctermbg=NONE
 
-"colorscheme gruvbox
+colorscheme gruvbox
 "colorscheme PaperColor
-colorscheme nord
+"colorscheme nord
 "colorscheme solarized
 
 set t_Co=256
