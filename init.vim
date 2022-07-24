@@ -15,12 +15,13 @@ set encoding=UTF-8
 set colorcolumn=90
 set expandtab " Convert tab into spaces.
 set tabstop=2
-set softtabstop=2 " Set number of spaces when add/remove new tab(s).
+set softtabstop=4 " Set number of spaces when add/remove new tab(s).
 set shiftwidth=2
 set number
 set laststatus=2
 set hlsearch
 set background=dark
+"set background=light
 set ignorecase
 
 set exrc
@@ -56,8 +57,9 @@ let g:vim_markdown_follow_anchor = 1
 " ======================================================================================
 " Airline configurations
 " ======================================================================================
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline_theme = 'base16_gruvbox_dark_hard'
+"let g:airline_theme = 'papercolor'
 let g:airline_powerline_fonts = 0
 
 
