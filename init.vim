@@ -3,9 +3,10 @@ filetype plugin indent on
 " ======================================================================================
 " Basic (Vim Native) Configurations
 " ======================================================================================
-set mouse=a
+"set mouse=a
 set cursorline
 set showcmd
+set wrap
 set hlsearch
 set showmatch
 set incsearch
@@ -14,15 +15,16 @@ set autoindent
 set encoding=UTF-8
 set colorcolumn=90
 set expandtab " Convert tab into spaces.
-set tabstop=2
+set tabstop=4
 set softtabstop=4 " Set number of spaces when add/remove new tab(s).
-set shiftwidth=2
+set shiftwidth=4
 set number
 set laststatus=2
 set hlsearch
-set background=dark
 "set background=light
+set background=dark
 set ignorecase
+syntax enable
 
 set exrc
 set backspace=indent,eol,start
@@ -58,8 +60,11 @@ let g:vim_markdown_follow_anchor = 1
 " Airline configurations
 " ======================================================================================
 let g:airline#extensions#tabline#enabled = 0
-let g:airline_theme = 'base16_gruvbox_dark_hard'
+"let g:airline_theme = 'base16_gruvbox_dark_hard'
 "let g:airline_theme = 'papercolor'
+"let g:airline_theme = 'night_owl'
+"let g:airline_theme = 'horizon'
+let g:airline_theme = 'nightfly'
 let g:airline_powerline_fonts = 0
 
 
@@ -152,9 +157,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'mxw/vim-jsx'
 
   " ============================================
-  " VIM dracula theme
+  " VIM themes
   " ============================================
-  Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'haishanh/night-owl.vim'
+  Plug 'ntk148v/vim-horizon'
+  Plug 'bluz71/vim-nightfly-guicolors'
 
   " ============================================
   " Syntax highting for styled-components
@@ -224,10 +231,21 @@ call plug#end()
 " ======================================================================================
 hi Normal guibg=NONE ctermbg=NONE
 
-colorscheme gruvbox
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+
+"colorscheme vscode
+"colorscheme gruvbox
 "colorscheme PaperColor
 "colorscheme nord
 "colorscheme solarized
+"colorscheme night-owl
+"colorscheme horizon
+colorscheme nightfly
+
 
 set t_Co=256
 highlight Normal ctermbg=NONE
@@ -247,7 +265,7 @@ let g:prettier#config#print_width = 90
 " number of spaces per indentation level
 " Prettier default: 2
 " ============================================
-let g:prettier#config#tab_width = 2
+let g:prettier#config#tab_width = 4
 
 " ============================================
 " use tabs over spaces
@@ -265,7 +283,7 @@ let g:prettier#config#semi = 'false'
 " single quotes over double quotes
 " Prettier default: false
 " ============================================
-let g:prettier#config#single_quote = 'true'
+let g:prettier#config#single_quote = 'false'
 
 " ============================================
 " print spaces between brackets
