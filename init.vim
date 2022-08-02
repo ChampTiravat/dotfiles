@@ -3,7 +3,7 @@ filetype plugin indent on
 " ======================================================================================
 " Basic (Vim Native) Configurations
 " ======================================================================================
-"set mouse=a
+set mouse=a
 set cursorline
 set showcmd
 set wrap
@@ -64,7 +64,8 @@ let g:airline#extensions#tabline#enabled = 0
 "let g:airline_theme = 'papercolor'
 "let g:airline_theme = 'night_owl'
 "let g:airline_theme = 'horizon'
-let g:airline_theme = 'nightfly'
+"let g:airline_theme = 'nightfly'
+let g:airline_theme = 'xcodelight'
 let g:airline_powerline_fonts = 0
 
 
@@ -162,6 +163,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'haishanh/night-owl.vim'
   Plug 'ntk148v/vim-horizon'
   Plug 'bluz71/vim-nightfly-guicolors'
+  Plug 'arzg/vim-colors-xcode'
 
   " ============================================
   " Syntax highting for styled-components
@@ -244,7 +246,8 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "colorscheme solarized
 "colorscheme night-owl
 "colorscheme horizon
-colorscheme nightfly
+"colorscheme nightfly
+colorscheme xcodelight
 
 
 set t_Co=256
