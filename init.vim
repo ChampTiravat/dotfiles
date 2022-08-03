@@ -64,8 +64,8 @@ let g:airline#extensions#tabline#enabled = 0
 "let g:airline_theme = 'papercolor'
 "let g:airline_theme = 'night_owl'
 "let g:airline_theme = 'horizon'
-"let g:airline_theme = 'nightfly'
-let g:airline_theme = 'xcodelight'
+let g:airline_theme = 'nightfly'
+"let g:airline_theme = 'xcodelight'
 let g:airline_powerline_fonts = 0
 
 
@@ -83,8 +83,6 @@ let g:blamer_relative_time = 1
 " ======================================================================================
 call plug#begin('~/.vim/plugged')
 
-  Plug 'NLKNguyen/papercolor-theme'
-  Plug 'dracula/vim'
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
   Plug 'scrooloose/nerdtree'
@@ -141,10 +139,20 @@ call plug#begin('~/.vim/plugged')
   Plug '~/my-prototype-plugin'
 
   " ============================================
-  " VIM airline and its theme
+  " VIM airline
   " ============================================
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+
+  " ============================================
+  " VIM themes
+  " ============================================
+  Plug 'haishanh/night-owl.vim'
+  Plug 'ntk148v/vim-horizon'
+  Plug 'bluz71/vim-nightfly-guicolors'
+  Plug 'arzg/vim-colors-xcode'
+  Plug 'NLKNguyen/papercolor-theme'
+  Plug 'arcticicestudio/nord-vim'
 
   " ============================================
   " VIM Javscript Prettier formatter
@@ -156,14 +164,8 @@ call plug#begin('~/.vim/plugged')
   " ============================================
   Plug 'pangloss/vim-javascript' 
   Plug 'mxw/vim-jsx'
-
-  " ============================================
-  " VIM themes
-  " ============================================
-  Plug 'haishanh/night-owl.vim'
-  Plug 'ntk148v/vim-horizon'
-  Plug 'bluz71/vim-nightfly-guicolors'
-  Plug 'arzg/vim-colors-xcode'
+  Plug 'tomlion/vim-solidity'
+  Plug 'ap/vim-css-color'
 
   " ============================================
   " Syntax highting for styled-components
@@ -173,31 +175,19 @@ call plug#begin('~/.vim/plugged')
   " ============================================
   " Equivalence to GitLens in VSCode
   " ============================================
-  " Plug 'APZelos/blamer.nvim'
+  Plug 'APZelos/blamer.nvim'
 
   " ============================================
   " HTML/JSX auto closing tag
   " ============================================
-  Plug 'alvan/vim-closetag'
-  
+  Plug 'alvan/vim-closetag' 
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
-
 
   " ============================================
   " Highlight TODO
   " ============================================
   Plug 'sakshamgupta05/vim-todo-highlight'
-
-  Plug 'arcticicestudio/nord-vim'
-
-  " ============================================
-  " Add markdown support
-  " ============================================
-  "Plug 'godlygeek/tabular'
-  "Plug 'plasticboy/vim-markdown'
-  
-  Plug 'ap/vim-css-color'
 
   "--- LSP
   Plug 'neovim/nvim-lspconfig'
@@ -213,9 +203,6 @@ call plug#begin('~/.vim/plugged')
 
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/vim-vsnip'
-
-  "--- Solidity Syntax
-  Plug 'tomlion/vim-solidity'
 
   " ============================================
   " File icons for many other plugins
@@ -246,8 +233,8 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "colorscheme solarized
 "colorscheme night-owl
 "colorscheme horizon
-"colorscheme nightfly
-colorscheme xcodelight
+colorscheme nightfly
+"colorscheme xcodelight
 
 
 set t_Co=256
