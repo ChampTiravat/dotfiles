@@ -19,17 +19,19 @@ source $ZSH/oh-my-zsh.sh
 
 
 # =====================================================================================
-# Alias COnfigurations
+# Alias Configurations
 # =====================================================================================
+alias pgsql:status='pg_isready'
+alias pgsql:start='brew services start postgresql@12'
+alias pgsql:booclii='psql -d booclii -U tiravat -W'
+
 alias getports='sudo lsof -i -P -n | grep LISTEN'
 alias composer='/usr/local/bin/composer.phar'
-alias startpgsql='brew services start postgresql@12'
-alias psql:niyomwan='psql -d niyomwan -U john -W'
 alias r='ranger'
 alias s='source'
 alias work='cd ~/Code/work'
 alias lab='cd ~/Code/lab'
-alias psn='cd ~/Code/personal'
+alias personal='cd ~/Code/personal'
 alias lvim='/Users/tiravat/.local/bin/lvim'
 alias vi='nvim'
 alias vim='nvim'
@@ -41,6 +43,7 @@ alias gaa='git add .'
 alias gc='git commit'
 alias gca='git commit --amend'
 alias gp='git push'
+
 
 export OBSIDIEN_VAULT="/Users/tiravat/Library/Mobile Documents/iCloud~md~obsidian/Documents"
 
@@ -111,5 +114,8 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
+
 export PATH="/usr/local/opt/php@7.4/bin:$PATH"
 export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
+
+
