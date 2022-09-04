@@ -1,83 +1,3 @@
-filetype plugin indent on
-
-" ======================================================================================
-" Basic (Vim Native) Configurations
-" ======================================================================================
-set mouse=a
-set cursorline
-set showcmd
-set wrap
-set hlsearch
-set showmatch
-set incsearch
-set syntax=go
-set autoindent
-set encoding=UTF-8
-set colorcolumn=90
-set expandtab " Convert tab into spaces.
-set tabstop=4
-set softtabstop=4 " Set number of spaces when add/remove new tab(s).
-set shiftwidth=4
-set number
-set laststatus=2
-set hlsearch
-"set background=light
-set background=dark
-set ignorecase
-syntax enable
-
-set exrc
-set backspace=indent,eol,start
-set nocompatible
-set nohlsearch
-set nowrap
-set showcmd
-set incsearch
-set noswapfile
-set smartcase
-set autoread
-set ruler
-set hidden
-set splitright
-set expandtab
-set noerrorbells
-
-set encoding=UTF-8
-let g:NERDTreeFileExtensionHighlightFullName = 0
-let g:NERDTreeExactMatchHighlightFullName = 0
-let g:NERDTreePatternMatchHighlightFullName = 0
-
-let g:NERDTreeHighlightFolders = 0 " enables folder icon highlighting using exact match
-let g:NERDTreeHighlightFoldersFullName = 0 " highlights the folder name
-
-
-"--- Vim Markdown settings
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_follow_anchor = 1
-
-
-" ======================================================================================
-" Airline configurations
-" ======================================================================================
-let g:airline#extensions#tabline#enabled = 0
-"let g:airline_theme = 'base16_gruvbox_dark_hard'
-"let g:airline_theme = 'papercolor'
-"let g:airline_theme = 'night_owl'
-"let g:airline_theme = 'horizon'
-let g:airline_theme = 'nightfly'
-"let g:airline_theme = 'xcodelight'
-let g:airline_powerline_fonts = 0
-
-
-" ======================================================================================
-" Blamer configurations
-" ======================================================================================
-let g:blamer_enabled = 0
-let g:blamer_delay = 200
-let g:blamer_relative_time = 1
-
-
-
 " ======================================================================================
 " Load plugins
 " ======================================================================================
@@ -93,7 +13,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-vinegar'
 
   " ============================================
-  " ALE is a linting
+  " ALE is a linting for many languages
   " ============================================
   Plug 'w0rp/ale'
 
@@ -214,6 +134,83 @@ call plug#begin('~/.vim/plugged')
 
 call plug#end()
 
+
+
+" ======================================================================================
+" Basic (Vim Native) Configurations
+" ======================================================================================
+set mouse=a
+set cursorline
+set showcmd
+set wrap
+set hlsearch
+set showmatch
+set incsearch
+set syntax=go
+set autoindent
+set encoding=UTF-8
+set colorcolumn=90
+set expandtab " Convert tab into spaces.
+set tabstop=4
+set softtabstop=4 " Set number of spaces when add/remove new tab(s).
+set shiftwidth=4
+set number
+set laststatus=2
+set hlsearch
+set background=light
+set ignorecase
+set exrc
+set backspace=indent,eol,start
+set nocompatible
+set nohlsearch
+set nowrap
+set showcmd
+set incsearch
+set noswapfile
+set smartcase
+set autoread
+set ruler
+set hidden
+set splitright
+set expandtab
+set noerrorbells
+
+syntax enable
+filetype plugin indent on
+
+set encoding=UTF-8
+let g:NERDTreeFileExtensionHighlightFullName = 0
+let g:NERDTreeExactMatchHighlightFullName = 0
+let g:NERDTreePatternMatchHighlightFullName = 0
+
+let g:NERDTreeHighlightFolders = 0 " enables folder icon highlighting using exact match
+let g:NERDTreeHighlightFoldersFullName = 0 " highlights the folder name
+
+
+"--- Vim Markdown settings
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_follow_anchor = 1
+
+
+" ======================================================================================
+" Airline configurations
+" ======================================================================================
+let g:airline#extensions#tabline#enabled = 0
+"let g:airline_theme = 'base16_gruvbox_dark_hard'
+"let g:airline_theme = 'papercolor'
+"let g:airline_theme = 'night_owl'
+"let g:airline_theme = 'horizon'
+let g:airline_theme = 'nightfly'
+"let g:airline_theme = 'xcodelight'
+let g:airline_powerline_fonts = 0
+
+
+" ======================================================================================
+" Blamer configurations
+" ======================================================================================
+let g:blamer_enabled = 0
+let g:blamer_delay = 200
+let g:blamer_relative_time = 1
 
 " ======================================================================================
 " Set colorscheme
