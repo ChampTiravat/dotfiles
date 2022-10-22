@@ -1,144 +1,110 @@
-" ======================================================================================
-" Load plugins
-" ======================================================================================
 call plug#begin('~/.vim/plugged')
+    Plug 'othree/yajs.vim'
+    Plug 'SirVer/ultisnips'
+    Plug 'tpope/vim-vinegar'
+    Plug 'mhinz/vim-startify'
+    Plug 'honza/vim-snippets'
+    Plug 'luochen1990/rainbow'
+    Plug 'scrooloose/nerdtree'
+    Plug 'preservim/nerdcommenter'
+    Plug 'easymotion/vim-easymotion'
+    Plug 'ntpeters/vim-better-whitespace'
+    Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
-  Plug 'scrooloose/nerdtree'
-  Plug 'preservim/nerdcommenter'
-  Plug 'mhinz/vim-startify'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  Plug 'easymotion/vim-easymotion'
-  Plug 'tpope/vim-vinegar'
+    " ============================================
+    " ALE is a linting for many languages
+    " ============================================
+    Plug 'w0rp/ale'
 
-  " ============================================
-  " ALE is a linting for many languages
-  " ============================================
-  Plug 'w0rp/ale'
+    " ============================================
+    " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+    " ============================================
+    Plug 'junegunn/vim-easy-align'
 
-  " ============================================
-  " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-  " ============================================
-  Plug 'junegunn/vim-easy-align'
+    " ============================================
+    " Any valid git URL is allowed
+    " ============================================
+    Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
-  " ============================================
-  " Any valid git URL is allowed
-  " ============================================
-  Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+    " ============================================
+    " Using a non-master branch
+    " ============================================
+    Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
-  " ============================================
-  " On-demand loading
-  " ============================================
-  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-  Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+    " ============================================
+    " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+    " ============================================
+    Plug 'fatih/vim-go', { 'tag': '*' }
 
-  " ============================================
-  " Using a non-master branch
-  " ============================================
-  Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+    " ============================================
+    " Plugin options
+    " ============================================
+    Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
 
-  " ============================================
-  " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-  " ============================================
-  Plug 'fatih/vim-go', { 'tag': '*' }
+    " ============================================
+    " Plugin outside ~/.vim/plugged with post-update hook
+    " ============================================
+    Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-  " ============================================
-  " Plugin options
-  " ============================================
-  Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+    " ============================================
+    " Unmanaged plugin (manually installed and updated)
+    " ============================================
+    Plug '~/my-prototype-plugin'
 
-  " ============================================
-  " Plugin outside ~/.vim/plugged with post-update hook
-  " ============================================
-  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    " ============================================
+    " VIM airline
+    " ============================================
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
 
-  " ============================================
-  " Unmanaged plugin (manually installed and updated)
-  " ============================================
-  Plug '~/my-prototype-plugin'
+    " ============================================
+    " VIM themes
+    " ============================================
+    Plug 'haishanh/night-owl.vim'
+    Plug 'arzg/vim-colors-xcode'
 
-  " ============================================
-  " VIM airline
-  " ============================================
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+    " ============================================
+    " VIM Javscript Syntax highlighting
+    " ============================================
+    Plug 'mxw/vim-jsx'
+    Plug 'ap/vim-css-color'
+    Plug 'tomlion/vim-solidity'
+    Plug 'pangloss/vim-javascript'
 
-  " ============================================
-  " VIM themes
-  " ============================================
-  Plug 'haishanh/night-owl.vim'
-  Plug 'ntk148v/vim-horizon'
-  Plug 'bluz71/vim-nightfly-guicolors'
-  Plug 'arzg/vim-colors-xcode'
-  Plug 'NLKNguyen/papercolor-theme'
-  Plug 'arcticicestudio/nord-vim'
+    " ============================================
+    " Syntax highting for styled-components
+    " ============================================
+    Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 
-  " ============================================
-  " VIM Javscript Prettier formatter
-  " ============================================
-  Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+    " ============================================
+    " Equivalence to GitLens in VSCode
+    " ============================================
+    Plug 'APZelos/blamer.nvim'
 
-  " ============================================
-  " VIM Javscript Syntax highlighting
-  " ============================================
-  Plug 'pangloss/vim-javascript' 
-  Plug 'mxw/vim-jsx'
-  Plug 'tomlion/vim-solidity'
-  Plug 'ap/vim-css-color'
+    " ============================================
+    " HTML/JSX auto closing tag
+    " ============================================
+    Plug 'alvan/vim-closetag'
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
 
-  " ============================================
-  " Syntax highting for styled-components
-  " ============================================
-  Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+    " ============================================
+    " Highlight
+    " ============================================
+    Plug 'sakshamgupta05/vim-todo-highlight'
 
-  " ============================================
-  " Equivalence to GitLens in VSCode
-  " ============================================
-  Plug 'APZelos/blamer.nvim'
-
-  " ============================================
-  " HTML/JSX auto closing tag
-  " ============================================
-  Plug 'alvan/vim-closetag' 
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim'
-
-  " ============================================
-  " Highlight TODO
-  " ============================================
-  Plug 'sakshamgupta05/vim-todo-highlight'
-
-  "--- LSP
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'nvim-lua/lsp-status.nvim'
-  Plug 'mfussenegger/nvim-jdtls'
-
-  "--- Completion
-  Plug 'hrsh7th/cmp-nvim-lsp'
-  Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/cmp-path'
-  Plug 'hrsh7th/cmp-cmdline'
-  Plug 'hrsh7th/nvim-cmp'
-
-  Plug 'hrsh7th/cmp-vsnip'
-  Plug 'hrsh7th/vim-vsnip'
-
-  " ============================================
-  " File icons for many other plugins
-  " (always load this plugin as the last one)
-  " ============================================
-  Plug 'ryanoasis/vim-devicons'
-  " Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-
-
+    " ============================================
+    " File icons for many other plugins
+    " (always load this plugin as the last one)
+    " ============================================
+    Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 
-
-" ======================================================================================
+" =====================================================================
 " Basic (Vim Native) Configurations
-" ======================================================================================
+" =====================================================================
 set mouse=a
 set cursorline
 set showcmd
@@ -150,14 +116,14 @@ set syntax=go
 set autoindent
 set encoding=UTF-8
 set colorcolumn=90
-set expandtab " Convert tab into spaces.
+set expandtab       " Convert tab into spaces.
 set tabstop=4
-set softtabstop=4 " Set number of spaces when add/remove new tab(s).
+set softtabstop=4   " Set number of spaces when add/remove new tab(s).
 set shiftwidth=4
 set number
 set laststatus=2
 set hlsearch
-set background=light
+set background=dark
 set ignorecase
 set exrc
 set backspace=indent,eol,start
@@ -174,204 +140,83 @@ set hidden
 set splitright
 set expandtab
 set noerrorbells
-
 syntax enable
 filetype plugin indent on
 
-set encoding=UTF-8
-let g:NERDTreeFileExtensionHighlightFullName = 0
-let g:NERDTreeExactMatchHighlightFullName = 0
-let g:NERDTreePatternMatchHighlightFullName = 0
 
-let g:NERDTreeHighlightFolders = 0 " enables folder icon highlighting using exact match
-let g:NERDTreeHighlightFoldersFullName = 0 " highlights the folder name
-
-
-"--- Vim Markdown settings
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_follow_anchor = 1
-
-
-" ======================================================================================
-" Airline configurations
-" ======================================================================================
-let g:airline#extensions#tabline#enabled = 0
-"let g:airline_theme = 'base16_gruvbox_dark_hard'
-"let g:airline_theme = 'papercolor'
-"let g:airline_theme = 'night_owl'
-"let g:airline_theme = 'horizon'
-let g:airline_theme = 'nightfly'
-"let g:airline_theme = 'xcodelight'
-let g:airline_powerline_fonts = 0
-
-
-" ======================================================================================
-" Blamer configurations
-" ======================================================================================
-let g:blamer_enabled = 0
-let g:blamer_delay = 200
-let g:blamer_relative_time = 1
-
-" ======================================================================================
-" Set colorscheme
-" ======================================================================================
-hi Normal guibg=NONE ctermbg=NONE
+" =====================================================================
+" Set terminal color configurations
+" =====================================================================
+set t_Co=256
 
 if (has("termguicolors"))
  set termguicolors
 endif
 
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-"colorscheme vscode
-"colorscheme gruvbox
-"colorscheme PaperColor
-"colorscheme nord
-"colorscheme solarized
-"colorscheme night-owl
-"colorscheme horizon
-colorscheme nightfly
-"colorscheme xcodelight
-
-
-set t_Co=256
+hi Normal guibg=NONE ctermbg=NONE
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
 
-" ======================================================================================
-" Javascript Prettier Configurations
-" ======================================================================================
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-" ============================================
-" max line length that prettier will wrap on
-" Prettier default: 80
-" ============================================
-let g:prettier#config#print_width = 90
 
-" ============================================
-" number of spaces per indentation level
-" Prettier default: 2
-" ============================================
-let g:prettier#config#tab_width = 4
+" =====================================================================
+" Rainbow
+" =====================================================================
+let g:rainbow_active = 1
 
-" ============================================
-" use tabs over spaces
-" Prettier default: false
-" ============================================
-let g:prettier#config#use_tabs = 'false'
 
-" ============================================
-" print semicolons
-" Prettier default: true
-" ============================================
-let g:prettier#config#semi = 'false'
-
-" ============================================
-" single quotes over double quotes
-" Prettier default: false
-" ============================================
-let g:prettier#config#single_quote = 'false'
-
-" ============================================
-" print spaces between brackets
-" Prettier default: true
-" ============================================
-let g:prettier#config#bracket_spacing = 'true'
-
-" ============================================
-" put > on the last line instead of new line
-" Prettier default: false
-" ============================================
-let g:prettier#config#jsx_bracket_same_line = 'false'
-
-" ============================================
-" avoid|always
-" Prettier default: avoid
-" ============================================
-let g:prettier#config#arrow_parens = 'always'
-
-" ============================================
-" none|es5|all
-" Prettier default: none
-" ============================================
-let g:prettier#config#trailing_comma = 'all'
-
-" ============================================
-" flow|babylon|typescript|css|less|scss|json|graphql|markdown
-" Prettier default: babylon
-" ============================================
-let g:prettier#config#parser = 'flow'
-
-" ============================================
-" cli-override|file-override|prefer-file
-" ============================================
-let g:prettier#config#config_precedence = 'prefer-file'
-
-" ============================================
-" always|never|preserve
-" ============================================
-let g:prettier#config#prose_wrap = 'preserve'
+" =====================================================================
+" NERDTree
+" =====================================================================
+let g:NERDTreeMinimalMenu=1
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName    = 1
+let g:NERDTreePatternMatchHighlightFullName  = 1
+let g:NERDTreeHighlightFolders               = 1 " enables folder icon highlighting using exact match
+let g:NERDTreeHighlightFoldersFullName       = 1 " highlights the folder name
+" autocmd VimEnter * NERDTree                    " Open NERDTree at startup
 
 
 " ======================================================================================
-" Vim Close Tag Configurations
+" Vim Markdown settings
 " ======================================================================================
-" filenames like *.xml, *.html, *.xhtml, ...
-" These are the file extensions where this plugin is enabled.
-"
-let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.jsx'
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_follow_anchor    = 1
 
-" filenames like *.xml, *.xhtml, ...
-" This will make the list of non-closing tags self-closing in the specified files.
-"
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
 
-" filetypes like xml, html, xhtml, ...
-" These are the file types where this plugin is enabled.
-"
-let g:closetag_filetypes = 'html,xhtml,phtml'
+" ======================================================================================
+" Blamer configurations
+" ======================================================================================
+let g:blamer_enabled        = 0
+let g:blamer_delay          = 200
+let g:blamer_relative_time  = 1
 
-" filetypes like xml, xhtml, ...
-" This will make the list of non-closing tags self-closing in the specified files.
-"
-let g:closetag_xhtml_filetypes = 'xhtml,jsx'
 
-" integer value [0|1]
-" This will make the list of non-closing tags case-sensitive 
-" (e.g. `<Link>` will be closed while `<link>` won't.)
-"
-let g:closetag_emptyTags_caseSensitive = 1
+" ======================================================================================
+" Set editor colorscheme (nightfly, xcodelight)
+" ======================================================================================
+colorscheme night-owl
 
-" dict
-" Disables auto-close if not in a "valid" region (based on filetype)
-"
-let g:closetag_regions = {
-    \ 'typescript.tsx': 'jsxRegion,tsxRegion',
-    \ 'javascript.jsx': 'jsxRegion',
-    \ 'typescriptreact': 'jsxRegion,tsxRegion',
-    \ 'javascriptreact': 'jsxRegion',
-    \ }
 
-" Shortcut for closing tags, default is '>'
-"
-let g:closetag_shortcut = '>'
+" ======================================================================================
+" Airline configurations & themes (nightfly, xcodelight)
+" ======================================================================================
+let g:airline_theme                      = 'night_owl'
+let g:airline_powerline_fonts            = 0
+let g:airline#extensions#tabline#enabled = 1
 
-" Add > at current position without closing the current tag, default is ''
-"
-let g:closetag_close_shortcut = '<leader>>'
 
+" ======================================================================================
+" Keymap
+" ======================================================================================
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :Telescope find_files<CR>
 nnoremap <C-g> :Telescope live_grep<CR>
-nnoremap <C-p> :Prettier<CR>
 nnoremap <C-t> :tabnew<CR>
 nnoremap <C-s> :w<CR>
 "nnoremap <C-f> :FZF<CR>
 "nnoremap <C-f> :Telescope buffers<CR>
 
-" ======================================================================================
-" Open NERDTree at startup
-" ======================================================================================
-" autocmd VimEnter * NERDTree 
 
