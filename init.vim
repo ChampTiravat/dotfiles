@@ -194,13 +194,13 @@ let g:blamer_relative_time  = 1
 
 
 " ======================================================================================
-" Set editor colorscheme (nightfly, xcodelight)
+" Set editor colorscheme (night-owl. xcodelight)
 " ======================================================================================
 colorscheme night-owl
 
 
 " ======================================================================================
-" Airline configurations & themes (nightfly, xcodelight)
+" Airline configurations & themes (night_owl, xcodelight)
 " ======================================================================================
 let g:airline_theme                      = 'night_owl'
 let g:airline_powerline_fonts            = 0
