@@ -8,7 +8,6 @@ export ZSH="/Users/tiravat/.oh-my-zsh"
 # Theme Configurations
 # =====================================================================================
 ZSH_THEME="robbyrussell"
-#ZSH_THEME="agnoster"
 
 
 # =====================================================================================
@@ -24,17 +23,22 @@ source $ZSH/oh-my-zsh.sh
 alias pgsql:status='pg_isready'
 alias pgsql:start='brew services start postgresql@12'
 alias pgsql:booclii='psql -d booclii -U tiravat -W'
-
 alias getports='sudo lsof -i -P -n | grep LISTEN'
-alias composer='/usr/local/bin/composer.phar'
-alias r='ranger'
-alias s='source'
-alias work='cd ~/Code/work'
-alias lab='cd ~/Code/lab'
-alias personal='cd ~/Code/personal'
+
 alias lvim='/Users/tiravat/.local/bin/lvim'
 alias vi='nvim'
 alias vim='nvim'
+
+alias m='make'
+alias r='ranger'
+alias s='source'
+alias composer='/usr/local/bin/composer.phar'
+
+alias ml='cd ~/Code/personal/machine-learning-research'
+alias work='cd ~/Code/work'
+alias lab='cd ~/Code/lab'
+alias personal='cd ~/Code/personal'
+
 alias gs='git status'
 alias gd='git diff'
 alias gl='git log'
@@ -97,6 +101,12 @@ unset __conda_setup
 
 
 # =====================================================================================
+# Flutter Path
+# =====================================================================================
+export PATH="/Users/tiravat/flutter/bin:$PATH"
+
+
+# =====================================================================================
 # PostgreSQL PATH
 # =====================================================================================
 export PATH="/usr/local/opt/libpq/bin:$PATH"
@@ -117,5 +127,20 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 export PATH="/usr/local/opt/php@7.4/bin:$PATH"
 export PATH="/usr/local/opt/php@7.4/sbin:$PATH"
+
+
+# =====================================================================================
+# PNPM
+# =====================================================================================
+export PNPM_HOME="/Users/tiravat/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/tiravat/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tiravat/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/tiravat/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tiravat/google-cloud-sdk/completion.zsh.inc'; fi
+
 
 

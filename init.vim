@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+    Plug 'dart-lang/dart-vim-plugin'
     Plug 'othree/yajs.vim'
     Plug 'SirVer/ultisnips'
     Plug 'tpope/vim-vinegar'
@@ -117,9 +118,9 @@ set autoindent
 set encoding=UTF-8
 set colorcolumn=90
 set expandtab       " Convert tab into spaces.
-set tabstop=4
-set softtabstop=4   " Set number of spaces when add/remove new tab(s).
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2   " Set number of spaces when add/remove new tab(s).
+set shiftwidth=2
 set number
 set laststatus=2
 set hlsearch
@@ -144,20 +145,6 @@ syntax enable
 filetype plugin indent on
 
 
-" =====================================================================
-" Set terminal color configurations
-" =====================================================================
-set t_Co=256
-
-if (has("termguicolors"))
- set termguicolors
-endif
-
-hi Normal guibg=NONE ctermbg=NONE
-highlight Normal ctermbg=NONE
-highlight nonText ctermbg=NONE
-
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 
 " =====================================================================
@@ -193,16 +180,32 @@ let g:blamer_delay          = 200
 let g:blamer_relative_time  = 1
 
 
-" ======================================================================================
-" Set editor colorscheme (night-owl. xcodelight)
-" ======================================================================================
-colorscheme night-owl
+" =====================================================================
+" Set terminal color configurations
+" =====================================================================
+set t_Co=256
+
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+hi normal guibg=none ctermbg=none
+highlight normal ctermbg=none
+highlight nontext ctermbg=none
+
+let $nvim_tui_enable_true_color=1
 
 
 " ======================================================================================
-" Airline configurations & themes (night_owl, xcodelight)
+" Set editor colorscheme
 " ======================================================================================
-let g:airline_theme                      = 'night_owl'
+colorscheme xcodelight
+
+
+" ======================================================================================
+" Airline configurations & themes
+" ======================================================================================
+let g:airline_theme                      = 'xcodelight'
 let g:airline_powerline_fonts            = 0
 let g:airline#extensions#tabline#enabled = 1
 
