@@ -22,6 +22,10 @@ source $ZSH/oh-my-zsh.sh
 # =====================================================================================
 alias pgsql:status='pg_isready'
 alias pgsql:start='brew services start postgresql@12'
+alias pgsql:stop='brew services stop postgresql@12'
+alias pgsql:restart='brew services restart postgresql@12'
+
+alias pgsql:shell='psql -d postgres -U $(whoami)'
 alias pgsql:booclii='psql -d booclii -U tiravat -W'
 alias getports='sudo lsof -i -P -n | grep LISTEN'
 
@@ -30,6 +34,7 @@ alias vi='nvim'
 alias vim='nvim'
 
 alias m='make'
+alias mt='make test'
 alias r='ranger'
 alias s='source'
 alias composer='/usr/local/bin/composer.phar'
@@ -38,10 +43,13 @@ alias ml='cd ~/Code/personal/machine-learning-research'
 alias work='cd ~/Code/work'
 alias lab='cd ~/Code/lab'
 alias personal='cd ~/Code/personal'
+alias sodality='cd ~/Code/work/sodality'
+alias delta='cd ~/go/src/github.com/champtiravat/delta-api'
 
 alias gs='git status'
 alias gd='git diff'
 alias gl='git log'
+alias glo='git log --oneline'
 alias ga='git add'
 alias gaa='git add .'
 alias gc='git commit'
@@ -143,4 +151,8 @@ if [ -f '/Users/tiravat/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tiravat
 if [ -f '/Users/tiravat/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tiravat/google-cloud-sdk/completion.zsh.inc'; fi
 
 
+
+export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/postgresql@12/lib"
+export CPPFLAGS="-I/usr/local/opt/postgresql@12/include"
 

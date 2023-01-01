@@ -145,8 +145,6 @@ syntax enable
 filetype plugin indent on
 
 
-
-
 " =====================================================================
 " Rainbow
 " =====================================================================
@@ -199,13 +197,15 @@ let $nvim_tui_enable_true_color=1
 " ======================================================================================
 " Set editor colorscheme
 " ======================================================================================
-colorscheme xcodelight
+colorscheme night-owl
+"colorscheme xcodelight
 
 
 " ======================================================================================
 " Airline configurations & themes
 " ======================================================================================
-let g:airline_theme                      = 'xcodelight'
+let g:airline_theme                      = 'night_owl'
+"let g:airline_theme                      = 'xcodelight'
 let g:airline_powerline_fonts            = 0
 let g:airline#extensions#tabline#enabled = 1
 
