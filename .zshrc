@@ -20,14 +20,14 @@ source $ZSH/oh-my-zsh.sh
 # =====================================================================================
 # Alias Configurations
 # =====================================================================================
+alias getports='sudo lsof -i -P -n | grep LISTEN'
+
 alias pgsql:status='pg_isready'
 alias pgsql:start='brew services start postgresql@12'
 alias pgsql:stop='brew services stop postgresql@12'
 alias pgsql:restart='brew services restart postgresql@12'
-
 alias pgsql:shell='psql -d postgres -U $(whoami)'
-alias pgsql:booclii='psql -d booclii -U tiravat -W'
-alias getports='sudo lsof -i -P -n | grep LISTEN'
+alias pgsql:booclii='psql -d db_name -U tiravat -W'
 
 alias lvim='/Users/tiravat/.local/bin/lvim'
 alias vi='nvim'
@@ -151,8 +151,8 @@ if [ -f '/Users/tiravat/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/tiravat
 if [ -f '/Users/tiravat/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/tiravat/google-cloud-sdk/completion.zsh.inc'; fi
 
 
-
 export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/postgresql@12/lib"
 export CPPFLAGS="-I/usr/local/opt/postgresql@12/include"
+
 

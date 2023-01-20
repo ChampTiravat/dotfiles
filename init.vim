@@ -154,7 +154,7 @@ let g:rainbow_active = 1
 " =====================================================================
 " NERDTree
 " =====================================================================
-let g:NERDTreeMinimalMenu=1
+"let g:NERDTreeMinimalMenu=1
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName    = 1
 let g:NERDTreePatternMatchHighlightFullName  = 1
@@ -178,6 +178,22 @@ let g:blamer_delay          = 200
 let g:blamer_relative_time  = 1
 
 
+" ======================================================================================
+" Set editor colorscheme
+" ======================================================================================
+"colorscheme xcodelight
+colorscheme night-owl
+
+
+" ======================================================================================
+" Airline configurations & themes
+" ======================================================================================
+"let g:airline_theme                      = 'xcodelight'
+let g:airline_theme                      = 'night_owl'
+let g:airline_powerline_fonts            = 0
+let g:airline#extensions#tabline#enabled = 1
+
+
 " =====================================================================
 " Set terminal color configurations
 " =====================================================================
@@ -192,22 +208,6 @@ highlight normal ctermbg=none
 highlight nontext ctermbg=none
 
 let $nvim_tui_enable_true_color=1
-
-
-" ======================================================================================
-" Set editor colorscheme
-" ======================================================================================
-colorscheme night-owl
-"colorscheme xcodelight
-
-
-" ======================================================================================
-" Airline configurations & themes
-" ======================================================================================
-let g:airline_theme                      = 'night_owl'
-"let g:airline_theme                      = 'xcodelight'
-let g:airline_powerline_fonts            = 0
-let g:airline#extensions#tabline#enabled = 1
 
 
 " ======================================================================================
