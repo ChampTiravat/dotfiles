@@ -7,7 +7,7 @@ echo "==================================="
 echo "Replace vim.tiny with vim"
 echo "==================================="
 sudo apt-get remove -y vim.tiny
-sudo apt-get install -y vim
+sudo apt-get install -y neovim
 
 echo "==================================="
 echo "Installing untility softwares"
@@ -22,7 +22,7 @@ sudo apt-get install -y curl
 echo "==================================="
 echo "Installing misc softwares"
 echo "==================================="
-sudo apt-get install -y screenfetch
+sudo apt-get install -y neofetch
 sudo apt-get install -y cowsay
 sudo apt-get install -y fortune
 
