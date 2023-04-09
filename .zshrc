@@ -27,9 +27,7 @@ alias pgsql:start='brew services start postgresql@12'
 alias pgsql:stop='brew services stop postgresql@12'
 alias pgsql:restart='brew services restart postgresql@12'
 alias pgsql:shell='psql -d postgres -U $(whoami)'
-alias pgsql:booclii='psql -d db_name -U tiravat -W'
 
-alias lvim='/Users/tiravat/.local/bin/lvim'
 alias vi='nvim'
 alias vim='nvim'
 
@@ -43,8 +41,6 @@ alias ml='cd ~/Code/personal/machine-learning-research'
 alias work='cd ~/Code/work'
 alias lab='cd ~/Code/lab'
 alias personal='cd ~/Code/personal'
-alias sodality='cd ~/Code/work/sodality'
-alias delta='cd ~/go/src/github.com/champtiravat/delta-api'
 
 alias gs='git status'
 alias gd='git diff'
@@ -56,8 +52,6 @@ alias gc='git commit'
 alias gca='git commit --amend'
 alias gp='git push'
 
-
-export OBSIDIEN_VAULT="/Users/tiravat/Library/Mobile Documents/iCloud~md~obsidian/Documents"
 
 
 # =====================================================================================
