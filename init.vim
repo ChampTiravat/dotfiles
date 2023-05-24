@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+    Plug 'xiyaowong/transparent.nvim'
     Plug 'dart-lang/dart-vim-plugin'
     Plug 'othree/yajs.vim'
     Plug 'SirVer/ultisnips'
@@ -99,7 +100,7 @@ call plug#begin('~/.vim/plugged')
     " File icons for many other plugins
     " (always load this plugin as the last one)
     " ============================================
-    Plug 'ryanoasis/vim-devicons'
+    " Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 
@@ -118,9 +119,9 @@ set autoindent
 set encoding=UTF-8
 set colorcolumn=90
 set expandtab       " Convert tab into spaces.
-set tabstop=2
-set softtabstop=2   " Set number of spaces when add/remove new tab(s).
-set shiftwidth=2
+set tabstop=4
+set softtabstop=4   " Set number of spaces when add/remove new tab(s).
+set shiftwidth=4
 set number
 set laststatus=2
 set hlsearch
@@ -190,7 +191,7 @@ colorscheme night-owl
 " ======================================================================================
 "let g:airline_theme                      = 'xcodelight'
 let g:airline_theme                      = 'night_owl'
-let g:airline_powerline_fonts            = 0
+"let g:airline_powerline_fonts            = 0
 let g:airline#extensions#tabline#enabled = 1
 
 
@@ -199,16 +200,21 @@ let g:airline#extensions#tabline#enabled = 1
 " =====================================================================
 set t_Co=256
 
+" =====================================================================
+" only turn this on when in dark mode
+" =====================================================================
 if (has("termguicolors"))
  set termguicolors
 endif
 
-hi normal guibg=none ctermbg=none
-highlight normal ctermbg=none
-highlight nontext ctermbg=none
+
+" =====================================================================
+" Enable transparency
+" =====================================================================
+g:transparent_enabled
+
 
 let $nvim_tui_enable_true_color=1
-
 
 " ======================================================================================
 " Keymap
@@ -221,5 +227,4 @@ nnoremap <C-t> :tabnew<CR>
 nnoremap <C-s> :w<CR>
 "nnoremap <C-f> :FZF<CR>
 "nnoremap <C-f> :Telescope buffers<CR>
-
 
