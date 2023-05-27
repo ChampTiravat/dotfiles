@@ -1,8 +1,8 @@
 # =====================================================================================
 # Set default text editor (NeoVIM)
 # =====================================================================================
-export NVIM_DIR="/usr/bin/nvim.appimage"
-export EDITOR=$NVIM_DIR
+export NVIM_PATH="/usr/bin/nvim.appimage"
+export EDITOR=$NVIM_PATH
 
 
 # =====================================================================================
@@ -71,11 +71,6 @@ alias doai='conda activate tf-gpu'
 
 alias download-youtube="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(playlist_index)s - %(title)s.%(ext)s"
 
-
-# =====================================================================================
-# Project directories
-# =====================================================================================
-BD_HEALTHMALL='~/Code/Contract/calcal/primo/cariva/bedee-healthmall'
 
 # =====================================================================================
 # Activate FZF (file searching/resolution tool)
