@@ -26,9 +26,10 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-wal -i ~/Pictures/Wallpapers/cyberpunk-1.jpg
-xwallpaper --zoom ~/Pictures/Wallpapers/solid_black.jpg
-setsid xcompmgr &
+# Setup wallpaper and colorscheme
+wal -i ~/Pictures/Wallpapers/sunset2.jpg
+xwallpaper --zoom ~/Pictures/Wallpapers/sunset2.jpg
+setsid xcompmgr -o 0.8 &
 setsid slstatus &
 xdotool key super+F5
 
