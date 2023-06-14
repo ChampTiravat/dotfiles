@@ -30,6 +30,7 @@ source $ZSH/oh-my-zsh.sh
 alias btt='bluetoothctl'
 alias btt:headphone="bluetoothctl connect $(cat ~/Data/WH1000.txt)"
 alias screenshot="scrot -s"
+alias sound="alsamixer"
 
 alias soundctl='pavucontrol'
 alias getports='sudo lsof -i -P -n | grep LISTEN'
@@ -135,4 +136,5 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 # =====================================================================================
 export JAVA_HOME=/home/batman/android-studio/jbr
 export PATH=$PATH:$JAVA_HOME/bin
+
 
