@@ -1,4 +1,5 @@
 call plug#begin('~/.vim/plugged')
+    Plug 'github/copilot.vim'
     Plug 'xiyaowong/transparent.nvim'
     Plug 'dart-lang/dart-vim-plugin'
     Plug 'othree/yajs.vim'
@@ -191,7 +192,7 @@ colorscheme night-owl
 " ======================================================================================
 "let g:airline_theme                      = 'xcodelight'
 let g:airline_theme                      = 'night_owl'
-"let g:airline_powerline_fonts            = 0
+let g:airline_powerline_fonts            = 1
 let g:airline#extensions#tabline#enabled = 1
 
 
