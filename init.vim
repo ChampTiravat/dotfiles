@@ -1,4 +1,8 @@
 call plug#begin('~/.vim/plugged')
+    Plug 'prettier/vim-prettier', {
+      \ 'do': 'yarn install --frozen-lockfile --production',
+      \ 'branch': 'release/0.x'
+      \ }
     Plug 'github/copilot.vim'
     Plug 'xiyaowong/transparent.nvim'
     Plug 'dart-lang/dart-vim-plugin'
@@ -212,8 +216,7 @@ endif
 " =====================================================================
 " Enable transparency
 " =====================================================================
-g:transparent_enabled
-
+"let g:transparent_enabled=0
 
 let $nvim_tui_enable_true_color=1
 
