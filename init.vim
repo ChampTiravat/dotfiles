@@ -16,13 +16,11 @@ call plug#begin('~/.vim/plugged')
       \ }
     Plug 'github/copilot.vim'
     Plug 'xiyaowong/transparent.nvim'
-    Plug 'dart-lang/dart-vim-plugin'
     Plug 'othree/yajs.vim'
     Plug 'SirVer/ultisnips'
     Plug 'tpope/vim-vinegar'
     Plug 'mhinz/vim-startify'
     Plug 'honza/vim-snippets'
-    Plug 'luochen1990/rainbow'
     Plug 'scrooloose/nerdtree'
     Plug 'preservim/nerdcommenter'
     Plug 'easymotion/vim-easymotion'
@@ -119,7 +117,6 @@ call plug#begin('~/.vim/plugged')
     " Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
-
 " =====================================================================
 " Basic (Vim Native) Configurations
 " =====================================================================
@@ -162,13 +159,6 @@ set noerrorbells
 syntax enable
 filetype plugin indent on
 
-
-" =====================================================================
-" Rainbow
-" =====================================================================
-let g:rainbow_active = 1
-
-
 " =====================================================================
 " NERDTree
 " =====================================================================
@@ -180,13 +170,11 @@ let g:NERDTreeHighlightFolders               = 1 " enables folder icon highlight
 let g:NERDTreeHighlightFoldersFullName       = 1 " highlights the folder name
 " autocmd VimEnter * NERDTree                    " Open NERDTree at startup
 
-
 " ======================================================================================
 " Vim Markdown settings
 " ======================================================================================
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_follow_anchor    = 1
-
 
 " ======================================================================================
 " Blamer configurations
@@ -195,22 +183,17 @@ let g:blamer_enabled        = 0
 let g:blamer_delay          = 200
 let g:blamer_relative_time  = 1
 
-
 " ======================================================================================
 " Set editor colorscheme
 " ======================================================================================
-"colorscheme xcodelight
 colorscheme night-owl
-
 
 " ======================================================================================
 " Airline configurations & themes
 " ======================================================================================
-"let g:airline_theme                      = 'xcodelight'
 let g:airline_theme                      = 'night_owl'
 let g:airline_powerline_fonts            = 1
-"let g:airline#extensions#tabline#enabled = 1
-
+let g:airline#extensions#tabline#enabled = 0
 
 " =====================================================================
 " Set terminal color configurations
@@ -224,12 +207,9 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
-
 " =====================================================================
 " Enable transparency
 " =====================================================================
-"let g:transparent_enabled=0
-
 let $nvim_tui_enable_true_color=1
 
 " ======================================================================================
