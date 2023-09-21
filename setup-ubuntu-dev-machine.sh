@@ -7,7 +7,6 @@ echo "==================================="
 echo "Replace vim.tiny with vim"
 echo "==================================="
 sudo apt-get remove -y vim.tiny
-sudo apt-get install -y neovim
 
 echo "==================================="
 echo "Installing untility softwares"
@@ -15,6 +14,7 @@ echo "==================================="
 sudo apt-get install -y tmux
 sudo apt-get install -y zsh
 sudo apt-get install -y htop
+sudo apt-get install -y http
 sudo apt-get install -y ranger
 sudo apt-get install -y git
 sudo apt-get install -y curl
@@ -23,8 +23,6 @@ echo "==================================="
 echo "Installing misc softwares"
 echo "==================================="
 sudo apt-get install -y neofetch
-sudo apt-get install -y cowsay
-sudo apt-get install -y fortune
 
 echo "==================================="
 echo "Installing Python development softwares"
