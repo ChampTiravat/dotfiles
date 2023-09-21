@@ -1,3 +1,14 @@
+" ===========================================
+" Install Runtime Dependencies
+" ===========================================
+" $ sudo apt install xclip
+
+" ===========================================
+" Extension Activation (run in vim console)
+" ===========================================
+" :CocInstall coc-tsserver
+" :CocInstall coc-go
+
 call plug#begin('~/.vim/plugged')
     Plug 'prettier/vim-prettier', {
       \ 'do': 'yarn install --frozen-lockfile --production',
@@ -112,6 +123,7 @@ call plug#end()
 " =====================================================================
 " Basic (Vim Native) Configurations
 " =====================================================================
+set clipboard=unnamedplus
 set mouse=a
 set cursorline
 set showcmd
@@ -122,7 +134,7 @@ set incsearch
 set syntax=go
 set autoindent
 set encoding=UTF-8
-set colorcolumn=90
+"set colorcolumn=90
 set expandtab       " Convert tab into spaces.
 set tabstop=4
 set softtabstop=4   " Set number of spaces when add/remove new tab(s).
@@ -197,7 +209,7 @@ colorscheme night-owl
 "let g:airline_theme                      = 'xcodelight'
 let g:airline_theme                      = 'night_owl'
 let g:airline_powerline_fonts            = 1
-let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#enabled = 1
 
 
 " =====================================================================
@@ -231,4 +243,7 @@ nnoremap <C-t> :tabnew<CR>
 nnoremap <C-s> :w<CR>
 "nnoremap <C-f> :FZF<CR>
 "nnoremap <C-f> :Telescope buffers<CR>
+
+nmap <S-k> <Plug>(coc-hover)
+nmap oo <Plug>(coc-definition)
 
