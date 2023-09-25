@@ -10,10 +10,11 @@
 " :CocInstall coc-go
 
 call plug#begin('~/.vim/plugged')
-    Plug 'prettier/vim-prettier', {
-      \ 'do': 'yarn install --frozen-lockfile --production',
-      \ 'branch': 'release/0.x'
-      \ }
+    " ============================================
+    " post install (yarn install | npm install) then load plugin only for editing supported files
+    " ============================================
+    Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+
     Plug 'github/copilot.vim'
     Plug 'xiyaowong/transparent.nvim'
     Plug 'othree/yajs.vim'
@@ -179,7 +180,7 @@ let g:vim_markdown_follow_anchor    = 1
 " ======================================================================================
 " Blamer configurations
 " ======================================================================================
-let g:blamer_enabled        = 0
+let g:blamer_enabled        = 1
 let g:blamer_delay          = 200
 let g:blamer_relative_time  = 1
 
@@ -201,7 +202,7 @@ let g:airline#extensions#tabline#enabled = 0
 set t_Co=256
 
 " =====================================================================
-" only turn this on when in dark mode
+" only turn this on, when in dark mode
 " =====================================================================
 if (has("termguicolors"))
  set termguicolors
@@ -215,6 +216,8 @@ let $nvim_tui_enable_true_color=1
 " ======================================================================================
 " Keymap
 " ======================================================================================
+nmap <S-k> <Plug>(coc-hover)
+nmap oo <Plug>(coc-definition)
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <C-f> :Telescope find_files<CR>
@@ -224,6 +227,4 @@ nnoremap <C-s> :w<CR>
 "nnoremap <C-f> :FZF<CR>
 "nnoremap <C-f> :Telescope buffers<CR>
 
-nmap <S-k> <Plug>(coc-hover)
-nmap oo <Plug>(coc-definition)
 
