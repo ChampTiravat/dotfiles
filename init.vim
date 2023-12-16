@@ -11,7 +11,7 @@
 
 call plug#begin('~/.vim/plugged')
     " -------------------------------------------
-    " post install (yarn install | npm install),
+    " post-install (yarn install | npm install),
     " then load plugin only for editing supported files
     " -------------------------------------------
     Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
@@ -181,7 +181,7 @@ let g:vim_markdown_follow_anchor    = 1
 " -------------------------------------------
 " Blamer configurations
 " -------------------------------------------
-let g:blamer_enabled        = 1
+let g:blamer_enabled        = 0
 let g:blamer_delay          = 200
 let g:blamer_relative_time  = 1
 
@@ -248,4 +248,22 @@ let g:prettier#config#tab_width = 2
 let g:prettier#config#trailing_comma = 'es5'
 let g:prettier#config#use_tabs = 'false'
 let g:prettier#config#vue_indent_script_and_style = 'false'
+
+" -------------------------------------------
+" Disable ALE for python (for simplicity)
+" -------------------------------------------
+augroup ale_disable_for_python
+  autocmd!
+  autocmd FileType python :ALEDisable
+augroup END
+
+augroup ale_disable_for_php
+  autocmd!
+  autocmd FileType php :ALEDisable
+augroup END
+
+let g:ale_go_gopls_options = '--remote=auto'
+let g:ale_linters = {
+\   'go': ['gopls'],
+\}
 
