@@ -7,6 +7,9 @@ echo "==================================="
 echo "Replace vim.tiny with vim"
 echo "==================================="
 sudo apt-get remove -y vim.tiny
+pip install neovim
+npm install -g neovim
+sudo apt-get install -y xclip
 
 echo "==================================="
 echo "Installing untility softwares"

@@ -9,8 +9,9 @@ source $ZSH/oh-my-zsh.sh
 alias m='make'
 alias s='source'
 alias python='python3'
-alias vi='nvim.appimage'
-alias vim='nvim.appimage'
+alias vi='~/bin/nvim.appimage'
+alias vim='~/bin/nvim.appimage'
+alias code='codium'
 
 alias gs='git status'
 alias gd='git diff'
@@ -31,7 +32,8 @@ alias download-youtube-video="yt-dlp -f bestvideo+bestaudio --merge-output-forma
 
 export NVIM_CONFIG='/home/godwyn/.config/nvim/init.vim'
 export VISUAL=vim;
-export EDITOR=vim;
+export EDITOR='~/bin/nvim.appimage';
+export GIT_EDITOR='~/bin/nvim.appimage';
 
 # PATH for NVM and Node.js
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -63,4 +65,5 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 # Set x-rate to move faster in vim
-xset r rate 300 50
+xset r rate 180 75
+

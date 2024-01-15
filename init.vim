@@ -91,11 +91,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'pangloss/vim-javascript'
 
     " -------------------------------------------
-    " Syntax highting for styled-components
-    " -------------------------------------------
-    Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
-
-    " -------------------------------------------
     " Equivalence to GitLens in VSCode
     " -------------------------------------------
     Plug 'APZelos/blamer.nvim'
