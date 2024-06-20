@@ -5,7 +5,8 @@ cyan = "#7fdbca"
 green = "#addb67"
 magenta = "#c792ea"
 red = "#ff5874"
-white = "#aaaaaa"
+# white = "#aaaaaa"
+white = "#eeeeee"
 yellow = "#f78c6c"
 
 [colors.normal]
@@ -15,11 +16,13 @@ cyan = "#7fdbca"
 green = "#addb67"
 magenta = "#c792ea"
 red = "#ff5874"
-white = "#aaaaaa"
+#white = "#aaaaaa"
+white = "#eeeeee"
 yellow = "#f78c6c"
 
 [colors.primary]
-background = "#000000"
+# background = "#000000"
+background = "#111111"
 foreground = "#ffffff"
 
 [cursor]
