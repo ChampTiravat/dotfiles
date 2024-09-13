@@ -8,6 +8,11 @@ plugins=(git sudo)
 
 source $ZSH/oh-my-zsh.sh
 
+alias notes:backup='cp -r ~/Desktop/Notes/* /media/batman/small_ssd/Notes/'
+alias notes='cd ~/Desktop/Notes; vi .'
+
+alias backup:notes='cp -r ~/Desktop/Notes/* /media/batman/small_ssd/Notes/'
+
 alias m='make'
 alias s='source'
 alias python='python3'
@@ -46,6 +51,7 @@ export NVM_DIR="$HOME/.nvm"
 # PATH for Go
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$(go env GOPATH)/bin
+export GOPRIVATE="bitbucket.org/truedmp/*"
 
 # PATH for additional binaries
 export PATH=$PATH:/home/batman/bin
@@ -54,7 +60,7 @@ export PATH=$PATH:/home/batman/bin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Set x-rate to move faster in vim
-xset r rate 180 75
+xset r rate 180 79
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
