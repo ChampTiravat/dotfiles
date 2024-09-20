@@ -14,6 +14,7 @@ sudo apt-get install -y xclip
 echo "==================================="
 echo "Installing untility softwares"
 echo "==================================="
+sudo snap install --classic alacritty
 sudo apt-get install -y tmux
 sudo apt-get install -y zsh
 sudo apt-get install -y htop

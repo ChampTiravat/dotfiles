@@ -1,7 +1,9 @@
 " -------------------------------------------
 " Install Runtime Dependencies
 " -------------------------------------------
-" $ sudo apt install xclip
+" $ sudo apt install -y xclip
+" $ sudo apt install -y python3-pynvim
+" $ sudo apt install -y ripgrep
 
 " -------------------------------------------
 " Extensions Activation (run in vim console)
@@ -10,108 +12,30 @@
 " :CocInstall coc-go
 
 call plug#begin('~/.vim/plugged')
-    " -------------------------------------------
-    " post-install (yarn install | npm install),
-    " then load plugin only for editing supported files
-    " -------------------------------------------
     Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
-
-    Plug 'github/copilot.vim'
-    Plug 'xiyaowong/transparent.nvim'
-    Plug 'othree/yajs.vim'
     Plug 'SirVer/ultisnips'
     Plug 'tpope/vim-vinegar'
-    Plug 'mhinz/vim-startify'
-    Plug 'honza/vim-snippets'
     Plug 'scrooloose/nerdtree'
-    Plug 'preservim/nerdcommenter'
     Plug 'easymotion/vim-easymotion'
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-    " -------------------------------------------
-    " ALE is a linting for many languages
-    " -------------------------------------------
-    Plug 'w0rp/ale'
-
-    " -------------------------------------------
-    " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
-    " -------------------------------------------
-    Plug 'junegunn/vim-easy-align'
-
-    " -------------------------------------------
-    " Any valid git URL is allowed
-    " -------------------------------------------
-    Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-
-    " -------------------------------------------
-    " Using a non-master branch
-    " -------------------------------------------
-    Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
-
-    " -------------------------------------------
-    " Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
-    " -------------------------------------------
+    Plug 'w0rp/ale' " ALE is a linting for many languages
     Plug 'fatih/vim-go', { 'tag': '*' }
-
-    " -------------------------------------------
-    " Plugin options
-    " -------------------------------------------
     Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-
-    " -------------------------------------------
-    " Plugin outside ~/.vim/plugged with post-update hook
-    " -------------------------------------------
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-
-    " -------------------------------------------
-    " Unmanaged plugin (manually installed and updated)
-    " -------------------------------------------
-    Plug '~/my-prototype-plugin'
-
-    " -------------------------------------------
-    " VIM airline
-    " -------------------------------------------
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-
-    " -------------------------------------------
-    " VIM themes
-    " -------------------------------------------
     Plug 'haishanh/night-owl.vim'
-    Plug 'arzg/vim-colors-xcode'
-
-    " -------------------------------------------
-    " VIM Javscript Syntax highlighting
-    " -------------------------------------------
-    Plug 'mxw/vim-jsx'
-    Plug 'ap/vim-css-color'
-    Plug 'tomlion/vim-solidity'
-    Plug 'pangloss/vim-javascript'
-
-    " -------------------------------------------
-    " Equivalence to GitLens in VSCode
-    " -------------------------------------------
+    Plug 'othree/yajs.vim' " JavaScript syntax highlighter
+    Plug 'mxw/vim-jsx' " JSX syntax highlighter
+    Plug 'ap/vim-css-color' " CSS syntax highlighter
+    Plug 'pangloss/vim-javascript' " Javascript syntax highlighter
     Plug 'APZelos/blamer.nvim'
-
-    " -------------------------------------------
-    " HTML/JSX auto closing tag
-    " -------------------------------------------
     Plug 'alvan/vim-closetag'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
-
-    " -------------------------------------------
-    " Highlight
-    " -------------------------------------------
     Plug 'sakshamgupta05/vim-todo-highlight'
-
-    " -------------------------------------------
-    " File icons for many other plugins
-    " (always load this plugin as the last one)
-    " -------------------------------------------
-    " Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " -------------------------------------------
@@ -176,7 +100,7 @@ let g:vim_markdown_follow_anchor    = 1
 " -------------------------------------------
 " Blamer configurations
 " -------------------------------------------
-let g:blamer_enabled        = 0
+let g:blamer_enabled        = 1
 let g:blamer_delay          = 200
 let g:blamer_relative_time  = 1
 
@@ -203,11 +127,6 @@ set t_Co=256
 if (has("termguicolors"))
  set termguicolors
 endif
-
-" -------------------------------------------
-" Enable background transparency
-" -------------------------------------------
-" let $nvim_tui_enable_true_color=1"
 
 " -------------------------------------------
 " Keymap
