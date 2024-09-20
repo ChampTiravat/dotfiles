@@ -1,3 +1,11 @@
+#!/bin/bash
+
+echo "==================================="
+echo "Update system apps and apt repository"
+echo "==================================="
+sudo apt-get update -y
+sudo apt-get upgrade -y
+
 echo "==================================="
 echo "Remove nano text editor"
 echo "==================================="
@@ -10,6 +18,7 @@ sudo apt-get remove -y vim.tiny
 pip install neovim
 npm install -g neovim
 sudo apt-get install -y xclip
+sudo apt-get install -y ripgrep
 
 echo "==================================="
 echo "Installing untility softwares"
@@ -22,6 +31,7 @@ sudo apt-get install -y http
 sudo apt-get install -y ranger
 sudo apt-get install -y git
 sudo apt-get install -y curl
+sudo apt-get install -y mpv
 
 echo "==================================="
 echo "Installing misc softwares"
@@ -32,3 +42,18 @@ echo "==================================="
 echo "Installing Python development softwares"
 echo "==================================="
 sudo apt-get install -y python3-pip
+
+echo "==================================="
+echo "Install VSCodium (opensourced version of VSCode"
+echo "==================================="
+
+wget -qO - https://gitlab.com/paulcarroty/vscodium-deb-rpm-repo/raw/master/pub.gpg \
+    | gpg --dearmor \
+    | sudo dd of=/usr/share/keyrings/vscodium-archive-keyring.gpg
+
+echo 'deb [ signed-by=/usr/share/keyrings/vscodium-archive-keyring.gpg ] https://download.vscodium.com/debs vscodium main' \
+    | sudo tee /etc/apt/sources.list.d/vscodium.list
+
+sudo apt-get update -y
+
+sudo apt-get install -y codium
