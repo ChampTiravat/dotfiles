@@ -1,5 +1,3 @@
-# TODO: install "glow" to read markdown files on terminal (https://github.com/charmbracelet/glow)
-
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
@@ -8,19 +6,21 @@ plugins=(git sudo)
 
 source $ZSH/oh-my-zsh.sh
 
+export PATH="$PATH:/opt/nvim/bin"
+
 alias notes:backup='cp -r ~/Desktop/Notes/* /media/batman/small_ssd/Notes/'
 alias notes='cd ~/Desktop/Notes; vi .'
 
 alias backup:notes='cp -r ~/Desktop/Notes/* /media/batman/small_ssd/Notes/'
 
+alias rename='vimv' # TODO: install https://github.com/thameera/vimv/ for bulk-renaming files
 alias m='make'
 alias s='source'
 alias python='python3'
-alias nvim='nvim.appimage'
-alias vim='nvim.appimage'
-alias vi='nvim.appimage'
+alias nvim='nvim'
+alias vim='nvim'
+alias vi='nvim'
 alias code='codium'
-alias postman='/home/batman/bin/Postman/Postman'
 
 alias copytext='xclip -selection clipboard'
 alias pastetext='xclip -selection clipboard -o'
@@ -39,10 +39,11 @@ alias gitcache='git config --global credential.helper "cache --timeout=904800"'
 alias download-youtube-playlist="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(playlist_index)s - %(title)s.%(ext)s'"
 alias download-youtube-video="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(title)s.%(ext)s'"
 
-export NVIM_CONFIG='/home/batman/.config/nvim/init.vim'
+export NVIM_CONFIG="/home/$(whoami)/.config/nvim/init.vim"
 export VISUAL=vim;
-export EDITOR='~/bin/nvim.appimage';
-export GIT_EDITOR='vim';
+export EDITOR='nvim';
+export GIT_EDITOR='nvim';
+export I3_CONFIG="/home/$(whoami)/.config/i3/config"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -60,7 +61,7 @@ export PATH=$PATH:/home/batman/bin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Set x-rate to move faster in vim
-xset r rate 180 79
+xset r rate 199 81
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -77,10 +78,3 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
-# bun completions
-[ -s "/home/batman/.bun/_bun" ] && source "/home/batman/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
