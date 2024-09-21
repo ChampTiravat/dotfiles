@@ -61,7 +61,7 @@ export PATH=$PATH:/home/batman/bin
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Set x-rate to move faster in vim
-xset r rate 199 81
+xset r rate 200 85
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
