@@ -39,11 +39,12 @@ alias gitcache='git config --global credential.helper "cache --timeout=904800"'
 alias download-youtube-playlist="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(playlist_index)s - %(title)s.%(ext)s'"
 alias download-youtube-video="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(title)s.%(ext)s'"
 
+export ALACRITTY_CONFIG="/home/$(whoami)/.config/alacritty/alacritty.toml"
+export I3_CONFIG="/home/$(whoami)/.config/i3/config"
 export NVIM_CONFIG="/home/$(whoami)/.config/nvim/init.vim"
 export VISUAL=vim;
 export EDITOR='nvim';
 export GIT_EDITOR='nvim';
-export I3_CONFIG="/home/$(whoami)/.config/i3/config"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
