@@ -8,10 +8,10 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$PATH:/opt/nvim/bin"
 
-alias notes:backup='cp -r ~/Desktop/Notes/* /media/batman/small_ssd/Notes/'
+alias notes:backup="cp -r ~/Desktop/Notes/* /media/$(whoami)/small_ssd/Notes/"
 alias notes='cd ~/Desktop/Notes; vi .'
 
-alias backup:notes='cp -r ~/Desktop/Notes/* /media/batman/small_ssd/Notes/'
+alias backup:notes="cp -r ~/Desktop/Notes/* /media/$(whoami)/small_ssd/Notes/"
 
 alias rename='vimv' # TODO: install https://github.com/thameera/vimv/ for bulk-renaming files
 alias m='make'
