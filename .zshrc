@@ -21,6 +21,7 @@ alias nvim='nvim'
 alias vim='nvim'
 alias vi='nvim'
 alias code='codium'
+alias dotfiles='vi ~/Code/personal/dotfiles'
 
 alias copytext='xclip -selection clipboard'
 alias pastetext='xclip -selection clipboard -o'
@@ -39,6 +40,7 @@ alias gitcache='git config --global credential.helper "cache --timeout=904800"'
 alias download-youtube-playlist="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(playlist_index)s - %(title)s.%(ext)s'"
 alias download-youtube-video="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(title)s.%(ext)s'"
 
+export DOTFILES_PATH="/home/$(whoami)/Code/personal/dotfiles"
 export ALACRITTY_CONFIG="/home/$(whoami)/.config/alacritty/alacritty.toml"
 export I3_CONFIG="/home/$(whoami)/.config/i3/config"
 export NVIM_CONFIG="/home/$(whoami)/.config/nvim/init.vim"

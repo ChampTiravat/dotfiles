@@ -38,6 +38,7 @@ sudo apt-get install -y        ranger
 sudo apt-get install -y        git
 sudo apt-get install -y        curl
 sudo apt-get install -y        mpv
+sudo apt-get install -y        sxiv # image viewer
 
 echo "====================================================="
 echo "installing misc softwares"
