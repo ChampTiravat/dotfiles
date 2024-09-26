@@ -8,16 +8,23 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$PATH:/opt/nvim/bin"
 
-alias notes:backup="cp -r ~/Desktop/Notes/* /media/$(whoami)/small_ssd/Notes/"
-alias notes='cd ~/Desktop/Notes; vi .'
+alias notes:backup="cp -r ~/Personal/Notes/* /media/$(whoami)/small_ssd/Notes/"
+alias backup:notes="cp -r ~/Personal/Notes/* /media/$(whoami)/small_ssd/Notes/"
 
-alias backup:notes="cp -r ~/Desktop/Notes/* /media/$(whoami)/small_ssd/Notes/"
-
+alias back="cd -; ls -lah"
+alias notes='cd ~/Personal/Notes; vi .'
+alias go:notes='cd ~/Personal/Notes; vi .'
+alias go:desk="cd /home/$(whoami)/Desktop"
+alias go:downl="cd /home/$(whoami)/Downloads"
+alias go:personal="cd /home/$(whoami)/Personal"
 alias go:ssd="cd /media/$(whoami)/small_ssd"
-alias go:dotfiles="cd /home/$(whoami)/Code/personal/dotfiles"
-alias go:tdg="cd /home/$(whoami)/Code/contract/tdg"
-alias go:smiley="cd /home/$(whoami)/Code/contract/smiley"
+alias go:ssd:notes='cd /media/$(whoami)/small_ssd/Notes; vi .'
+alias go:dots="cd /home/$(whoami)/Code/personal/dotfiles"
+alias go:code:dotfiles="cd /home/$(whoami)/Code/personal/dotfiles"
+alias go:code:tdg="cd /home/$(whoami)/Code/contract/tdg"
+alias go:code:smiley="cd /home/$(whoami)/Code/contract/smiley"
 
+alias reload='source ~/.zshrc; echo "> reloaded ~/.zshrc";'
 alias rename='vimv' # TODO: install https://github.com/thameera/vimv/ for bulk-renaming files
 alias m='make'
 alias s='source'
@@ -26,9 +33,12 @@ alias nvim='nvim'
 alias vim='nvim'
 alias vi='nvim'
 alias code='codium'
-alias dotfiles='vi ~/Code/personal/dotfiles'
+alias vi:conf="vi /home/$(whoami)/Code/personal/dotfiles/init.vim"
+alias vim:conf="vi /home/$(whoami)/Code/personal/dotfiles/init.vim"
+alias nvim:conf="vi /home/$(whoami)/Code/personal/dotfiles/init.vim"
+alias zsh:conf="vi /home/$(whoami)/Code/personal/dotfiles/.zshrc"
 
-alias copytext='xclip -selection clipboard'
+alias copytext='xclip -selection clipboard; echo "> text coppied to clipboard"'
 alias pastetext='xclip -selection clipboard -o'
 
 alias gs='git status'
