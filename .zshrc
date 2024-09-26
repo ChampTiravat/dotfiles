@@ -8,6 +8,8 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="$PATH:/opt/nvim/bin"
 
+alias sound='pulsemixer'
+
 alias notes:backup="cp -r ~/Personal/Notes/* /media/$(whoami)/small_ssd/Notes/"
 alias backup:notes="cp -r ~/Personal/Notes/* /media/$(whoami)/small_ssd/Notes/"
 
