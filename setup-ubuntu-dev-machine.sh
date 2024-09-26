@@ -66,7 +66,7 @@ echo "====================================================="
 echo "installing common desktop apps"
 echo "====================================================="
 sudo apt-get install -y gnome-disk-utility
-sudo apt-get install -y gnome-tweak
+sudo apt-get install -y gnome-tweaks
 sudo apt-get install -y blender
 sudo apt-get install -y krita
 sudo apt-get install -y gimp
