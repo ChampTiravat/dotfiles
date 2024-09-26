@@ -1,3 +1,3 @@
 #/bin/zsh
 
-maim ~/Pictures/$(date +%s).png
+maim | tee ~/Pictures/$(date +%s).png | xclip -selection clipboard -t image/png

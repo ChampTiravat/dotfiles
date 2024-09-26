@@ -13,6 +13,11 @@ alias notes='cd ~/Desktop/Notes; vi .'
 
 alias backup:notes="cp -r ~/Desktop/Notes/* /media/$(whoami)/small_ssd/Notes/"
 
+alias go:ssd="cd /media/$(whoami)/small_ssd"
+alias go:dotfiles="cd /home/$(whoami)/Code/personal/dotfiles"
+alias go:tdg="cd /home/$(whoami)/Code/contract/tdg"
+alias go:smiley="cd /home/$(whoami)/Code/contract/smiley"
+
 alias rename='vimv' # TODO: install https://github.com/thameera/vimv/ for bulk-renaming files
 alias m='make'
 alias s='source'
