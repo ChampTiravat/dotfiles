@@ -94,6 +94,7 @@ echo "====================================================="
 ln -s ./init.vim       /home/${whoami}/.config/nvim/init.vim
 ln -s ./alacritty.toml /home/${whoami}/.config/alacritty/alacritty.toml
 ln -s ./.tmux.conf     /home/${whoami}/.tmux.conf
+ln -s ./.xinitrc       /home/${whoami}/.xinitrc
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 rm /home/${whoami}/.zshrc;

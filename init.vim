@@ -20,16 +20,16 @@ call plug#begin('~/.vim/plugged')
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    Plug 'w0rp/ale' " ALE is a linting for many languages
+    Plug 'w0rp/ale'                " ALE is a linting for many languages
     Plug 'fatih/vim-go', { 'tag': '*' }
     Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'haishanh/night-owl.vim'
-    Plug 'othree/yajs.vim' " JavaScript syntax highlighter
-    Plug 'mxw/vim-jsx' " JSX syntax highlighter
-    Plug 'ap/vim-css-color' " CSS syntax highlighter
+    Plug 'othree/yajs.vim'         " JavaScript syntax highlighter
+    Plug 'mxw/vim-jsx'             " JSX syntax highlighter
+    Plug 'ap/vim-css-color'        " CSS syntax highlighter
     Plug 'pangloss/vim-javascript' " Javascript syntax highlighter
     Plug 'APZelos/blamer.nvim'
     Plug 'alvan/vim-closetag'

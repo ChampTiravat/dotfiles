@@ -10,6 +10,9 @@ export PATH="$PATH:/opt/nvim/bin"
 
 alias sound='pulsemixer'
 
+alias wifi:list='nmcli device wifi list'
+alias wifi:conn='nmcli device wifi connect '
+
 alias notes:backup="cp -r ~/Personal/Notes/* /media/$(whoami)/small_ssd/Notes/"
 
 alias backup:notes="cp -r ~/Personal/Notes/* /media/$(whoami)/small_ssd/Notes/"
