@@ -13,7 +13,7 @@ alias sound='pulsemixer'
 alias notes:backup="cp -r ~/Personal/Notes/* /media/$(whoami)/small_ssd/Notes/"
 
 alias backup:notes="cp -r ~/Personal/Notes/* /media/$(whoami)/small_ssd/Notes/"
-alias backup:dotfiles="cp -r ~/Code/personal/dotfiles/* ~/Code/personal/dotfiles/.*  /media/$(whoami)/small_ssd/dotfiles/"
+alias backup:dotfiles="rm -rf /media/$(whoami)/small_ssd/dotfiles/.git; cp -r ~/Code/personal/dotfiles/* ~/Code/personal/dotfiles/.*  /media/$(whoami)/small_ssd/dotfiles/"
 
 alias back="cd -; ls -lah"
 alias notes='cd ~/Personal/Notes; vi .'
