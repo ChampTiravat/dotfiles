@@ -38,6 +38,7 @@ sudo apt-get install -y        ranger
 sudo apt-get install -y        git
 sudo apt-get install -y        curl
 sudo apt-get install -y        mpv
+sudo apt-get insatll -y        pulsemixer
 sudo apt-get install -y        sxiv # image viewer
 # sudo apt-get install -y        sxhkd # keyboard's key binding
 
