@@ -17,6 +17,7 @@ alias notes:backup="cp -r ~/Personal/Notes/* /media/$(whoami)/small_ssd/Notes/"
 
 alias backup:notes="cp -r ~/Personal/Notes/* /media/$(whoami)/small_ssd/Notes/"
 alias backup:dotfiles="rm -rf /media/$(whoami)/small_ssd/dotfiles/.git; cp -r ~/Code/Personal/dotfiles/* ~/Code/Personal/dotfiles/.*  /media/$(whoami)/small_ssd/dotfiles/"
+alias backup:all="backup:notes; backup:dotfiles"
 
 alias back="cd -; ls -lah"
 alias notes='cd ~/Personal/Notes; vi .'
