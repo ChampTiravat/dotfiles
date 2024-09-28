@@ -39,7 +39,7 @@ sudo apt-get install -y        git;
 sudo apt-get install -y        curl;
 sudo apt-get install -y        mpv;
 sudo apt-get install -y        maim;
-sudo apt-get insatll -y        pulsemixer;
+sudo apt-get install -y        pulsemixer;
 sudo apt-get install -y        sxiv; # image viewer
 # sudo apt-get install -y      sxhkd; # keyboard's key binding
 
@@ -69,6 +69,7 @@ sudo apt-get install -y codium;
 echo "====================================================="
 echo "installing common desktop apps"
 echo "====================================================="
+sudo apt-get install -y keepassxc;
 sudo apt-get install -y gnome-disk-utility;
 sudo apt-get install -y gnome-tweaks;
 sudo apt-get install -y blender;
