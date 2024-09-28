@@ -6,8 +6,6 @@ plugins=(git sudo)
 
 source $ZSH/oh-my-zsh.sh
 
-export PATH="$PATH:/opt/nvim/bin"
-
 alias sound='pulsemixer'
 
 alias wifi:list='nmcli device wifi list'
@@ -80,23 +78,24 @@ export GOPRIVATE="bitbucket.org/truedmp/*"
 
 # PATH for additional binaries
 export PATH=$PATH:/home/batman/bin
+export PATH="$PATH:/opt/nvim/bin"
 
 # Fuzzy search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Set x-rate to move faster in vim
-xset r rate 200 85
+xset r rate 200 90
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/batman/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/home/primaris/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/home/batman/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/batman/anaconda3/etc/profile.d/conda.sh"
+    if [ -f "/home/primaris/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/primaris/anaconda3/etc/profile.d/conda.sh"
     else
-        export PATH="/home/batman/anaconda3/bin:$PATH"
+        export PATH="/home/primaris/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup

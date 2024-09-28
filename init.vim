@@ -180,4 +180,3 @@ let g:ale_go_gopls_options = '--remote=auto'
 let g:ale_linters = {
 \   'go': ['gopls'],
 \}
-
