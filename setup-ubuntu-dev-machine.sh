@@ -91,10 +91,12 @@ sudo apt-get install -y brave-browser
 echo "====================================================="
 echo "place config files in their appropriate locations"
 echo "====================================================="
-ln -s ./init.vim       /home/${whoami}/.config/nvim/init.vim
-ln -s ./alacritty.toml /home/${whoami}/.config/alacritty/alacritty.toml
-ln -s ./.tmux.conf     /home/${whoami}/.tmux.conf
-ln -s ./.xinitrc       /home/${whoami}/.xinitrc
+ln -s ./init.vim                   /home/${whoami}/.config/nvim/init.vim
+ln -s ./alacritty.toml             /home/${whoami}/.config/alacritty/alacritty.toml
+ln -s ./.tmux.conf                 /home/${whoami}/.tmux.conf
+ln -s ./.xinitrc                   /home/${whoami}/.xinitrc
+ln    ./scripts/screenshot.sh      /usr/bin/screenshot
+ln    ./scripts/screenshot-full.sh /usr/bin/screenshot-full
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 rm /home/${whoami}/.zshrc;
