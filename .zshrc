@@ -16,20 +16,20 @@ alias wifi:conn='nmcli device wifi connect '
 alias notes:backup="cp -r ~/Personal/Notes/* /media/$(whoami)/small_ssd/Notes/"
 
 alias backup:notes="cp -r ~/Personal/Notes/* /media/$(whoami)/small_ssd/Notes/"
-alias backup:dotfiles="rm -rf /media/$(whoami)/small_ssd/dotfiles/.git; cp -r ~/Code/personal/dotfiles/* ~/Code/personal/dotfiles/.*  /media/$(whoami)/small_ssd/dotfiles/"
+alias backup:dotfiles="rm -rf /media/$(whoami)/small_ssd/dotfiles/.git; cp -r ~/Code/Personal/dotfiles/* ~/Code/Personal/dotfiles/.*  /media/$(whoami)/small_ssd/dotfiles/"
 
 alias back="cd -; ls -lah"
 alias notes='cd ~/Personal/Notes; vi .'
 alias go:notes='cd ~/Personal/Notes; vi .'
-alias go:desk="cd /home/$(whoami)/Desktop"
-alias go:downl="cd /home/$(whoami)/Downloads"
-alias go:personal="cd /home/$(whoami)/Personal"
+alias go:desk="cd ~/Desktop"
+alias go:downl="cd ~/Downloads"
+alias go:personal="cd ~/Personal"
 alias go:ssd="cd /media/$(whoami)/small_ssd"
 alias go:ssd:notes='cd /media/$(whoami)/small_ssd/Notes; vi .'
-alias go:dots="cd /home/$(whoami)/Code/personal/dotfiles"
-alias go:code:dotfiles="cd /home/$(whoami)/Code/personal/dotfiles"
-alias go:code:tdg="cd /home/$(whoami)/Code/contract/tdg"
-alias go:code:smiley="cd /home/$(whoami)/Code/contract/smiley"
+alias go:dots="cd ~/Code/Personal/dotfiles"
+alias go:code:dotfiles="cd ~/Code/Personal/dotfiles"
+alias go:code:tdg="cd ~/Code/Contract/tdg"
+alias go:code:smiley="cd ~/Code/Contract/smiley"
 
 alias reload='source ~/.zshrc; echo "> reloaded ~/.zshrc";'
 alias rename='vimv' # TODO: install https://github.com/thameera/vimv/ for bulk-renaming files
@@ -40,10 +40,10 @@ alias nvim='nvim'
 alias vim='nvim'
 alias vi='nvim'
 alias code='codium'
-alias vi:conf="vi /home/$(whoami)/Code/personal/dotfiles/init.vim"
-alias vim:conf="vi /home/$(whoami)/Code/personal/dotfiles/init.vim"
-alias nvim:conf="vi /home/$(whoami)/Code/personal/dotfiles/init.vim"
-alias zsh:conf="vi /home/$(whoami)/Code/personal/dotfiles/.zshrc"
+alias vi:conf="vi   ~/Code/Personal/dotfiles/init.vim"
+alias vim:conf="vi  ~/Code/Personal/dotfiles/init.vim"
+alias nvim:conf="vi ~/Code/Personal/dotfiles/init.vim"
+alias zsh:conf="vi  ~/Code/Personal/dotfiles/.zshrc"
 
 alias copytext='xclip -selection clipboard; echo "> text coppied to clipboard"'
 alias pastetext='xclip -selection clipboard -o'

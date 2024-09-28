@@ -1,11 +1,6 @@
 #!/bin/bash
 
 echo "====================================================="
-echo "become root user for simplicity and conventien"
-echo "====================================================="
-sudo su;
-
-echo "====================================================="
 echo "update system apps and apt repository"
 echo "====================================================="
 sudo apt-get update  -y;
@@ -14,22 +9,27 @@ sudo apt-get upgrade -y;
 echo "====================================================="
 echo "remove nano text editor"
 echo "====================================================="
-sudo apt-get remove -y nano;
+# sudo apt-get remove -y nano;
 
 echo "====================================================="
 echo "replace vim.tiny with vim"
 echo "====================================================="
-sudo apt-get remove -y vim.tiny;
-pip install neovim;
+# sudo apt-get remove -y vim.tiny;
+sudo apt install -y python3-pynvim;
 npm install -g neovim;
 sudo apt-get install -y xclip;
 sudo apt-get install -y ripgrep;
 
 echo "====================================================="
+echo "builk-renaming files with vim"
+echo "====================================================="
+curl https://raw.githubusercontent.com/thameera/vimv/master/vimv > ~/.local/bin/vimv && chmod +755 ~/.local/bin/vimv
+
+echo "====================================================="
 echo "installing untility softwares"
 echo "====================================================="
 sudo snap    install --classic alacritty;
-sudo snap    install           dbeaver-ce;
+# sudo snap    install           dbeaver-ce;
 sudo apt-get install -y        tmux;
 sudo apt-get install -y        zsh;
 sudo apt-get install -y        htop;
@@ -38,6 +38,7 @@ sudo apt-get install -y        ranger;
 sudo apt-get install -y        git;
 sudo apt-get install -y        curl;
 sudo apt-get install -y        mpv;
+sudo apt-get install -y        maim;
 sudo apt-get insatll -y        pulsemixer;
 sudo apt-get install -y        sxiv; # image viewer
 # sudo apt-get install -y      sxhkd; # keyboard's key binding
@@ -93,10 +94,10 @@ sudo apt-get install -y brave-browser;
 echo "====================================================="
 echo "place config files in their appropriate locations"
 echo "====================================================="
-     ln -s ./init.vim                   /home/${whoami}/.config/nvim/init.vim;
-     ln -s ./alacritty.toml             /home/${whoami}/.config/alacritty/alacritty.toml;
-     ln -s ./.tmux.conf                 /home/${whoami}/.tmux.conf;
-     ln -s ./.xinitrc                   /home/${whoami}/.xinitrc;
+     ln -s ./init.vim                   ~/.config/nvim/init.vim;
+     ln -s ./alacritty.toml             ~/.config/alacritty/alacritty.toml;
+     ln -s ./.tmux.conf                 ~/.tmux.conf;
+     ln -s ./.xinitrc                   ~/.xinitrc;
 sudo ln    ./scripts/screenshot.sh      /usr/bin/screenshot;
 sudo ln    ./scripts/screenshot-full.sh /usr/bin/screenshot-full;
 
