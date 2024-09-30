@@ -11,7 +11,7 @@ alias sound='pulsemixer'
 alias wifi:list='nmcli device wifi list'
 alias wifi:conn='nmcli device wifi connect '
 
-alias backup:pass="rm -rf /media/$(whoami)/small_ssd/Passwords; mkdir /media/$(whoami)/small_ssd/Passwords; cp ~/Personal/personal_passwords.key /media/$(whoami)/small_ssd/Passwords; cp ~/Personal/personal_passwords.kdbx /media/$(whoami)/small_ssd/Passwords;"
+alias backup:pass="rm -rf /media/$(whoami)/small_ssd/Passwords; cp -r ~/Personal/Passwords /media/$(whoami)/small_ssd/Passwords;"
 alias backup:notes="rm -rf /media/$(whoami)/small_ssd/Notes/.git; cp -r ~/Personal/Notes/* /media/$(whoami)/small_ssd/Notes/"
 alias backup:dotfiles="rm -rf /media/$(whoami)/small_ssd/dotfiles/.git; cp -r ~/Code/Personal/dotfiles/* ~/Code/Personal/dotfiles/.*  /media/$(whoami)/small_ssd/dotfiles/"
 alias backup:all='backup:notes; echo "> created backup for notes"; backup:dotfiles; echo "> created backup for dotfiles"; backup:pass; echo "> created backup for passwords";'
