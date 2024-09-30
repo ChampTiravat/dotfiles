@@ -6,8 +6,6 @@ plugins=(git sudo)
 
 source $ZSH/oh-my-zsh.sh
 
-alias sound='pulsemixer'
-
 alias wifi:list='nmcli device wifi list'
 alias wifi:conn='nmcli device wifi connect '
 
@@ -23,17 +21,15 @@ alias go:desk="cd ~/Desktop"
 alias go:downl="cd ~/Downloads"
 alias go:personal="cd ~/Personal"
 alias go:ssd="cd /media/$(whoami)/small_ssd"
-alias go:ssd:notes='cd /media/$(whoami)/small_ssd/Notes; vi .'
 alias go:dots="cd ~/Code/Personal/dotfiles"
-alias go:code:dotfiles="cd ~/Code/Personal/dotfiles"
-alias go:code:tdg="cd ~/Code/Contract/tdg"
-alias go:code:smiley="cd ~/Code/Contract/smiley"
+alias go:code="cd ~/Code"
 
 alias reload='source ~/.zshrc; echo "> reloaded ~/.zshrc";'
 alias rename='vimv' # TODO: install https://github.com/thameera/vimv/ for bulk-renaming files
 alias m='make'
 alias s='source'
 alias python='python3'
+alias sound='pulsemixer'
 alias nvim='nvim'
 alias vim='nvim'
 alias vi='nvim'
@@ -49,11 +45,6 @@ alias pastetext='xclip -selection clipboard -o'
 alias gs='git status'
 alias gd='git diff'
 alias gl='git log'
-alias glo='git log --oneline'
-alias ga='git add'
-alias gaa='git add .'
-alias gc='git commit'
-alias gca='git commit --amend'
 alias gp='git push'
 alias gitcache='git config --global credential.helper "cache --timeout=904800"'
 
@@ -64,10 +55,11 @@ export DOTFILES_PATH="/home/$(whoami)/Code/personal/dotfiles"
 export ALACRITTY_CONFIG="/home/$(whoami)/.config/alacritty/alacritty.toml"
 export I3_CONFIG="/home/$(whoami)/.config/i3/config"
 export NVIM_CONFIG="/home/$(whoami)/.config/nvim/init.vim"
-export VISUAL=vim;
-export EDITOR='nvim';
+export VISUAL='vim';
+export EDITOR='/usr/bin/nvim';
 export GIT_EDITOR='nvim';
 
+# PATH for NVM and Nodejs
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -77,11 +69,7 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$(go env GOPATH)/bin
 export GOPRIVATE="bitbucket.org/truedmp/*"
 
-# PATH for additional binaries
-export PATH=$PATH:/home/batman/bin
-export PATH="$PATH:/opt/nvim/bin"
-
-# Fuzzy search
+# Fuzzy search (press Ctrl + r to use)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Set x-rate to move faster in vim

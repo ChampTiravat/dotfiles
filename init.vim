@@ -37,7 +37,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'alvan/vim-closetag'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
-    Plug 'sakshamgupta05/vim-todo-highlight'
 call plug#end()
 
 
