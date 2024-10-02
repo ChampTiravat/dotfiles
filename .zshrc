@@ -31,7 +31,7 @@ alias         wifi:conn='nmcli device wifi connect '
 alias        backup:all='backup:notes; echo "> created backup for notes"; backup:dotfiles; echo "> created backup for dotfiles"; backup:pass; echo "> created backup for passwords";'
 alias       backup:pass="rm -rf /run/media/$(whoami)/small_ssd/Passwords;     cp -r ~/Personal/Passwords /run/media/$(whoami)/small_ssd/Passwords;"
 alias      backup:notes="rm -rf /run/media/$(whoami)/small_ssd/Notes/.git;    cp -r ~/Personal/Notes/* /run/media/$(whoami)/small_ssd/Notes/"
-alias    ackup:dotfiles="rm -rf /run/media/$(whoami)/small_ssd/dotfiles/.git; cp -r /home/$(whoami)/Code/Personal/dotfiles/* /home/$(whoami)/Code/Personal/dotfiles/.*  /run/media/$(whoami)/small_ssd/dotfiles/"
+alias   backup:dotfiles="rm -rf /run/media/$(whoami)/small_ssd/dotfiles/.git; cp -r /home/$(whoami)/Code/Personal/dotfiles/* /home/$(whoami)/Code/Personal/dotfiles/.*  /run/media/$(whoami)/small_ssd/dotfiles/"
 
 alias              back="cd -; ls -lah"
 alias             notes="cd /home/$(whoami)/Personal/Notes; vi ."
