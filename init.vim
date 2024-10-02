@@ -105,7 +105,7 @@ let g:vim_markdown_follow_anchor    = 1
 " -------------------------------------------
 " Blamer configurations
 " -------------------------------------------
-let g:blamer_enabled        = 1
+let g:blamer_enabled        = 0
 let g:blamer_delay          = 200
 let g:blamer_relative_time  = 1
 

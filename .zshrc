@@ -94,8 +94,8 @@ export NVM_DIR="$HOME/.config/nvm"
 # ================================================================
 # PATH for Go
 # ================================================================
-export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$(go env GOPATH)/bin
+export      PATH=$PATH:/usr/local/go/bin
+export      PATH=$PATH:$(go env GOPATH)/bin
 export GOPRIVATE="bitbucket.org/truedmp/*"
 
 
