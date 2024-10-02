@@ -67,6 +67,13 @@ alias                gl='git log'
 alias                gp='git push'
 alias          gitcache='git config --global credential.helper "cache --timeout=904800"'
 
+alias  youtube-playlist="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(playlist_index)s - %(title)s.%(ext)s'"
+alias     youtube-video="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(title)s.%(ext)s'"
+
+
+# ================================================================
+# Variables
+# ================================================================
 export ALACRITTY_CONFIG="/home/$(whoami)/.config/alacritty/alacritty.toml"
 export    DOTFILES_PATH="/home/$(whoami)/Code/personal/dotfiles"
 export      NVIM_CONFIG="/home/$(whoami)/.config/nvim/init.vim"
@@ -74,9 +81,6 @@ export        I3_CONFIG="/home/$(whoami)/.config/i3/config"
 export           EDITOR='/usr/bin/nvim';
 export       GIT_EDITOR='nvim';
 export           VISUAL='vim';
-
-alias  youtube-playlist="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(playlist_index)s - %(title)s.%(ext)s'"
-alias     youtube-video="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(title)s.%(ext)s'"
 
 
 # ================================================================
