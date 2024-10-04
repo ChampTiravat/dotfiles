@@ -21,7 +21,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'SirVer/ultisnips'
     Plug 'tpope/vim-vinegar'
     Plug 'scrooloose/nerdtree'
-    Plug 'easymotion/vim-easymotion'
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -40,6 +39,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'alvan/vim-closetag'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+
+    " DAP Plugins
+    Plug 'nvim-neotest/nvim-nio'
+    Plug 'mfussenegger/nvim-dap' " DAP for Neovim
+    Plug 'rcarriga/nvim-dap-ui'  " DAP UI
 call plug#end()
 
 
@@ -196,3 +200,64 @@ let g:ale_linters = {
 \   'go': ['gopls'],
 \}
 
+
+" -------------------------------------------
+" Setup debugger using vim-dap
+" -------------------------------------------
+lua << EOF
+local dap = require('dap')
+
+-- DAP adapter for Go using delve
+dap.adapters.go = {
+  type = 'server';
+  port = 38697; -- This can be any available port
+  executable = {
+    command = 'dlv';
+    args = { 'dap', '--listen=:38697', '--headless', '--accept-multiclient' };
+  }
+}
+
+dap.configurations.go = {
+  {
+    type = 'go',
+    name = 'Debug',
+    request = 'launch',
+    mode = 'debug',
+    -- program = "${fileDirname}",
+    program = "main.go",
+    cwd = "${workspaceFolder}",
+  },
+}
+
+-- Optional: Set up DAP UI
+require("dapui").setup()
+
+-- Automatically open DAP UI when debugging
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  require("dapui").open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  require("dapui").close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  require("dapui").close()
+end
+EOF
+
+" Set leader key to 'spacebar'
+let mapleader=" "
+
+" Debugging Key Mappings (similar to VSCode)
+nnoremap <leader>db :lua require'dap'.continue()<CR>   " Start/Continue
+nnoremap <leader>ds :lua require'dap'.close()<CR>      " Stop
+nnoremap <leader>dr :lua require'dap'.repl.open()<CR>  " Open REPL
+nnoremap <leader>di :lua require'dap'.step_into()<CR>  " Step Into
+nnoremap <leader>do :lua require'dap'.step_over()<CR>  " Step Over
+nnoremap <leader>du :lua require'dap'.step_out()<CR>   " Step Out
+nnoremap <leader>dl :lua require'dap'.run_last()<CR>   " Run Last Configuration
+nnoremap <leader>dbp :lua require'dap'.toggle_breakpoint()<CR> " Toggle Breakpoint
+nnoremap <leader>dbc :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint Condition: '))<CR> " Conditional Breakpoint
+
+
+highlight DapBreakpoint ctermfg=red guifg=red  " Change color as needed
+highlight DapStopped ctermfg=yellow guifg=yellow  " Change color as needed
