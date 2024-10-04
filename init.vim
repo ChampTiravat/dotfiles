@@ -13,6 +13,9 @@
 " :CocInstall coc-go
 
 
+" -------------------------------------------
+" Extensions
+" -------------------------------------------
 call plug#begin('~/.vim/plugged')
     Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
     Plug 'SirVer/ultisnips'
