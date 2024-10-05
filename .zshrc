@@ -97,6 +97,8 @@ export NVM_DIR="$HOME/.config/nvm"
 export      PATH=$PATH:/usr/local/go/bin
 export      PATH=$PATH:$(go env GOPATH)/bin
 
+export PATH=$PATH:/home/$(whoami)/postman/app
+
 
 # ================================================================
 # Fuzzy search (press Ctrl + r to use)
