@@ -3,6 +3,7 @@
 # ================================================================
 export ZSH="$HOME/.oh-my-zsh"
 
+export TERM=xterm-256color
 
 # ================================================================
 # Theme
@@ -41,7 +42,7 @@ alias          go:downl="cd /home/$(whoami)/Downloads"
 alias       go:personal="cd /home/$(whoami)/Personal"
 alias           go:dots="cd /home/$(whoami)/Code/Personal/dotfiles"
 alias           go:code="cd /home/$(whoami)/Code"
-alias            go:ssd="cd /media/$(whoami)/small_ssd"
+alias            go:ssd="cd /run/media/$(whoami)/small_ssd"
 
 alias            reload='source ~/.zshrc; echo "> reloaded ~/.zshrc";'
 alias            rename='vimv' # TODO: install https://github.com/thameera/vimv/ for bulk-renaming files
@@ -109,7 +110,7 @@ export PATH=$PATH:/home/$(whoami)/postman/app
 # ================================================================
 # Set x-rate to move faster in vim
 # ================================================================
-xset r rate 200 100
+xset r rate 200 90
 
 
 # ================================================================
@@ -129,5 +130,4 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-
 
