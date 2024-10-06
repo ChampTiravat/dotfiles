@@ -21,8 +21,7 @@ white = "#eeeeee"
 yellow = "#f78c6c"
 
 [colors.primary]
-# background = "#000000"
-background = "#111111"
+background = "#000000"
 foreground = "#ffffff"
 
 [cursor]
@@ -62,6 +61,7 @@ multiplier = 3
 
 [window]
 decorations = "full"
+opacity = 0.90  # Overall window opacity
 
 [window.dimensions]
 columns = 122
