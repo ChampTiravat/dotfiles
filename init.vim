@@ -2,8 +2,8 @@
 " Install Runtime Dependencies
 " -------------------------------------------
 " $ sudo apt install -y xclip
-" $ sudo apt install -y python3-pynvim
 " $ sudo apt install -y ripgrep
+" $ sudo apt install -y python3-pynvim
 
 
 " -------------------------------------------
@@ -200,10 +200,26 @@ let g:ale_linters = {
 \   'go': ['gopls'],
 \}
 
-
 " -------------------------------------------
 " Setup debugger using vim-dap
 " -------------------------------------------
+" Set leader key to 'spacebar'
+let mapleader=" "
+
+" Debugging Key Mappings (similar to VSCode)
+nnoremap <leader>db :lua require'dap'.continue()<CR>   " Start/Continue
+nnoremap <leader>ds :lua require'dap'.close()<CR>      " Stop
+nnoremap <leader>dr :lua require'dap'.repl.open()<CR>  " Open REPL
+nnoremap <leader>di :lua require'dap'.step_into()<CR>  " Step Into
+nnoremap <leader>do :lua require'dap'.step_over()<CR>  " Step Over
+nnoremap <leader>du :lua require'dap'.step_out()<CR>   " Step Out
+nnoremap <leader>dl :lua require'dap'.run_last()<CR>   " Run Last Configuration
+nnoremap <leader>dbp :lua require'dap'.toggle_breakpoint()<CR> " Toggle Breakpoint
+nnoremap <leader>dbc :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint Condition: '))<CR> " Conditional Breakpoint
+
+highlight DapBreakpoint ctermfg=red guifg=red  " Change color as needed
+highlight DapStopped ctermfg=yellow guifg=yellow  " Change color as needed
+
 lua << EOF
 local dap = require('dap')
 
@@ -223,7 +239,6 @@ dap.configurations.go = {
     name = 'Debug',
     request = 'launch',
     mode = 'debug',
-    -- program = "${fileDirname}",
     program = "main.go",
     cwd = "${workspaceFolder}",
   },
@@ -244,20 +259,3 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 end
 EOF
 
-" Set leader key to 'spacebar'
-let mapleader=" "
-
-" Debugging Key Mappings (similar to VSCode)
-nnoremap <leader>db :lua require'dap'.continue()<CR>   " Start/Continue
-nnoremap <leader>ds :lua require'dap'.close()<CR>      " Stop
-nnoremap <leader>dr :lua require'dap'.repl.open()<CR>  " Open REPL
-nnoremap <leader>di :lua require'dap'.step_into()<CR>  " Step Into
-nnoremap <leader>do :lua require'dap'.step_over()<CR>  " Step Over
-nnoremap <leader>du :lua require'dap'.step_out()<CR>   " Step Out
-nnoremap <leader>dl :lua require'dap'.run_last()<CR>   " Run Last Configuration
-nnoremap <leader>dbp :lua require'dap'.toggle_breakpoint()<CR> " Toggle Breakpoint
-nnoremap <leader>dbc :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint Condition: '))<CR> " Conditional Breakpoint
-
-
-highlight DapBreakpoint ctermfg=red guifg=red  " Change color as needed
-highlight DapStopped ctermfg=yellow guifg=yellow  " Change color as needed
