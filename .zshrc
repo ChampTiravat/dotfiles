@@ -68,8 +68,8 @@ alias                gl='git log'
 alias                gp='git push'
 alias          gitcache='git config --global credential.helper "cache --timeout=904800"'
 
-alias  youtube-playlist="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(playlist_index)s - %(title)s.%(ext)s'"
-alias     youtube-video="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(title)s.%(ext)s'"
+alias     youtube:video="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(title)s.%(ext)s'"
+alias  youtube:playlist="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(playlist_index)s - %(title)s.%(ext)s'"
 
 
 # ================================================================
