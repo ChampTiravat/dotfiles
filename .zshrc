@@ -2,8 +2,8 @@
 # Load initial config from oh-my-zsh
 # ================================================================
 export ZSH="$HOME/.oh-my-zsh"
-
 export TERM=xterm-256color
+
 
 # ================================================================
 # Theme
@@ -26,50 +26,50 @@ source $ZSH/oh-my-zsh.sh
 # ================================================================
 # Aliases
 # ================================================================
-alias         wifi:list='nmcli device wifi list'
-alias         wifi:conn='nmcli device wifi connect '
+alias wifi:list='nmcli device wifi list'
+alias wifi:conn='nmcli device wifi connect '
 
-alias        backup:all='backup:notes; echo "> created backup for notes"; backup:dotfiles; echo "> created backup for dotfiles"; backup:pass; echo "> created backup for passwords";'
-alias       backup:pass="rm -rf /run/media/$(whoami)/small_ssd/Passwords;     cp -r ~/Personal/Passwords /run/media/$(whoami)/small_ssd/Passwords;"
-alias      backup:notes="rm -rf /run/media/$(whoami)/small_ssd/Notes/.git;    cp -r ~/Personal/Notes/* /run/media/$(whoami)/small_ssd/Notes/"
-alias   backup:dotfiles="rm -rf /run/media/$(whoami)/small_ssd/dotfiles/.git; cp -r /home/$(whoami)/Code/Personal/dotfiles/* /home/$(whoami)/Code/Personal/dotfiles/.*  /run/media/$(whoami)/small_ssd/dotfiles/"
+alias      backup:all='backup:notes; echo "> created backup for notes"; backup:dotfiles; echo "> created backup for dotfiles"; backup:pass; echo "> created backup for passwords";'
+alias     backup:pass="rm -rf /run/media/$(whoami)/small_ssd/Passwords;     cp -r ~/Personal/Passwords /run/media/$(whoami)/small_ssd/Passwords;"
+alias    backup:notes="rm -rf /run/media/$(whoami)/small_ssd/Notes/.git;    cp -r ~/Personal/Notes/* /run/media/$(whoami)/small_ssd/Notes/"
+alias backup:dotfiles="rm -rf /run/media/$(whoami)/small_ssd/dotfiles/.git; cp -r /home/$(whoami)/Code/Personal/dotfiles/* /home/$(whoami)/Code/Personal/dotfiles/.*  /run/media/$(whoami)/small_ssd/dotfiles/"
 
-alias              back="cd -; ls -lah"
-alias             notes="cd /home/$(whoami)/Personal/Notes; vi ."
-alias          go:notes="cd /home/$(whoami)/Personal/Notes; vi ."
-alias           go:desk="cd /home/$(whoami)/Desktop"
-alias          go:downl="cd /home/$(whoami)/Downloads"
-alias       go:personal="cd /home/$(whoami)/Personal"
-alias           go:dots="cd /home/$(whoami)/Code/Personal/dotfiles"
-alias           go:code="cd /home/$(whoami)/Code"
-alias            go:ssd="cd /run/media/$(whoami)/small_ssd"
+alias        back="cd -; ls -lah"
+alias       notes="cd /home/$(whoami)/Personal/Notes; vi ."
+alias    go:notes="cd /home/$(whoami)/Personal/Notes; vi ."
+alias     go:desk="cd /home/$(whoami)/Desktop"
+alias    go:downl="cd /home/$(whoami)/Downloads"
+alias go:personal="cd /home/$(whoami)/Personal"
+alias     go:dots="cd /home/$(whoami)/Code/Personal/dotfiles"
+alias     go:code="cd /home/$(whoami)/Code"
+alias      go:ssd="cd /run/media/$(whoami)/small_ssd"
 
-alias            reload='source ~/.zshrc; echo "> reloaded ~/.zshrc";'
-alias            rename='vimv' # TODO: install https://github.com/thameera/vimv/ for bulk-renaming files
-alias                 m='make'
-alias                 s='source'
-alias            python='python3'
-alias             sound='pulsemixer'
-alias              nvim='nvim'
-alias               vim='nvim'
-alias                vi='nvim'
-alias              code='codium'
-alias           vi:conf="vi /home/$(whoami)/Code/Personal/dotfiles/init.vim"
-alias          vim:conf="vi /home/$(whoami)/Code/Personal/dotfiles/init.vim"
-alias         nvim:conf="vi /home/$(whoami)/Code/Personal/dotfiles/init.vim"
-alias          zsh:conf="vi /home/$(whoami)/Code/Personal/dotfiles/.zshrc"
+alias    reload='source ~/.zshrc; echo "> reloaded ~/.zshrc";'
+alias    rename='vimv' # TODO: install https://github.com/thameera/vimv/ for bulk-renaming files
+alias         m='make'
+alias         s='source'
+alias    python='python3'
+alias     sound='pulsemixer'
+alias      nvim='nvim'
+alias       vim='nvim'
+alias        vi='nvim'
+alias      code='codium'
+alias   vi:conf="vi /home/$(whoami)/Code/Personal/dotfiles/init.vim"
+alias  vim:conf="vi /home/$(whoami)/Code/Personal/dotfiles/init.vim"
+alias nvim:conf="vi /home/$(whoami)/Code/Personal/dotfiles/init.vim"
+alias  zsh:conf="vi /home/$(whoami)/Code/Personal/dotfiles/.zshrc"
 
-alias          copytext='xclip -selection clipboard; echo "> text coppied to clipboard"'
-alias         pastetext='xclip -selection clipboard -o'
+alias  copytext='xclip -selection clipboard; echo "> text coppied to clipboard"'
+alias pastetext='xclip -selection clipboard -o'
 
-alias                gs='git status'
-alias                gd='git diff'
-alias                gl='git log'
-alias                gp='git push'
-alias          gitcache='git config --global credential.helper "cache --timeout=904800"'
+alias       gs='git status'
+alias       gd='git diff'
+alias       gl='git log'
+alias       gp='git push'
+alias gitcache='git config --global credential.helper "cache --timeout=904800"'
 
-alias     youtube:video="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(title)s.%(ext)s'"
-alias  youtube:playlist="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(playlist_index)s - %(title)s.%(ext)s'"
+alias    youtube:video="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(title)s.%(ext)s'"
+alias youtube:playlist="yt-dlp -f bestvideo+bestaudio --merge-output-format mp4 -o '%(playlist_index)s - %(title)s.%(ext)s'"
 
 
 # ================================================================
@@ -80,8 +80,8 @@ export    DOTFILES_PATH="/home/$(whoami)/Code/personal/dotfiles"
 export      NVIM_CONFIG="/home/$(whoami)/.config/nvim/init.vim"
 export        I3_CONFIG="/home/$(whoami)/.config/i3/config"
 export           EDITOR='/usr/bin/nvim';
-export       GIT_EDITOR='nvim';
-export           VISUAL='vim';
+export       GIT_EDITOR='nvim'
+export           VISUAL='vim'
 
 
 # ================================================================
@@ -95,9 +95,8 @@ export NVM_DIR="$HOME/.config/nvm"
 # ================================================================
 # PATH for Go
 # ================================================================
-export      PATH=$PATH:/usr/local/go/bin
-export      PATH=$PATH:$(go env GOPATH)/bin
-
+export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:$(go env GOPATH)/bin
 export PATH=$PATH:/home/$(whoami)/postman/app
 
 
@@ -110,7 +109,7 @@ export PATH=$PATH:/home/$(whoami)/postman/app
 # ================================================================
 # Set x-rate to move faster in vim
 # ================================================================
-xset r rate 200 100
+xset r rate 200 120
 
 
 # ================================================================
@@ -130,4 +129,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
 

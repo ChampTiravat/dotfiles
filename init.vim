@@ -5,11 +5,13 @@
 " $ sudo apt install -y ripgrep
 " $ sudo apt install -y python3-pynvim
 
+
 " -------------------------------------------
 " Extensions Activation (run in vim console)
 " -------------------------------------------
 " :CocInstall coc-tsserver
 " :CocInstall coc-go
+
 
 " -------------------------------------------
 " Extensions
@@ -42,7 +44,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-neotest/nvim-nio'
     Plug 'mfussenegger/nvim-dap' " DAP for Neovim
     Plug 'rcarriga/nvim-dap-ui'  " DAP UI
+
+    Plug 'xiyaowong/transparent.nvim'
 call plug#end()
+
 
 " -------------------------------------------
 " Basic (Vim Native) Configurations
@@ -86,6 +91,7 @@ set noerrorbells
 syntax enable
 filetype plugin indent on
 
+
 " -------------------------------------------
 " NERDTree
 " -------------------------------------------
@@ -97,23 +103,27 @@ let g:NERDTreeHighlightFolders               = 1 " enables folder icon highlight
 let g:NERDTreeHighlightFoldersFullName       = 1 " highlights the folder name
 " autocmd VimEnter * NERDTree                    " Open NERDTree at startup
 
+
 " -------------------------------------------
 " Vim Markdown settings
 " -------------------------------------------
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_follow_anchor    = 1
 
+
 " -------------------------------------------
 " Blamer configurations
 " -------------------------------------------
-let g:blamer_enabled        = 1
+let g:blamer_enabled        = 0
 let g:blamer_delay          = 200
 let g:blamer_relative_time  = 1
+
 
 " -------------------------------------------
 " Set editor colorscheme
 " -------------------------------------------
 colorscheme night-owl
+
 
 " -------------------------------------------
 " Airline configurations & themes
@@ -122,6 +132,7 @@ let g:airline_theme                      = 'night_owl'
 let g:airline_powerline_fonts            = 1
 let g:airline#extensions#tabline#enabled = 1
 
+
 " -------------------------------------------
 " Use terminal color configurations
 " -------------------------------------------
@@ -129,6 +140,7 @@ set t_Co=256
 if (has("termguicolors"))
  set termguicolors
 endif
+
 
 " -------------------------------------------
 " Keymap
@@ -143,6 +155,7 @@ nnoremap <C-t> :tabnew<CR>
 nnoremap <C-s> :w<CR>
 "nnoremap <C-f> :FZF<CR>
 "nnoremap <C-f> :Telescope buffers<CR>
+
 
 " -------------------------------------------
 " Prettier configurations
@@ -165,6 +178,7 @@ let g:prettier#config#trailing_comma = 'es5'
 let g:prettier#config#use_tabs = 'false'
 let g:prettier#config#vue_indent_script_and_style = 'false'
 
+
 " -------------------------------------------
 " Disable ALE for python (for simplicity)
 " -------------------------------------------
@@ -183,13 +197,17 @@ let g:ale_linters = {
 \   'go': ['gopls'],
 \}
 
+
 " -------------------------------------------
 " Setup debugger using vim-dap
 " -------------------------------------------
 " Set leader key to 'spacebar'
 let mapleader=" "
 
+
+" -------------------------------------------
 " Debugging Key Mappings (similar to VSCode)
+" -------------------------------------------
 nnoremap <leader>db :lua require'dap'.continue()<CR>   " Start/Continue
 nnoremap <leader>ds :lua require'dap'.close()<CR>      " Stop
 nnoremap <leader>dr :lua require'dap'.repl.open()<CR>  " Open REPL
@@ -227,6 +245,7 @@ dap.configurations.go = {
   },
 }
 
+
 -- Optional: Set up DAP UI
 require("dapui").setup()
 
@@ -242,3 +261,11 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 end
 EOF
 
+
+lua << EOF
+require("transparent").setup({
+  enable = true,  -- Enable transparency
+  extra_groups = {},  -- Additional groups to make transparent
+  exclude_groups = {},  -- Groups to exclude from transparency
+})
+EOF
