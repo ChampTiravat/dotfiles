@@ -131,3 +131,9 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 
+# ================================================================
+# bun completions
+# ================================================================
+[ -s "/home/primaris/.bun/_bun" ] && source "/home/primaris/.bun/_bun"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

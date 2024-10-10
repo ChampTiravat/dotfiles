@@ -50,7 +50,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
+bindsym $mod+d exec --no-startup-id dmenu_run -c -l 20
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -182,17 +182,18 @@ bar {
     position top
     font pango:JetBrains Mono 15
 	status_command bumblebee-status \
-        -m sensors cpu memory battery disk bluetooth pasink pasource datetime system \
+        -m sensors cpu memory battery disk bluetooth pasink pasource datetime \
         -p time.format="%d/%m/%Y %H:%M" \
         -t greyish-powerline
 }
 
 exec --no-startup-id setxkbmap -layout 'us,th' -option 'grp:alt_shift_toggle'
 exec --no-startup-id xcompmgr
+# exec setsid xcompmgr &
 exec xwallpaper --zoom ~/Pictures/anime-cloudy.jpeg
 
-gaps inner 20
-gaps outer 0
+gaps inner 15
+gaps outer 10
 
 default_border pixel 5
 default_floating_border pixel 5

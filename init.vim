@@ -137,11 +137,12 @@ let g:airline#extensions#tabline#enabled = 1
 " -------------------------------------------
 " Use terminal color configurations
 " -------------------------------------------
-set t_Co=256
-if (has("termguicolors"))
- set termguicolors
-endif
-
+" set t_Co=256
+" if (has("termguicolors"))
+"  set termguicolors
+" endif
+set termguicolors
+highlight CursorLine cterm=NONE ctermbg=NONE guibg=#444444
 
 " -------------------------------------------
 " Keymap
