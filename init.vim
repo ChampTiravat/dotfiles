@@ -17,6 +17,7 @@
 " Extensions
 " -------------------------------------------
 call plug#begin('~/.vim/plugged')
+    Plug 'mhinz/vim-startify'
     Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
     Plug 'SirVer/ultisnips'
     Plug 'tpope/vim-vinegar'

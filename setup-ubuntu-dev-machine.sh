@@ -43,6 +43,7 @@ sudo apt-get install -y        flameshot; # Screenshot (works better than maim)
 sudo apt-get install -y        pulsemixer;
 sudo apt-get install -y        sxiv; # image viewer
 # sudo apt-get install -y      sxhkd; # keyboard's key binding
+pip install --user bumblebee-status
 
 echo "====================================================="
 echo "installing misc softwares"
