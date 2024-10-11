@@ -193,7 +193,7 @@ exec --no-startup-id xcompmgr
 exec xwallpaper --zoom ~/Pictures/anime-cloudy.jpeg
 
 gaps inner 15
-gaps outer 10
+gaps outer 7
 
 default_border pixel 5
 default_floating_border pixel 5
