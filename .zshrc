@@ -9,6 +9,7 @@ export TERM=xterm-256color
 # Theme
 # ================================================================
 ZSH_THEME="robbyrussell"
+export QT_QPA_PLATFORMTHEME=gtk2
 
 
 # ================================================================
@@ -134,3 +135,5 @@ unset __conda_setup
 [ -s "/home/primaris/.bun/_bun" ] && source "/home/primaris/.bun/_bun"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+
