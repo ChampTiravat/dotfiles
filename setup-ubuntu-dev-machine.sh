@@ -15,8 +15,8 @@ echo "====================================================="
 echo "replace vim.tiny with vim"
 echo "====================================================="
 # sudo apt-get remove -y vim.tiny;
-sudo apt install -y python3-pynvim;
-npm install -g neovim;
+sudo apt     install -y python3-pynvim;
+     npm     install -g neovim;
 sudo apt-get install -y xclip;
 sudo apt-get install -y ripgrep;
 
