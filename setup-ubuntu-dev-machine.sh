@@ -101,8 +101,6 @@ echo "====================================================="
      ln -s ./alacritty.toml             ~/.config/alacritty/alacritty.toml;
      ln -s ./.tmux.conf                 ~/.tmux.conf;
      ln -s ./.xinitrc                   ~/.xinitrc;
-sudo ln    ./scripts/screenshot.sh      /usr/bin/screenshot;
-sudo ln    ./scripts/screenshot-full.sh /usr/bin/screenshot-full;
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";
 rm /home/${whoami}/.zshrc;

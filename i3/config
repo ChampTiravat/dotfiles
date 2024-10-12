@@ -187,9 +187,9 @@ bar {
         -t greyish-powerline
 }
 
+exec mullvad-vpn
 exec --no-startup-id setxkbmap -layout 'us,th' -option 'grp:alt_shift_toggle'
 exec --no-startup-id xcompmgr
-# exec setsid xcompmgr &
 exec xwallpaper --zoom ~/Pictures/anime-cloudy.jpeg
 
 gaps inner 15
