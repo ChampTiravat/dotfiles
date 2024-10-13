@@ -51,7 +51,7 @@ call plug#end()
 
 
 " -------------------------------------------
-" Basic (Vim Native) Configurations
+" Basic Configurations
 " -------------------------------------------
 set clipboard=unnamedplus
 set mouse=a
@@ -137,12 +137,11 @@ let g:airline#extensions#tabline#enabled = 1
 " -------------------------------------------
 " Use terminal color configurations
 " -------------------------------------------
-" set t_Co=256
-" if (has("termguicolors"))
-"  set termguicolors
-" endif
-set termguicolors
-highlight CursorLine cterm=NONE ctermbg=NONE guibg=#444444
+set t_Co=256
+if (has("termguicolors"))
+ set termguicolors
+endif
+
 
 " -------------------------------------------
 " Keymap
@@ -162,23 +161,23 @@ nnoremap <C-s> :w<CR>
 " -------------------------------------------
 " Prettier configurations
 " -------------------------------------------
-let g:prettier#config#arrow_parens = 'always'
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#bracket_same_line = 'false'
+let g:prettier#config#arrow_parens                 = 'always'
+let g:prettier#config#bracket_spacing              = 'true'
+let g:prettier#config#bracket_same_line            = 'false'
 let g:prettier#config#embedded_language_formatting = 'auto'
-let g:prettier#config#end_of_line = 'lf'
-let g:prettier#config#html_whitespace_sensitivity = 'css'
-let g:prettier#config#jsx_single_quote = 'false'
-let g:prettier#config#print_width = 80
-let g:prettier#config#prose_wrap = 'preserve'
-let g:prettier#config#quote_props = 'as-needed'
-let g:prettier#config#semi = 'true'
-let g:prettier#config#single_attribute_per_line = 'false'
-let g:prettier#config#single_quote = 'false'
-let g:prettier#config#tab_width = 4
-let g:prettier#config#trailing_comma = 'es5'
-let g:prettier#config#use_tabs = 'false'
-let g:prettier#config#vue_indent_script_and_style = 'false'
+let g:prettier#config#end_of_line                  = 'lf'
+let g:prettier#config#html_whitespace_sensitivity  = 'css'
+let g:prettier#config#jsx_single_quote             = 'false'
+let g:prettier#config#print_width                  = 80
+let g:prettier#config#prose_wrap                   = 'preserve'
+let g:prettier#config#quote_props                  = 'as-needed'
+let g:prettier#config#semi                         = 'true'
+let g:prettier#config#single_attribute_per_line    = 'false'
+let g:prettier#config#single_quote                 = 'false'
+let g:prettier#config#tab_width                    = 4
+let g:prettier#config#trailing_comma               = 'es5'
+let g:prettier#config#use_tabs                     = 'false'
+let g:prettier#config#vue_indent_script_and_style  = 'false'
 
 
 " -------------------------------------------
@@ -220,8 +219,6 @@ nnoremap <leader>dl :lua require'dap'.run_last()<CR>   " Run Last Configuration
 nnoremap <leader>dbp :lua require'dap'.toggle_breakpoint()<CR> " Toggle Breakpoint
 nnoremap <leader>dbc :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint Condition: '))<CR> " Conditional Breakpoint
 
-highlight DapBreakpoint ctermfg=red guifg=red  " Change color as needed
-highlight DapStopped ctermfg=yellow guifg=yellow  " Change color as needed
 
 lua << EOF
 local dap = require('dap')
@@ -266,8 +263,8 @@ EOF
 
 lua << EOF
 require("transparent").setup({
-  enable = true,  -- Enable transparency
-  extra_groups = {},  -- Additional groups to make transparent
-  exclude_groups = {},  -- Groups to exclude from transparency
+  enable = true,       -- Enable transparency
+  extra_groups = {},   -- Additional groups to make transparent
+  exclude_groups = {}, -- Groups to exclude from transparency
 })
 EOF

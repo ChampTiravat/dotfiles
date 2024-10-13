@@ -185,18 +185,19 @@ bar {
         -p time.format="%d/%m/%Y %H:%M" \
         -t greyish-powerline
     colors {
-        background #111111
+        # background #111111
+        background #191919
     }
 }
 
-bindsym F1 exec thunar
+bindsym F1 exec thunar /home/primaris
 bindsym F2 exec thunar /run/media/primaris/small_ssd
 bindsym Print exec flameshot gui
 
 exec mullvad-vpn
+exec keepassxc
 exec --no-startup-id setxkbmap -layout 'us,th' -option 'grp:alt_shift_toggle'
 exec --no-startup-id xcompmgr
-exec xwallpaper --zoom ~/Pictures/anime-island.jpeg
 exec --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
 exec --no-startup-id gsettings set org.gnome.desktop.interface icon-theme 'Numix'
 
