@@ -31,21 +31,18 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'haishanh/night-owl.vim'
-    Plug 'w0rp/ale'                " ALE is a linting for many languages
-    Plug 'othree/yajs.vim'         " JavaScript syntax highlighter
-    Plug 'mxw/vim-jsx'             " JSX syntax highlighter
-    Plug 'ap/vim-css-color'        " CSS syntax highlighter
-    Plug 'pangloss/vim-javascript' " Javascript syntax highlighter
+    Plug 'w0rp/ale'                      " ALE is a linting for many languages
+    Plug 'othree/yajs.vim'               " JavaScript syntax highlighter
+    Plug 'mxw/vim-jsx'                   " JSX syntax highlighter
+    Plug 'ap/vim-css-color'              " CSS syntax highlighter
+    Plug 'pangloss/vim-javascript'       " Javascript syntax highlighter
     Plug 'APZelos/blamer.nvim'
     Plug 'alvan/vim-closetag'
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
-
-    " DAP Plugins
-    Plug 'nvim-neotest/nvim-nio'
-    Plug 'mfussenegger/nvim-dap' " DAP for Neovim
-    Plug 'rcarriga/nvim-dap-ui'  " DAP UI
-
+    Plug 'nvim-neotest/nvim-nio'         " providing asynchronous features for nvim
+    Plug 'mfussenegger/nvim-dap'         " DAP for Neovim
+    Plug 'rcarriga/nvim-dap-ui'          " DAP UI
     Plug 'xiyaowong/transparent.nvim'
 call plug#end()
 

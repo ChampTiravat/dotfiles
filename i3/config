@@ -179,20 +179,22 @@ bindsym $mod+r mode "resize"
 
 bar {
     position top
-    font pango:JetBrains Mono 15
+    font pango:JetBrains Mono 14
 	status_command bumblebee-status \
         -m sensors cpu memory battery disk bluetooth pasink pasource datetime \
         -p time.format="%d/%m/%Y %H:%M" \
         -t greyish-powerline
     colors {
-        # background #111111
-        background #191919
+        background #000000
     }
 }
 
-bindsym F1 exec thunar /home/primaris
-bindsym F2 exec thunar /run/media/primaris/small_ssd
-bindsym Print exec flameshot gui
+bindsym F1    exec --no-startup-id thunar /home/primaris
+bindsym F2    exec --no-startup-id thunar /run/media/primaris/small_ssd
+bindsym F3    exec --no-startup-id keepassxc
+bindsym F4    exec --no-startup-id signal-desktop
+bindsym F12   exec --no-startup-id trezor-suite
+bindsym Print exec --no-startup-id flameshot gui
 
 exec mullvad-vpn
 exec keepassxc
