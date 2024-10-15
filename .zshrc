@@ -27,6 +27,9 @@ source $ZSH/oh-my-zsh.sh
 # ================================================================
 # Aliases
 # ================================================================
+alias encrypt='gpg -c --no-symkey-cache --cipher-algo AES256'
+alias decrypt='gpg --decrypt'
+
 alias wifi:list='nmcli device wifi list'
 alias wifi:conn='nmcli device wifi connect '
 
