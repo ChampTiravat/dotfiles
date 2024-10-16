@@ -10,6 +10,18 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:JetBrains Mono 12
 
+
+# Colors
+# set $bg #2c2c2e
+# set $fg #9f9f9f
+# set $focus_color #eeeeee
+# set $urgent_color #ff0000
+# 
+# client.focused          $focus_color  $focus_color  $fg
+# client.unfocused        $bg           $bg           $fg
+# client.focused_inactive $bg           $bg           $fg
+# client.urgent           $urgent_color $urgent_color $fg
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8

@@ -61,7 +61,7 @@ set incsearch
 set syntax=go
 set autoindent
 set encoding=UTF-8
-"set colorcolumn=90
+set colorcolumn=100
 set expandtab       " Convert tab into spaces.
 set tabstop=4
 set softtabstop=4   " Set number of spaces when add/remove new tab(s).
@@ -165,7 +165,7 @@ let g:prettier#config#embedded_language_formatting = 'auto'
 let g:prettier#config#end_of_line                  = 'lf'
 let g:prettier#config#html_whitespace_sensitivity  = 'css'
 let g:prettier#config#jsx_single_quote             = 'false'
-let g:prettier#config#print_width                  = 80
+let g:prettier#config#print_width                  = 100
 let g:prettier#config#prose_wrap                   = 'preserve'
 let g:prettier#config#quote_props                  = 'as-needed'
 let g:prettier#config#semi                         = 'true'
