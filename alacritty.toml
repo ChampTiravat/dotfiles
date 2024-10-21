@@ -29,7 +29,7 @@ blink_interval = 800
 style = "Block"
 
 [font]
-size = 16.0
+size = 15.0
 
 [font.normal]
 family = "JetBrains Mono"
@@ -61,7 +61,7 @@ multiplier = 3
 
 [window]
 decorations = "full"
-opacity = 0.95
+opacity = 0.97
 
 [window.dimensions]
 columns = 122

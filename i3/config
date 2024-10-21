@@ -11,12 +11,12 @@ set $mod Mod4
 font pango:JetBrains Mono 12
 
 
-# Colors
+# # Colors
 # set $bg #2c2c2e
 # set $fg #9f9f9f
 # set $focus_color #eeeeee
 # set $urgent_color #ff0000
-# 
+
 # client.focused          $focus_color  $focus_color  $fg
 # client.unfocused        $bg           $bg           $fg
 # client.focused_inactive $bg           $bg           $fg
@@ -195,17 +195,17 @@ bar {
 	status_command bumblebee-status \
         -m sensors cpu memory battery disk bluetooth pasink pasource datetime \
         -p time.format="%d/%m/%Y %H:%M" \
-        -t greyish-powerline
+        # -t greyish-powerline
     colors {
-        background #000000
+        background #0d0d0d
     }
 }
 
-bindsym F1    exec --no-startup-id thunar /home/primaris
-bindsym F2    exec --no-startup-id thunar /run/media/primaris/small_ssd
-bindsym F3    exec --no-startup-id keepassxc
-bindsym F4    exec --no-startup-id signal-desktop
-bindsym F12   exec --no-startup-id trezor-suite
+bindsym $mod+F1    exec --no-startup-id thunar /home/primaris
+bindsym $mod+F2    exec --no-startup-id thunar /run/media/primaris/small_ssd
+bindsym $mod+F3    exec --no-startup-id keepassxc
+bindsym $mod+F4    exec --no-startup-id signal-desktop
+bindsym $mod+F12   exec --no-startup-id trezor-suite
 bindsym Print exec --no-startup-id flameshot gui
 
 exec mullvad-vpn
@@ -215,8 +215,8 @@ exec --no-startup-id xcompmgr
 exec --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
 exec --no-startup-id gsettings set org.gnome.desktop.interface icon-theme 'Numix'
 
-gaps inner 15
-gaps outer 7
+gaps inner 10
+gaps outer 0
 
 default_border pixel 5
 default_floating_border pixel 5

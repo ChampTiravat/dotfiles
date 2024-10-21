@@ -27,6 +27,8 @@ source $ZSH/oh-my-zsh.sh
 # ================================================================
 # Aliases
 # ================================================================
+alias gitlazy=lazygit
+
 alias encrypt='gpg -c --no-symkey-cache --cipher-algo AES256'
 alias decrypt='gpg --decrypt'
 
