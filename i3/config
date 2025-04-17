@@ -194,17 +194,18 @@ bar {
     font pango:JetBrains Mono 14
 	status_command bumblebee-status \
         -m sensors cpu memory battery disk bluetooth pasink pasource datetime \
-        -p time.format="%d/%m/%Y %H:%M" \
         # -t greyish-powerline
     colors {
         background #0d0d0d
     }
 }
 
+
 bindsym $mod+F1    exec --no-startup-id thunar /home/primaris
-bindsym $mod+F2    exec --no-startup-id thunar /run/media/primaris/small_ssd
+bindsym $mod+F2    exec --no-startup-id thunar /media/primaris/big_ssd
 bindsym $mod+F3    exec --no-startup-id keepassxc
 bindsym $mod+F4    exec --no-startup-id signal-desktop
+bindsym $mod+F5    exec --no-startup-id telegram-desktop
 bindsym $mod+F12   exec --no-startup-id trezor-suite
 bindsym Print exec --no-startup-id flameshot gui
 
@@ -215,7 +216,7 @@ exec --no-startup-id xcompmgr
 exec --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
 exec --no-startup-id gsettings set org.gnome.desktop.interface icon-theme 'Numix'
 
-gaps inner 10
+gaps inner 15
 gaps outer 0
 
 default_border pixel 5

@@ -25,9 +25,17 @@ source $ZSH/oh-my-zsh.sh
 
 
 # ================================================================
+# Reload keyboard layout settings
+# ================================================================
+setxkbmap -layout 'us,th' -option 'grp:alt_shift_toggle'
+
+
+# ================================================================
 # Aliases
 # ================================================================
 alias gitlazy=lazygit
+alias open='setsid thunar'
+alias reset:keyboard="setxkbmap -layout 'us,th' -option 'grp:alt_shift_toggle'"
 
 alias encrypt='gpg -c --no-symkey-cache --cipher-algo AES256'
 alias decrypt='gpg --decrypt'
@@ -36,10 +44,11 @@ alias wifi:list='nmcli device wifi list'
 alias wifi:conn='nmcli device wifi connect '
 
 alias      backup:all='backup:notes; echo "> created backup for notes"; backup:dotfiles; echo "> created backup for dotfiles"; backup:pass; echo "> created backup for passwords";'
-alias     backup:pass="rm -rf /run/media/$(whoami)/small_ssd/Passwords;     cp -r ~/Personal/Passwords /run/media/$(whoami)/small_ssd/Passwords;"
-alias    backup:notes="rm -rf /run/media/$(whoami)/small_ssd/Notes/.git;    cp -r ~/Personal/Notes/* /run/media/$(whoami)/small_ssd/Notes/"
-alias backup:dotfiles="rm -rf /run/media/$(whoami)/small_ssd/dotfiles/.git; cp -r /home/$(whoami)/Code/Personal/dotfiles/* /home/$(whoami)/Code/Personal/dotfiles/.*  /run/media/$(whoami)/small_ssd/dotfiles/"
+alias     backup:pass="rm -rf /media/$(whoami)/big_ssd/Passwords;     cp -r ~/Personal/Passwords /media/$(whoami)/big_ssd/Passwords;"
+alias    backup:notes="rm -rf /media/$(whoami)/big_ssd/Notes/.git;    cp -r ~/Personal/Notes/* /media/$(whoami)/big_ssd/Notes/"
+alias backup:dotfiles="rm -rf /media/$(whoami)/big_ssd/dotfiles/.git; cp -r /home/$(whoami)/Code/Personal/dotfiles/* /home/$(whoami)/Code/Personal/dotfiles/.*  /media/$(whoami)/big_ssd/dotfiles/"
 
+alias         tdg="cd ~/Code/Contract/tdg"
 alias        back="cd -; ls -lah"
 alias       notes="cd /home/$(whoami)/Personal/Notes; vi ."
 alias    go:notes="cd /home/$(whoami)/Personal/Notes; vi ."
@@ -48,7 +57,7 @@ alias    go:downl="cd /home/$(whoami)/Downloads"
 alias go:personal="cd /home/$(whoami)/Personal"
 alias     go:dots="cd /home/$(whoami)/Code/Personal/dotfiles"
 alias     go:code="cd /home/$(whoami)/Code"
-alias      go:ssd="cd /run/media/$(whoami)/small_ssd"
+alias      go:ssd="cd /media/$(whoami)/big_ssd"
 
 alias    reload='source ~/.zshrc; echo "> reloaded ~/.zshrc";'
 alias    rename='vimv' # TODO: install https://github.com/thameera/vimv/ for bulk-renaming files
@@ -56,7 +65,6 @@ alias         m='make'
 alias         s='source'
 alias    python='python3'
 alias     sound='pulsemixer'
-alias      nvim='nvim'
 alias       vim='nvim'
 alias        vi='nvim'
 alias      code='codium'
@@ -112,7 +120,7 @@ export PATH=$PATH:/home/$(whoami)/postman/app
 # ================================================================
 # Set x-rate to move faster in vim
 # ================================================================
-xset r rate 200 120
+xset r rate 200 150
 
 
 # ================================================================

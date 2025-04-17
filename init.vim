@@ -25,7 +25,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-    Plug 'fatih/vim-go', { 'tag': '*' }
+    Plug 'fatih/vim-go'
     Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'vim-airline/vim-airline'
@@ -43,7 +43,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-neotest/nvim-nio'         " providing asynchronous features for nvim
     Plug 'mfussenegger/nvim-dap'         " DAP for Neovim
     Plug 'rcarriga/nvim-dap-ui'          " DAP UI
-    Plug 'xiyaowong/transparent.nvim'
 call plug#end()
 
 
@@ -73,7 +72,7 @@ set background=dark
 set ignorecase
 set exrc
 set backspace=indent,eol,start
-set nocompatible
+"set nocompatible
 set nohlsearch
 set nowrap
 set showcmd
@@ -185,10 +184,10 @@ augroup ale_disable_for_python
   autocmd FileType python :ALEDisable
 augroup END
 
-augroup ale_disable_for_php
-  autocmd!
-  autocmd FileType php :ALEDisable
-augroup END
+" augroup ale_disable_for_php
+"   autocmd!
+"   autocmd FileType php :ALEDisable
+" augroup END
 
 let g:ale_go_gopls_options = '--remote=auto'
 let g:ale_linters = {
@@ -257,11 +256,3 @@ dap.listeners.before.event_exited["dapui_config"] = function()
 end
 EOF
 
-
-lua << EOF
-require("transparent").setup({
-  enable = true,       -- Enable transparency
-  extra_groups = {},   -- Additional groups to make transparent
-  exclude_groups = {}, -- Groups to exclude from transparency
-})
-EOF
