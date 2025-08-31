@@ -22,7 +22,8 @@ yellow = "#f78c6c"
 
 [colors.primary]
 # background = "#000000"
-background = "#0d0d0d"
+# background = "#0e0e0e"
+background = "#1a1b26"
 foreground = "#ffffff"
 
 [cursor]
@@ -30,7 +31,7 @@ blink_interval = 800
 style = "Block"
 
 [font]
-size = 15.0
+size = 14.0
 
 [font.normal]
 family = "JetBrains Mono"

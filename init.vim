@@ -17,6 +17,8 @@
 " Extensions
 " -------------------------------------------
 call plug#begin('~/.vim/plugged')
+    Plug 'folke/tokyonight.nvim'
+    Plug 'xiyaowong/nvim-transparent'
     Plug 'mhinz/vim-startify'
     Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
     Plug 'SirVer/ultisnips'
@@ -26,11 +28,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'fatih/vim-go'
+    Plug 'charlespascoe/vim-go-syntax'
     Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'haishanh/night-owl.vim'
     Plug 'w0rp/ale'                      " ALE is a linting for many languages
     Plug 'othree/yajs.vim'               " JavaScript syntax highlighter
     Plug 'mxw/vim-jsx'                   " JSX syntax highlighter
@@ -45,6 +47,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'rcarriga/nvim-dap-ui'          " DAP UI
 call plug#end()
 
+let g:transparent_enabled = v:true
 
 " -------------------------------------------
 " Basic Configurations
@@ -60,7 +63,7 @@ set incsearch
 set syntax=go
 set autoindent
 set encoding=UTF-8
-set colorcolumn=100
+" set colorcolumn=100
 set expandtab       " Convert tab into spaces.
 set tabstop=4
 set softtabstop=4   " Set number of spaces when add/remove new tab(s).
@@ -119,24 +122,15 @@ let g:blamer_relative_time  = 1
 " -------------------------------------------
 " Set editor colorscheme
 " -------------------------------------------
-colorscheme night-owl
+colorscheme tokyonight
 
 
 " -------------------------------------------
 " Airline configurations & themes
 " -------------------------------------------
-let g:airline_theme                      = 'night_owl'
+let g:airline_theme                      = 'onedark'
 let g:airline_powerline_fonts            = 1
 let g:airline#extensions#tabline#enabled = 1
-
-
-" -------------------------------------------
-" Use terminal color configurations
-" -------------------------------------------
-set t_Co=256
-if (has("termguicolors"))
- set termguicolors
-endif
 
 
 " -------------------------------------------
@@ -193,66 +187,4 @@ let g:ale_go_gopls_options = '--remote=auto'
 let g:ale_linters = {
 \   'go': ['gopls'],
 \}
-
-
-" -------------------------------------------
-" Setup debugger using vim-dap
-" -------------------------------------------
-" Set leader key to 'spacebar'
-let mapleader=" "
-
-
-" -------------------------------------------
-" Debugging Key Mappings (similar to VSCode)
-" -------------------------------------------
-nnoremap <leader>db :lua require'dap'.continue()<CR>   " Start/Continue
-nnoremap <leader>ds :lua require'dap'.close()<CR>      " Stop
-nnoremap <leader>dr :lua require'dap'.repl.open()<CR>  " Open REPL
-nnoremap <leader>di :lua require'dap'.step_into()<CR>  " Step Into
-nnoremap <leader>do :lua require'dap'.step_over()<CR>  " Step Over
-nnoremap <leader>du :lua require'dap'.step_out()<CR>   " Step Out
-nnoremap <leader>dl :lua require'dap'.run_last()<CR>   " Run Last Configuration
-nnoremap <leader>dbp :lua require'dap'.toggle_breakpoint()<CR> " Toggle Breakpoint
-nnoremap <leader>dbc :lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint Condition: '))<CR> " Conditional Breakpoint
-
-
-lua << EOF
-local dap = require('dap')
-
--- DAP adapter for Go using delve
-dap.adapters.go = {
-  type = 'server';
-  port = 38697; -- This can be any available port
-  executable = {
-    command = 'dlv';
-    args = { 'dap', '--listen=:38697', '--headless', '--accept-multiclient' };
-  }
-}
-
-dap.configurations.go = {
-  {
-    type = 'go',
-    name = 'Debug',
-    request = 'launch',
-    mode = 'debug',
-    program = "main.go",
-    cwd = "${workspaceFolder}",
-  },
-}
-
-
--- Optional: Set up DAP UI
-require("dapui").setup()
-
--- Automatically open DAP UI when debugging
-dap.listeners.after.event_initialized["dapui_config"] = function()
-  require("dapui").open()
-end
-dap.listeners.before.event_terminated["dapui_config"] = function()
-  require("dapui").close()
-end
-dap.listeners.before.event_exited["dapui_config"] = function()
-  require("dapui").close()
-end
-EOF
 
