@@ -4,6 +4,7 @@
 " $ sudo apt install -y xclip
 " $ sudo apt install -y ripgrep
 " $ sudo apt install -y python3-pynvim
+" $      npm install -g neovim
 
 
 " -------------------------------------------
@@ -21,15 +22,13 @@ call plug#begin('~/.vim/plugged')
     Plug 'xiyaowong/nvim-transparent'
     Plug 'mhinz/vim-startify'
     Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
-    Plug 'SirVer/ultisnips'
-    Plug 'tpope/vim-vinegar'
     Plug 'scrooloose/nerdtree'
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'fatih/vim-go'
     Plug 'charlespascoe/vim-go-syntax'
-    Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+    Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' } " Golang autocompletion
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
@@ -37,14 +36,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'othree/yajs.vim'               " JavaScript syntax highlighter
     Plug 'mxw/vim-jsx'                   " JSX syntax highlighter
     Plug 'ap/vim-css-color'              " CSS syntax highlighter
-    Plug 'pangloss/vim-javascript'       " Javascript syntax highlighter
     Plug 'APZelos/blamer.nvim'
     Plug 'alvan/vim-closetag'
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
-    Plug 'nvim-neotest/nvim-nio'         " providing asynchronous features for nvim
-    Plug 'mfussenegger/nvim-dap'         " DAP for Neovim
-    Plug 'rcarriga/nvim-dap-ui'          " DAP UI
+    Plug 'nvim-lua/plenary.nvim'         " required by nvim-telescope/telescope.nvim
+    Plug 'nvim-telescope/telescope.nvim' " search for file names and file contents
+    " Plug 'nvim-neotest/nvim-nio'       " providing asynchronous features for nvim such as popup windows, popup errors, etc
 call plug#end()
 
 let g:transparent_enabled = v:true
@@ -130,7 +126,7 @@ colorscheme tokyonight
 " -------------------------------------------
 let g:airline_theme                      = 'onedark'
 let g:airline_powerline_fonts            = 1
-let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#enabled = 1
 
 
 " -------------------------------------------
