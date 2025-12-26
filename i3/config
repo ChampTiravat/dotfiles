@@ -8,7 +8,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:JetBrains Mono 12
+font pango:JetBrains Mono 11
 
 
 # # Colors
@@ -69,8 +69,9 @@ bindsym $mod+Shift+q kill
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun -theme Arc-Dark"
 # bindsym $mod+space exec "rofi -modi drun,run -show drun -theme Arc-Dark"
 bindsym $mod+space exec "rofi -show combi -combi-modes 'drun,keys,filebrowser,window,run,ssh' -modes combi -theme Arc-Dark"
+# bindsym $mod+space exec "rofi -theme ~/.cache/wal/colors-rofi-dark.rasi -show combi -combi-modes 'drun,keys,filebrowser,window,run,ssh' -modes combi"
 bindsym $mod+m exec "rofi -show filebrowser -modes filebrowser -theme Arc-Dark"
-bindsym $mod+d exec "rofi -show calc -modi calc -no-show-match -no-sort -theme Arc-Dark"
+# bindsym $mod+d exec "rofi -show calc -modi calc -no-show-match -no-sort -theme Arc-Dark"
 
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
@@ -155,7 +156,7 @@ bindsym $mod+0 workspace number $ws10
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
-bindsym $mod+Shift+4 move cotainer to workspace number $ws4
+bindsym $mod+Shift+4 move container to workspace number $ws4
 bindsym $mod+Shift+5 move container to workspace number $ws5
 bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
@@ -196,33 +197,37 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# exec_always --no-startup-id polybar
 bar {
     position top
     font pango:JetBrains Mono 10
-	status_command bumblebee-status \
-        -m cpu memory battery disk pasink pasource datetime \
-        #-m sensors cpu memory battery disk bluetooth pasink pasource datetime \
-        # -t greyish-powerline
+	status_command bumblebee-status -m battery cpu memory pasink pasource datetime
     colors {
-        background #0d0d0d
+        # background #0d0d0d
+        background #08121d
     }
 }
 
+bindsym $mod+F1  exec --no-startup-id dolphin /home/$(whoami)
+bindsym $mod+F2  exec --no-startup-id dolphin /run/media/$(whoami)/big_ssd
+# bindsym $mod+F1  exec --no-startup-id ranger /home/$(whoami)
+# bindsym $mod+F2  exec --no-startup-id ranger /run/media/$(whoami)/big_ssd
 
-bindsym $mod+F1    exec --no-startup-id thunar /home/$(whoami)
-bindsym $mod+F2    exec --no-startup-id thunar /run/media/$(whoami)/e3b70229-2ffe-4eb7-824c-472c9465eb2b
-bindsym $mod+F3    exec --no-startup-id keepassxc
-bindsym $mod+F4    exec --no-startup-id signal-desktop
-bindsym $mod+F5    exec --no-startup-id telegram-desktop
-bindsym $mod+F12   exec --no-startup-id trezor-suite
-bindsym Print exec --no-startup-id flameshot gui
+bindsym $mod+F3  exec --no-startup-id keepassxc
+bindsym $mod+F4  exec --no-startup-id signal-desktop
+bindsym $mod+F5  exec --no-startup-id telegram-desktop
+bindsym Print    exec --no-startup-id flameshot gui
 
 exec mullvad-vpn
 exec keepassxc
 exec --no-startup-id setxkbmap -layout 'us,th' -option 'grp:alt_shift_toggle'
 exec --no-startup-id xcompmgr
+exec --no-startup-id gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 exec --no-startup-id gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'
 exec --no-startup-id gsettings set org.gnome.desktop.interface icon-theme 'Numix'
+exec --no-startup-id nm-applet
+exec --no-startup-id xrandr --output DP-2 --mode 1920x1080 --rate 144
+exec --no-startup-id dunst
 
 gaps inner 8
 gaps outer 0

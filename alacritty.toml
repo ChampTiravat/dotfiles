@@ -31,7 +31,7 @@ blink_interval = 800
 style = "Block"
 
 [font]
-size = 14.0
+size = 13.0
 
 [font.normal]
 family = "JetBrains Mono"

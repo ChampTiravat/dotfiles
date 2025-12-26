@@ -12,6 +12,7 @@
 " -------------------------------------------
 " :CocInstall coc-tsserver
 " :CocInstall coc-go
+" :CocInstall coc-flutter
 
 
 " -------------------------------------------
@@ -19,6 +20,7 @@
 " -------------------------------------------
 call plug#begin('~/.vim/plugged')
     Plug 'folke/tokyonight.nvim'
+    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
     Plug 'xiyaowong/nvim-transparent'
     Plug 'mhinz/vim-startify'
     Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
@@ -40,10 +42,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'alvan/vim-closetag'
     Plug 'nvim-lua/plenary.nvim'         " required by nvim-telescope/telescope.nvim
     Plug 'nvim-telescope/telescope.nvim' " search for file names and file contents
-    " Plug 'nvim-neotest/nvim-nio'       " providing asynchronous features for nvim such as popup windows, popup errors, etc
+    Plug 'dart-lang/dart-vim-plugin'
+    Plug 'nvim-neotest/nvim-nio'         " providing asynchronous features for nvim such as popup windows, popup errors, etc
 call plug#end()
 
-let g:transparent_enabled = v:true
+let g:transparent_enabled = v:false
 
 " -------------------------------------------
 " Basic Configurations
@@ -58,8 +61,9 @@ set showmatch
 set incsearch
 set syntax=go
 set autoindent
-set encoding=UTF-8
-" set colorcolumn=100
+set encoding=utf-8
+set fileencoding=utf-8
+"set colorcolumn=100
 set expandtab       " Convert tab into spaces.
 set tabstop=4
 set softtabstop=4   " Set number of spaces when add/remove new tab(s).
@@ -71,7 +75,7 @@ set background=dark
 set ignorecase
 set exrc
 set backspace=indent,eol,start
-"set nocompatible
+set nocompatible
 set nohlsearch
 set nowrap
 set showcmd
@@ -113,20 +117,6 @@ let g:vim_markdown_follow_anchor    = 1
 let g:blamer_enabled        = 1
 let g:blamer_delay          = 200
 let g:blamer_relative_time  = 1
-
-
-" -------------------------------------------
-" Set editor colorscheme
-" -------------------------------------------
-colorscheme tokyonight
-
-
-" -------------------------------------------
-" Airline configurations & themes
-" -------------------------------------------
-let g:airline_theme                      = 'onedark'
-let g:airline_powerline_fonts            = 1
-" let g:airline#extensions#tabline#enabled = 1
 
 
 " -------------------------------------------
@@ -184,3 +174,17 @@ let g:ale_linters = {
 \   'go': ['gopls'],
 \}
 
+
+" -------------------------------------------
+" Airline configurations & themes
+" -------------------------------------------
+let g:airline_theme                      = 'catppuccin'
+let g:airline_powerline_fonts            = 1
+" let g:airline#extensions#tabline#enabled = 1
+
+
+" -------------------------------------------
+" Set editor colorscheme
+" -------------------------------------------
+" colorscheme tokyonight
+colorscheme catppuccin-mocha
