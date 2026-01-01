@@ -19,6 +19,9 @@
 " Extensions
 " -------------------------------------------
 call plug#begin('~/.vim/plugged')
+    Plug 'psliwka/vim-smoothie'
+    Plug 'lukas-reineke/indent-blankline.nvim', { 'as': 'ibl' }
+    Plug 'sphamba/smear-cursor.nvim'
     Plug 'folke/tokyonight.nvim'
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
     Plug 'xiyaowong/nvim-transparent'
@@ -174,13 +177,16 @@ let g:ale_linters = {
 \   'go': ['gopls'],
 \}
 
+lua require("ibl").setup()
+" lua require('smear_cursor').enabled = true
+
 
 " -------------------------------------------
 " Airline configurations & themes
 " -------------------------------------------
 let g:airline_theme                      = 'catppuccin'
 let g:airline_powerline_fonts            = 1
-" let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 
 
 " -------------------------------------------

@@ -1,37 +1,39 @@
-[colors.bright]
-black = "#637777"
-blue = "#82aaff"
-cyan = "#7fdbca"
-green = "#addb67"
-magenta = "#c792ea"
-red = "#ff5874"
-# white = "#aaaaaa"
-white = "#eeeeee"
-yellow = "#f78c6c"
+general.import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
 
-[colors.normal]
-black = "#0F1418"
-blue = "#82aaff"
-cyan = "#7fdbca"
-green = "#addb67"
-magenta = "#c792ea"
-red = "#ff5874"
-#white = "#aaaaaa"
-white = "#eeeeee"
-yellow = "#f78c6c"
-
-[colors.primary]
-# background = "#000000"
-background = "#0e0e0e"
-# background = "#1a1b26"
-foreground = "#ffffff"
+#[colors.bright]
+#black = "#637777"
+#blue = "#82aaff"
+#cyan = "#7fdbca"
+#green = "#addb67"
+#magenta = "#c792ea"
+#red = "#ff5874"
+## white = "#aaaaaa"
+#white = "#eeeeee"
+#yellow = "#f78c6c"
+#
+#[colors.normal]
+#black = "#0F1418"
+#blue = "#82aaff"
+#cyan = "#7fdbca"
+#green = "#addb67"
+#magenta = "#c792ea"
+#red = "#ff5874"
+##white = "#aaaaaa"
+#white = "#eeeeee"
+#yellow = "#f78c6c"
+#
+#[colors.primary]
+#background = "#1e1e2e"
+#foreground = "#ffffff"
 
 [cursor]
 blink_interval = 800
 style = "Block"
 
 [font]
-size = 13.0
+size = 14.0
 
 [font.normal]
 family = "JetBrains Mono"
@@ -72,3 +74,6 @@ lines = 35
 [window.padding]
 x = 0
 y = 0
+
+[env]
+TERM = "xterm-256color"
