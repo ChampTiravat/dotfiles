@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/batman/Projects/Works/adsolo/frontend/pages'
+let g:netrw_dirhist_2='/home/batman/Projects/Works/adsolo/frontend'
+let g:netrw_dirhist_3='/home/batman/Projects/Works/adsolo/frontend/pages'
+let g:netrw_dirhist_4='/home/batman/Projects/Works/adsolo/frontend'
+let g:netrw_dirhist_5='/home/batman/Projects/Works/adsolo'
+let g:netrw_dirhist_6='/home/batman/Projects/Works/adsolo/.vscode'
+let g:netrw_dirhist_7='/home/batman/Projects/Works/adsolo/frontend'
+let g:netrw_dirhist_8='/home/batman/Projects/Works/adsolo/frontend/pages'

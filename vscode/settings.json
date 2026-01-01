@@ -1,0 +1,74 @@
+{
+    "editor.rulers": [
+        90
+    ],
+    "workbench.startupEditor": "newUntitledFile",
+    "git.autofetch": true,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "go.formatTool": "goimports",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "editor.fontLigatures": true,
+    "extensions.ignoreRecommendations": true,
+    "editor.lineHeight": 32,
+    "workbench.iconTheme": "material-icon-theme",
+    "terminal.integrated.fontSize": 15,
+    "[vue]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "terminal.integrated.cursorBlinking": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
+    "files.defaultLanguage": "${activeEditorLanguage}",
+    "terminal.external.linuxExec": "zsh",
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.fontFamily": "'Fira Code Retina',  'Monaco', 'Cascadia Code', 'Consolas',   'Courier New', monospac",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "[javascriptreact]": {
+    
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.confirmSync": false,
+    "emmet.syntaxProfiles": {
+    
+    },
+    "solidity.compileUsingRemoteVersion": "v0.6.12+commit.27d51765",
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "prettier.jsxSingleQuote": true,
+    "editor.tabSize": 2,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "editor.fontSize": 16,
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "bracketPairColorizer.depreciation-notice": false,
+    "files.saveConflictResolution": "overwriteFileOnDisk",
+    "prettier.printWidth": 90,
+    "powermode.enabled": true,
+    "[php]": {
+        "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+    },
+    "workbench.editor.untitled.hint": "hidden",
+    "workbench.colorTheme": "Solarized Dark",
+    "editor.cursorSmoothCaretAnimation": false,
+    "workbench.colorCustomizations": {
+        "editor.background": "#001015",
+        "sideBar.background": "#001c23"
+    }
+}

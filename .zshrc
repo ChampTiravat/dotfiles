@@ -1,33 +1,89 @@
-# ================================================================
-# Load initial config from oh-my-zsh
-# ================================================================
+# Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export TERM=xterm-256color
 
-# ================================================================
-# Theme
-# ================================================================
+# [ -f "${HOME}/.cache/wal/sequences" ] && cat "${HOME}/.cache/wal/sequences"
+
+if [ -f "$HOME/.zsh_secrets" ]; then
+    source "$HOME/.zsh_secrets"
+fi
+
+
 ZSH_THEME="robbyrussell"
-export QT_QPA_PLATFORMTHEME=gtk2
 
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-# ================================================================
-# Plugin
-# ================================================================
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+zstyle ':omz:update' mode auto      # update automatically without asking
+# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+
+# Uncomment the following line to change how often to auto-update (in days).
+zstyle ':omz:update' frequency 7
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+ENABLE_CORRECTION="false"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
+COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
 plugins=(git sudo)
 
-
-# ================================================================
-# Reload config from oh-my-zsh
-# ================================================================
 source $ZSH/oh-my-zsh.sh
 
+# User configuration
 
-# ================================================================
-# Reload keyboard layout settings
-# ================================================================
-setxkbmap -layout 'us,th' -option 'grp:alt_shift_toggle'
+# export MANPATH="/usr/local/man:$MANPATH"
 
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='vim'
+else
+  export EDITOR='nvim'
+fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch $(uname -m)"
 
 # ================================================================
 # Aliases
@@ -41,22 +97,6 @@ alias decrypt='gpg --decrypt'
 
 alias wifi:list='nmcli device wifi list'
 alias wifi:conn='nmcli device wifi connect '
-
-alias      backup:all='backup:notes; echo "> created backup for notes"; backup:dotfiles; echo "> created backup for dotfiles"; backup:pass; echo "> created backup for passwords";'
-alias     backup:pass="rm -rf /media/$(whoami)/big_ssd/Passwords;     cp -r ~/Personal/Passwords /media/$(whoami)/big_ssd/Passwords;"
-alias    backup:notes="rm -rf /media/$(whoami)/big_ssd/Notes/.git;    cp -r ~/Personal/Notes/* /media/$(whoami)/big_ssd/Notes/"
-alias backup:dotfiles="rm -rf /media/$(whoami)/big_ssd/dotfiles/.git; cp -r /home/$(whoami)/Code/Personal/dotfiles/* /home/$(whoami)/Code/Personal/dotfiles/.*  /media/$(whoami)/big_ssd/dotfiles/"
-
-alias         tdg="cd ~/Code/Contract/tdg"
-alias        back="cd -; ls -lah"
-alias       notes="cd /home/$(whoami)/Personal/Notes; vi ."
-alias    go:notes="cd /home/$(whoami)/Personal/Notes; vi ."
-alias     go:desk="cd /home/$(whoami)/Desktop"
-alias    go:downl="cd /home/$(whoami)/Downloads"
-alias go:personal="cd /home/$(whoami)/Personal"
-alias     go:dots="cd /home/$(whoami)/Code/Personal/dotfiles"
-alias     go:code="cd /home/$(whoami)/Code"
-alias      go:ssd="cd /media/$(whoami)/big_ssd"
 
 alias    reload='source ~/.zshrc; echo "> reloaded ~/.zshrc";'
 alias    rename='vimv' # TODO: install https://github.com/thameera/vimv/ for bulk-renaming files
@@ -73,7 +113,8 @@ alias nvim:conf="vi /home/$(whoami)/Code/Personal/dotfiles/init.vim"
 alias  zsh:conf="vi /home/$(whoami)/Code/Personal/dotfiles/.zshrc"
 
 alias  copytext='xclip -selection clipboard; echo "> text coppied to clipboard"'
-alias pastetext='xclip -selection clipboard -o'
+alias  ccc='xclip -selection clipboard; echo "> text coppied to clipboard"'
+alias ppp='xclip -selection clipboard -o'
 
 alias       gs='git status'
 alias       gd='git diff'
@@ -81,6 +122,7 @@ alias       gl='git log'
 alias       gp='git push'
 alias gitcache='git config --global credential.helper "cache --timeout=904800"'
 
+alias appsOnPort='sudo lsof -i '
 
 # ================================================================
 # Variables
@@ -91,61 +133,52 @@ export      NVIM_CONFIG="/home/$(whoami)/.config/nvim/init.vim"
 export        I3_CONFIG="/home/$(whoami)/.config/i3/config"
 export           EDITOR='/usr/bin/nvim';
 export       GIT_EDITOR='nvim'
-export           VISUAL='vim'
+export           VISUAL='nvim'
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# ================================================================
-# PATH for NVM and Nodejs
-# ================================================================
-export NVM_DIR="$HOME/.config/nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
-# ================================================================
-# PATH for Go
-# ================================================================
 export PATH=$PATH:/usr/local/go/bin
-export PATH=$PATH:$(go env GOPATH)/bin
-export PATH=$PATH:/home/$(whoami)/postman/app
+export PATH=$PATH:/home/$(whoami)/go/bin/
 
+## >>> conda initialize >>>
+## !! Contents within this block are managed by 'conda init' !!
+#__conda_setup="$('/home/astartes/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#if [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+#    if [ -f "/home/astartes/miniconda3/etc/profile.d/conda.sh" ]; then
+#        . "/home/astartes/miniconda3/etc/profile.d/conda.sh"
+#    else
+#        export PATH="/home/astartes/miniconda3/bin:$PATH"
+#    fi
+#fi
+#unset __conda_setup
+## <<< conda initialize <<<
 
-# ================================================================
-# Fuzzy search (press Ctrl + r to use)
-# ================================================================
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+unsetopt correct_all
 
-
-# ================================================================
-# Set x-rate to move faster in vim
-# ================================================================
 xset r rate 200 150
 
+export PATH=$HOME/flutter/bin:$PATH
+export PATH=$HOME/android-stuido/bin:$PATH
+# export PATH=$HOME/cmdline-tools/bin:$PATH
 
-# ================================================================
-# Configure conda for python
-# ================================================================
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/primaris/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/primaris/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/primaris/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/primaris/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+export ANDROID_SDK_ROOT="$HOME/Android/Sdk"
+export JAVA_HOME="/usr/lib/jvm/java-17-openjdk"
+export PATH="$PATH:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin"
 
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
-# ================================================================
-# bun completions
-# ================================================================
-[ -s "/home/primaris/.bun/_bun" ] && source "/home/primaris/.bun/_bun"
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
+# gsettings set org.gnome.desktop.peripherals.keyboard repeat true
+# gsettings set org.gnome.desktop.peripherals.keyboard delay 200
+# gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 5
 
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/astartes/.dart-cli-completion/zsh-config.zsh ]] && . /home/astartes/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
 
