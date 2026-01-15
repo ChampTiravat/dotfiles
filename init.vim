@@ -1,27 +1,28 @@
-" -------------------------------------------
+" ------------------------------------------------
 " Install Runtime Dependencies
-" -------------------------------------------
+" ------------------------------------------------
 " $ sudo apt install -y xclip
+" $ sudo apt install -y wl-clipboard
 " $ sudo apt install -y ripgrep
 " $ sudo apt install -y python3-pynvim
 " $      npm install -g neovim
 
 
-" -------------------------------------------
+" ------------------------------------------------
 " Extensions Activation (run in vim console)
-" -------------------------------------------
+" ------------------------------------------------
 " :CocInstall coc-tsserver
 " :CocInstall coc-go
 " :CocInstall coc-flutter
 
 
-" -------------------------------------------
+" ------------------------------------------------
 " Extensions
-" -------------------------------------------
+" ------------------------------------------------
 call plug#begin('~/.vim/plugged')
+    Plug 'nvim-neotest/nvim-nio'
     Plug 'psliwka/vim-smoothie'
     Plug 'lukas-reineke/indent-blankline.nvim', { 'as': 'ibl' }
-    Plug 'sphamba/smear-cursor.nvim'
     Plug 'folke/tokyonight.nvim'
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
     Plug 'xiyaowong/nvim-transparent'
@@ -37,23 +38,21 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    Plug 'w0rp/ale'                      " ALE is a linting for many languages
-    Plug 'othree/yajs.vim'               " JavaScript syntax highlighter
-    Plug 'mxw/vim-jsx'                   " JSX syntax highlighter
-    Plug 'ap/vim-css-color'              " CSS syntax highlighter
+    Plug 'w0rp/ale' " ALE is a linting for many languages
+    Plug 'othree/yajs.vim' " JavaScript syntax highlighter
+    Plug 'mxw/vim-jsx' " JSX syntax highlighter
+    Plug 'ap/vim-css-color' " CSS syntax highlighter
     Plug 'APZelos/blamer.nvim'
     Plug 'alvan/vim-closetag'
-    Plug 'nvim-lua/plenary.nvim'         " required by nvim-telescope/telescope.nvim
+    Plug 'nvim-lua/plenary.nvim' " required by nvim-telescope/telescope.nvim
     Plug 'nvim-telescope/telescope.nvim' " search for file names and file contents
     Plug 'dart-lang/dart-vim-plugin'
-    Plug 'nvim-neotest/nvim-nio'         " providing asynchronous features for nvim such as popup windows, popup errors, etc
 call plug#end()
 
-let g:transparent_enabled = v:false
 
-" -------------------------------------------
+" ------------------------------------------------
 " Basic Configurations
-" -------------------------------------------
+" ------------------------------------------------
 set clipboard=unnamedplus
 set mouse=a
 set cursorline
@@ -66,7 +65,7 @@ set syntax=go
 set autoindent
 set encoding=utf-8
 set fileencoding=utf-8
-"set colorcolumn=100
+" set colorcolumn=100
 set expandtab       " Convert tab into spaces.
 set tabstop=4
 set softtabstop=4   " Set number of spaces when add/remove new tab(s).
@@ -95,9 +94,9 @@ syntax enable
 filetype plugin indent on
 
 
-" -------------------------------------------
+" ------------------------------------------------
 " NERDTree
-" -------------------------------------------
+" ------------------------------------------------
 "let g:NERDTreeMinimalMenu=1
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName    = 1
@@ -107,24 +106,24 @@ let g:NERDTreeHighlightFoldersFullName       = 1 " highlights the folder name
 " autocmd VimEnter * NERDTree                    " Open NERDTree at startup
 
 
-" -------------------------------------------
+" ------------------------------------------------
 " Vim Markdown settings
-" -------------------------------------------
+" ------------------------------------------------
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_follow_anchor    = 1
 
 
-" -------------------------------------------
+" ------------------------------------------------
 " Blamer configurations
-" -------------------------------------------
+" ------------------------------------------------
 let g:blamer_enabled        = 1
 let g:blamer_delay          = 200
 let g:blamer_relative_time  = 1
 
 
-" -------------------------------------------
+" ------------------------------------------------
 " Keymap
-" -------------------------------------------
+" ------------------------------------------------
 nmap <S-k> <Plug>(coc-hover)
 nmap oo <Plug>(coc-definition)
 nnoremap <leader>n :NERDTreeFocus<CR>
@@ -137,9 +136,9 @@ nnoremap <C-s> :w<CR>
 "nnoremap <C-f> :Telescope buffers<CR>
 
 
-" -------------------------------------------
+" ------------------------------------------------
 " Prettier configurations
-" -------------------------------------------
+" ------------------------------------------------
 let g:prettier#config#arrow_parens                 = 'always'
 let g:prettier#config#bracket_spacing              = 'true'
 let g:prettier#config#bracket_same_line            = 'false'
@@ -159,9 +158,9 @@ let g:prettier#config#use_tabs                     = 'false'
 let g:prettier#config#vue_indent_script_and_style  = 'false'
 
 
-" -------------------------------------------
+" ------------------------------------------------
 " Disable ALE for python (for simplicity)
-" -------------------------------------------
+" ------------------------------------------------
 augroup ale_disable_for_python
   autocmd!
   autocmd FileType python :ALEDisable
@@ -177,20 +176,23 @@ let g:ale_linters = {
 \   'go': ['gopls'],
 \}
 
+let g:transparent_enabled = v:false
+
+" ------------------------------------------------
+" Display indentation indicator
+" ------------------------------------------------
 lua require("ibl").setup()
-" lua require('smear_cursor').enabled = true
 
-
-" -------------------------------------------
+" ------------------------------------------------
 " Airline configurations & themes
-" -------------------------------------------
+" ------------------------------------------------
 let g:airline_theme                      = 'catppuccin'
 let g:airline_powerline_fonts            = 1
 let g:airline#extensions#tabline#enabled = 1
 
-
-" -------------------------------------------
+" ------------------------------------------------
 " Set editor colorscheme
-" -------------------------------------------
+" ------------------------------------------------
 " colorscheme tokyonight
 colorscheme catppuccin-mocha
+

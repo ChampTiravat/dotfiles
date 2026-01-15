@@ -12,7 +12,7 @@ general.import = [
 ## white = "#aaaaaa"
 #white = "#eeeeee"
 #yellow = "#f78c6c"
-#
+
 #[colors.normal]
 #black = "#0F1418"
 #blue = "#82aaff"
@@ -23,7 +23,7 @@ general.import = [
 ##white = "#aaaaaa"
 #white = "#eeeeee"
 #yellow = "#f78c6c"
-#
+
 #[colors.primary]
 #background = "#1e1e2e"
 #foreground = "#ffffff"
