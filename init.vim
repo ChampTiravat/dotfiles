@@ -21,11 +21,8 @@
 " ------------------------------------------------
 call plug#begin('~/.vim/plugged')
     Plug 'nvim-neotest/nvim-nio'
-    Plug 'psliwka/vim-smoothie'
     Plug 'lukas-reineke/indent-blankline.nvim', { 'as': 'ibl' }
-    Plug 'folke/tokyonight.nvim'
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-    Plug 'xiyaowong/nvim-transparent'
     Plug 'mhinz/vim-startify'
     Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
     Plug 'scrooloose/nerdtree'
@@ -34,7 +31,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'fatih/vim-go'
     Plug 'charlespascoe/vim-go-syntax'
-    Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' } " Golang autocompletion
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
@@ -43,10 +39,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'mxw/vim-jsx' " JSX syntax highlighter
     Plug 'ap/vim-css-color' " CSS syntax highlighter
     Plug 'APZelos/blamer.nvim'
-    Plug 'alvan/vim-closetag'
     Plug 'nvim-lua/plenary.nvim' " required by nvim-telescope/telescope.nvim
     Plug 'nvim-telescope/telescope.nvim' " search for file names and file contents
-    Plug 'dart-lang/dart-vim-plugin'
 call plug#end()
 
 
@@ -176,8 +170,6 @@ let g:ale_linters = {
 \   'go': ['gopls'],
 \}
 
-let g:transparent_enabled = v:false
-
 " ------------------------------------------------
 " Display indentation indicator
 " ------------------------------------------------
@@ -188,7 +180,7 @@ lua require("ibl").setup()
 " ------------------------------------------------
 let g:airline_theme                      = 'catppuccin'
 let g:airline_powerline_fonts            = 1
-let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 
 " ------------------------------------------------
 " Set editor colorscheme

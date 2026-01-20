@@ -25,7 +25,7 @@ general.import = [
 #yellow = "#f78c6c"
 
 #[colors.primary]
-#background = "#1e1e2e"
+# background = "#1e1e2e"
 #foreground = "#ffffff"
 
 [cursor]
