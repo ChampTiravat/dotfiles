@@ -1,32 +1,32 @@
 general.import = [
-  "~/.config/alacritty/catppuccin-mocha.toml"
+    "~/.config/alacritty/catppuccin-mocha.toml"
 ]
 
-#[colors.bright]
-#black = "#637777"
-#blue = "#82aaff"
-#cyan = "#7fdbca"
-#green = "#addb67"
-#magenta = "#c792ea"
-#red = "#ff5874"
-## white = "#aaaaaa"
-#white = "#eeeeee"
-#yellow = "#f78c6c"
+# [colors.bright]
+# black = "#637777"
+# blue = "#82aaff"
+# cyan = "#7fdbca"
+# green = "#addb67"
+# magenta = "#c792ea"
+# red = "#ff5874"
+# white = "#eeeeee"
+# yellow = "#f78c6c"
 
-#[colors.normal]
-#black = "#0F1418"
-#blue = "#82aaff"
-#cyan = "#7fdbca"
-#green = "#addb67"
-#magenta = "#c792ea"
-#red = "#ff5874"
-##white = "#aaaaaa"
-#white = "#eeeeee"
-#yellow = "#f78c6c"
+# [colors.normal]
+# black = "#0F1418"
+# blue = "#82aaff"
+# cyan = "#7fdbca"
+# green = "#addb67"
+# magenta = "#c792ea"
+# red = "#ff5874"
+# #white = "#aaaaaa"
+# white = "#eeeeee"
+# yellow = "#f78c6c"
 
-#[colors.primary]
+[colors.primary]
 # background = "#1e1e2e"
-#foreground = "#ffffff"
+background = "#1e1e2a"
+# foreground = "#ffffff"
 
 [cursor]
 blink_interval = 800
@@ -37,6 +37,7 @@ size = 14.0
 
 [font.normal]
 family = "JetBrains Mono"
+# family = "FiraCode"
 style = "Regular"
 
 [[keyboard.bindings]]

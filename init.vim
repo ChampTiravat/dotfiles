@@ -20,9 +20,9 @@
 " Extensions
 " ------------------------------------------------
 call plug#begin('~/.vim/plugged')
+    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
     Plug 'nvim-neotest/nvim-nio'
     Plug 'lukas-reineke/indent-blankline.nvim', { 'as': 'ibl' }
-    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
     Plug 'mhinz/vim-startify'
     Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
     Plug 'scrooloose/nerdtree'
@@ -42,7 +42,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'nvim-lua/plenary.nvim' " required by nvim-telescope/telescope.nvim
     Plug 'nvim-telescope/telescope.nvim' " search for file names and file contents
 call plug#end()
-
 
 " ------------------------------------------------
 " Basic Configurations
@@ -84,6 +83,7 @@ set hidden
 set splitright
 set expandtab
 set noerrorbells
+set termguicolors
 syntax enable
 filetype plugin indent on
 
@@ -185,6 +185,17 @@ let g:airline#extensions#tabline#enabled = 0
 " ------------------------------------------------
 " Set editor colorscheme
 " ------------------------------------------------
-" colorscheme tokyonight
-colorscheme catppuccin-mocha
+colorscheme catppuccin
 
+lua << EOF
+require("catppuccin").setup({
+  color_overrides = {
+    all = {
+      base   = "#1e1e2a",
+      mantle = "#1e1e2a",
+      crust  = "#1e1e2a",
+    },
+  },
+})
+vim.cmd.colorscheme("catppuccin")
+EOF
