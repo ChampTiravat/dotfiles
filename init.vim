@@ -20,28 +20,30 @@
 " Extensions
 " ------------------------------------------------
 call plug#begin('~/.vim/plugged')
+    " Plug 'tribela/vim-transparent'
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+    Plug 'vim-airline/vim-airline'
     Plug 'nvim-neotest/nvim-nio'
-    Plug 'lukas-reineke/indent-blankline.nvim', { 'as': 'ibl' }
     Plug 'mhinz/vim-startify'
     Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
-    Plug 'scrooloose/nerdtree'
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'fatih/vim-go'
     Plug 'charlespascoe/vim-go-syntax'
     Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'w0rp/ale' " ALE is a linting for many languages
-    Plug 'othree/yajs.vim' " JavaScript syntax highlighter
-    Plug 'mxw/vim-jsx' " JSX syntax highlighter
-    Plug 'ap/vim-css-color' " CSS syntax highlighter
+    Plug 'nvim-tree/nvim-web-devicons'   " If you want to have icons in your statusline choose one of these
+    Plug 'w0rp/ale'                      " ALE is a linting for many languages
+    Plug 'othree/yajs.vim'               " JavaScript syntax highlighter
+    Plug 'mxw/vim-jsx'                   " JSX syntax highlighter
+    Plug 'ap/vim-css-color'              " CSS syntax highlighter
     Plug 'APZelos/blamer.nvim'
-    Plug 'nvim-lua/plenary.nvim' " required by nvim-telescope/telescope.nvim
+    Plug 'nvim-lua/plenary.nvim'         " required by nvim-telescope/telescope.nvim
     Plug 'nvim-telescope/telescope.nvim' " search for file names and file contents
+    Plug 'MunifTanjim/nui.nvim'
+    Plug 'nvim-neo-tree/neo-tree.nvim'
 call plug#end()
+
 
 " ------------------------------------------------
 " Basic Configurations
@@ -88,17 +90,6 @@ syntax enable
 filetype plugin indent on
 
 
-" ------------------------------------------------
-" NERDTree
-" ------------------------------------------------
-"let g:NERDTreeMinimalMenu=1
-let g:NERDTreeFileExtensionHighlightFullName = 1
-let g:NERDTreeExactMatchHighlightFullName    = 1
-let g:NERDTreePatternMatchHighlightFullName  = 1
-let g:NERDTreeHighlightFolders               = 1 " enables folder icon highlighting using exact match
-let g:NERDTreeHighlightFoldersFullName       = 1 " highlights the folder name
-" autocmd VimEnter * NERDTree                    " Open NERDTree at startup
-
 
 " ------------------------------------------------
 " Vim Markdown settings
@@ -120,8 +111,7 @@ let g:blamer_relative_time  = 1
 " ------------------------------------------------
 nmap <S-k> <Plug>(coc-hover)
 nmap oo <Plug>(coc-definition)
-nnoremap <leader>n :NERDTreeFocus<CR>
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :Neotree<CR>
 nnoremap <C-f> :Telescope find_files<CR>
 nnoremap <C-g> :Telescope live_grep<CR>
 nnoremap <C-t> :tabnew<CR>
@@ -160,20 +150,25 @@ augroup ale_disable_for_python
   autocmd FileType python :ALEDisable
 augroup END
 
+
 " augroup ale_disable_for_php
 "   autocmd!
 "   autocmd FileType php :ALEDisable
 " augroup END
+
 
 let g:ale_go_gopls_options = '--remote=auto'
 let g:ale_linters = {
 \   'go': ['gopls'],
 \}
 
+
 " ------------------------------------------------
-" Display indentation indicator
+" Set editor colorscheme
 " ------------------------------------------------
-lua require("ibl").setup()
+" colorscheme catppuccin-latte
+colorscheme catppuccin-mocha
+
 
 " ------------------------------------------------
 " Airline configurations & themes
@@ -182,20 +177,55 @@ let g:airline_theme                      = 'catppuccin'
 let g:airline_powerline_fonts            = 1
 let g:airline#extensions#tabline#enabled = 0
 
-" ------------------------------------------------
-" Set editor colorscheme
-" ------------------------------------------------
-colorscheme catppuccin
 
 lua << EOF
-require("catppuccin").setup({
-  color_overrides = {
-    all = {
-      base   = "#1e1e2a",
-      mantle = "#1e1e2a",
-      crust  = "#1e1e2a",
+ require("catppuccin").setup({
+   color_overrides = {
+     all = {
+       base   = "#000000",
+       mantle = "#000000",
+       crust  = "#000000",
+     },
+   },
+ })
+vim.cmd.colorscheme("catppuccin-mocha")
+-- vim.cmd.colorscheme("catppuccin-latte")
+EOF
+
+lua << EOF
+require("neo-tree").setup({
+  -- some configs / distros disable this explicitly
+  enable_diagnostics = true, -- :contentReference[oaicite:2]{index=2}
+
+  default_component_configs = {
+    diagnostics = {
+      symbols = {
+        hint = "●",
+        info = "●",
+        warn = "●",
+        error = "●",
+      },
+      highlights = {
+        hint = "DiagnosticHint",
+        info = "DiagnosticInfo",
+        warn = "DiagnosticWarn",
+        error = "DiagnosticError",
+      },
     },
   },
 })
-vim.cmd.colorscheme("catppuccin")
 EOF
+
+
+" Prevent weird behavior when saving .go files and the cursor will move down
+" to the bottom of the file. This is caused by the mechanism of gofmt format-on-save.
+" We solve this by saving the cursor position before gofmt autosave then after
+" gofmt has run, we move the cursor back to the original position.
+augroup GoFmtFixView
+  autocmd!
+  autocmd BufWritePre *.go let b:saveview = winsaveview()
+  autocmd BufWritePre *.go silent! call go#auto#fmt_autosave()
+  autocmd BufWritePost *.go if exists('b:saveview') | call winrestview(b:saveview) | unlet b:saveview | endif
+augroup END
+
+

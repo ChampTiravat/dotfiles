@@ -1,4 +1,5 @@
 general.import = [
+    # "~/.config/alacritty/catppuccin-latte.toml"
     "~/.config/alacritty/catppuccin-mocha.toml"
 ]
 
@@ -25,7 +26,7 @@ general.import = [
 
 [colors.primary]
 # background = "#1e1e2e"
-background = "#1e1e2a"
+background = "#000000"
 # foreground = "#ffffff"
 
 [cursor]
