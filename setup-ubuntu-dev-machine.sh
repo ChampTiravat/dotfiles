@@ -117,4 +117,3 @@ echo 'deb [arch=amd64 signed-by=/usr/share/keyrings/signal-desktop-keyring.gpg] 
 
 sudo apt-get update  -y;
 sudo apt-get install -y signal-desktop;
-
