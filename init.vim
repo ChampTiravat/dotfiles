@@ -20,12 +20,12 @@
 " Extensions
 " ------------------------------------------------
 call plug#begin('~/.vim/plugged')
-    " Plug 'tribela/vim-transparent'
+    Plug 'tribela/vim-transparent'
+    Plug 'nvim-lualine/lualine.nvim'
+    Plug 'folke/todo-comments.nvim'
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
-    Plug 'vim-airline/vim-airline'
     Plug 'nvim-neotest/nvim-nio'
-    Plug 'mhinz/vim-startify'
-    Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
+    Plug 'prettier/vim-prettier', { 'do': 'npm install' }
     Plug 'ntpeters/vim-better-whitespace'
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -90,7 +90,6 @@ syntax enable
 filetype plugin indent on
 
 
-
 " ------------------------------------------------
 " Vim Markdown settings
 " ------------------------------------------------
@@ -116,8 +115,6 @@ nnoremap <C-f> :Telescope find_files<CR>
 nnoremap <C-g> :Telescope live_grep<CR>
 nnoremap <C-t> :tabnew<CR>
 nnoremap <C-s> :w<CR>
-"nnoremap <C-f> :FZF<CR>
-"nnoremap <C-f> :Telescope buffers<CR>
 
 
 " ------------------------------------------------
@@ -170,27 +167,20 @@ let g:ale_linters = {
 colorscheme catppuccin-mocha
 
 
-" ------------------------------------------------
-" Airline configurations & themes
-" ------------------------------------------------
-let g:airline_theme                      = 'catppuccin'
-let g:airline_powerline_fonts            = 1
-let g:airline#extensions#tabline#enabled = 0
-
-
 lua << EOF
- require("catppuccin").setup({
-   color_overrides = {
-     all = {
-       base   = "#000000",
-       mantle = "#000000",
-       crust  = "#000000",
+  require("catppuccin").setup({
+     color_overrides = {
+       all = {
+         base   = "#111111",
+         mantle = "#111111",
+         crust  = "#111111",
+       },
      },
-   },
- })
-vim.cmd.colorscheme("catppuccin-mocha")
--- vim.cmd.colorscheme("catppuccin-latte")
+  })
+  vim.cmd.colorscheme("catppuccin-mocha")
+  -- vim.cmd.colorscheme("catppuccin-latte")
 EOF
+
 
 lua << EOF
 require("neo-tree").setup({
@@ -215,6 +205,15 @@ require("neo-tree").setup({
   },
 })
 EOF
+
+
+lua << EOF
+require("todo-comments").setup({})
+EOF
+
+lua << END
+require('lualine').setup()
+END
 
 
 " Prevent weird behavior when saving .go files and the cursor will move down
